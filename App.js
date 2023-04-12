@@ -24,15 +24,11 @@ export default function App() {
               options={{ headerShown: false }}
               component={Page2}
             ></Stack.Screen>
-          </Stack.Navigator>
-          <Stack.Navigator>
             <Stack.Screen
               name="On Boarding 3"
               options={{ headerShown: false }}
               component={Page3}
             ></Stack.Screen>
-          </Stack.Navigator>
-          <Stack.Navigator>
             <Stack.Screen
               name="On Boarding 4"
               options={{ headerShown: false }}
