@@ -3,8 +3,15 @@ import PrimaryButton from "../../components/UI/PrimaryButton";
 
 const Page1 = () => {
   return (
-    <div>Page</div>
-  )
-}
+    <View>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+      <Text>Hello</Text>
+      <Text>Hello</Text>
+    </View>
+  );
+};
 
 export default Page1;
