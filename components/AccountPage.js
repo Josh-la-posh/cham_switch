@@ -8,9 +8,7 @@ const AccountPage = ({ children, pageContainer }) => {
       <View style={styles.topContainer}>
         <Text style={styles.text}>{children}</Text>
       </View>
-      <View style={styles.formContainer}>
-        
-      </View>
+      <View style={styles.formContainer}></View>
     </View>
   );
 };
@@ -20,7 +18,7 @@ export default AccountPage;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.accountBackground,
-    height: '100%'
+    height: "100%",
   },
   topContainer: {
     backgroundColor: COLORS.colorPrimaryDark,
@@ -32,17 +30,17 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 40,
     fontWeight: 700,
-    marginTop: 130,
+    marginTop: '30%',
   },
   formContainer: {
-      backgroundColor: 'white',
-      color: 'white',
-      marginLeft: 20.5,
-      marginRight: 20.5,
-      marginTop: -107,
-      height: '60%',
-      borderRadius: 19,
-      paddingLeft: 26.5,
-      paddingRight: 26.5
+    backgroundColor: "white",
+    color: "white",
+    marginLeft: 20.5,
+    marginRight: 20.5,
+    marginTop: -107,
+    height: "60%",
+    borderRadius: 19,
+    paddingLeft: 26.5,
+    paddingRight: 26.5,
   },
 });
