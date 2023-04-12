@@ -6,6 +6,7 @@ import Page1 from "./Sections/Onboarding/Page1";
 import Page2 from "./Sections/Onboarding/Page2";
 import Page3 from "./Sections/Onboarding/Page3";
 import Page4 from "./Sections/Onboarding/Page4";
+import Login from "./Sections/LoginAndSignup/Login";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -33,6 +34,11 @@ export default function App() {
               name="On Boarding 4"
               options={{ headerShown: false }}
               component={Page4}
+            ></Stack.Screen>
+            <Stack.Screen
+              name="Login"
+              options={{ headerShown: false }}
+              component={Login}
             ></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>

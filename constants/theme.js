@@ -7,7 +7,8 @@ export const COLORS = {
     colorPrimaryLight: '#08EAA6',
     textColorDark: '#000',
     dangerTextColor: '#F80D0D',
-    dangerBtnColor: '#F80E0E'
+    dangerBtnColor: '#F80E0E',
+    accountBackground: '#F2EEEE',
 
 }
 

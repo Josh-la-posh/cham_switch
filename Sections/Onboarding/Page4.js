@@ -9,7 +9,7 @@ const Page4 = ({ navigation }) => {
       </View>
       <Text style={styles.text}>File a complaint</Text>
       <View style={styles.btnContainer}>
-        <PrimaryButton onPress={() => {navigation.navigate('On Boarding 1')}} btnStyle={styles.btnStyle}>
+        <PrimaryButton onPress={() => {navigation.navigate('Login')}} btnStyle={styles.btnStyle}>
           <Text>Done</Text>
         </PrimaryButton>
       </View>
