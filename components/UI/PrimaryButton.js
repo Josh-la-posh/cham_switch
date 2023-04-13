@@ -28,7 +28,7 @@ const PrimaryButton = ({
 export default PrimaryButton;
 
 const styles = StyleSheet.create({
-    buttonContainer: {
+  buttonContainer: {
     backgroundColor: COLORS.colorPrimaryDark,
   },
   buttonStyle: {

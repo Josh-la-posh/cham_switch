@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
-import { COLORS, SIZES } from "../constants";
+import { COLORS } from "../constants";
 
-const AccountPage = ({ children, pageContainer }) => {
+const AccountPage = ({ children, title, pageContainer }) => {
   const defaultAccountContainer = [styles.container, pageContainer];
   return (
     <View style={defaultAccountContainer}>
       <View style={styles.topContainer}>
-        <Text style={styles.text}>{children}</Text>
+        <Text style={styles.text}>{title}</Text>
       </View>
-      <View style={styles.formContainer}></View>
+      <View style={styles.formContainer}>{children}</View>
     </View>
   );
 };
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 40,
     fontWeight: 700,
-    marginTop: '30%',
+    marginTop: "30%",
   },
   formContainer: {
     backgroundColor: "white",
@@ -42,5 +42,6 @@ const styles = StyleSheet.create({
     borderRadius: 19,
     paddingLeft: 26.5,
     paddingRight: 26.5,
+    overflow: 'hidden',
   },
 });

@@ -9,7 +9,12 @@ const Page4 = ({ navigation }) => {
       </View>
       <Text style={styles.text}>File a complaint</Text>
       <View style={styles.btnContainer}>
-        <PrimaryButton onPress={() => {navigation.navigate('Login')}} btnStyle={styles.btnStyle}>
+        <PrimaryButton
+          onPress={() => {
+            navigation.navigate("Login and Signup");
+          }}
+          btnStyle={styles.btnStyle}
+        >
           <Text>Done</Text>
         </PrimaryButton>
       </View>
@@ -27,13 +32,12 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: 369,
-
   },
   text: {
-      fontSize: 40,
-      textAlign: 'center',
-      fontWeight: 400,
-      marginBottom: 135,
+    fontSize: 40,
+    textAlign: "center",
+    fontWeight: 400,
+    marginBottom: 135,
   },
   btnContainer: {
     borderRadius: 19,

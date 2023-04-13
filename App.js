@@ -6,7 +6,9 @@ import Page1 from "./Sections/Onboarding/Page1";
 import Page2 from "./Sections/Onboarding/Page2";
 import Page3 from "./Sections/Onboarding/Page3";
 import Page4 from "./Sections/Onboarding/Page4";
-import Login from "./Sections/LoginAndSignup/Login";
+import Login from "./Sections/LoginAndSignup/Login/Login";
+import SignUp from "./Sections/LoginAndSignup/Signup/SignUp";
+import Login_And_Signup from "./Sections/LoginAndSignup/Login_And_Signup";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -36,9 +38,19 @@ export default function App() {
               component={Page4}
             ></Stack.Screen>
             <Stack.Screen
+              name="Login and Signup"
+              options={{ headerShown: false }}
+              component={Login_And_Signup}
+            ></Stack.Screen>
+            <Stack.Screen
               name="Login"
               options={{ headerShown: false }}
               component={Login}
+            ></Stack.Screen>
+            <Stack.Screen
+              name="Sign Up"
+              options={{ headerShown: false }}
+              component={SignUp}
             ></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>
