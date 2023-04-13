@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import AccountPage from "../../components/AccountPage";
-import Input from "../../components/UI/input";
-import PrimaryButton from "../../components/UI/PrimaryButton";
 import { COLORS } from "../../constants";
 import Login from "./Login/Login";
 import SignUp from "./Signup/SignUp";
 
-const Login_And_Signup = ({ navigation }) => {
+const Login_And_Signup = () => {
   const [signUp, setSignUp] = useState(0);
   return (
     <View>
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 21.5,
     paddingTop: 63,
-    paddingBottom: 43
+    paddingBottom: 43,
   },
   navLinkContainer: {
     gap: 10,

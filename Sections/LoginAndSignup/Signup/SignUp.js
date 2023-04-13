@@ -4,7 +4,7 @@ import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const SignUp = ({ navigation }) => {
   return (
-    <ScrollView style={{paddingBottom: 30}}>
+    <ScrollView style={{ paddingBottom: 30 }}>
       <View style={{ paddingTop: 22 }}>
         <View>
           <Input
@@ -42,7 +42,7 @@ const SignUp = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <PrimaryButton
           onPress={() => {
-            navigation.navigate("Login");
+            // navigation.navigate('On Boarding 1');
           }}
           btnStyle={styles.btnStyle}
         >

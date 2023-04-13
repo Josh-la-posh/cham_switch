@@ -20,7 +20,7 @@ const Login = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <PrimaryButton
           onPress={() => {
-            navigation.navigate("Sign Up");
+            // navigation.navigate("On Boarding 1");
           }}
           btnStyle={styles.btnStyle}
         >
@@ -30,7 +30,7 @@ const Login = ({ navigation }) => {
       <View style={{ marginTop: 44 }}>
         <Pressable
           onPress={() => {
-            navigation.navigate("Sign Up");
+            // navigation.navigate("On Boarding 1");
           }}
         >
           <Text style={styles.reset}>Forgot Password?</Text>
