@@ -1,8 +1,13 @@
+import { useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const SignUp = ({ navigation }) => {
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <ScrollView style={{ paddingBottom: 30 }}>
       <View style={{ paddingTop: 22 }}>
@@ -10,18 +15,25 @@ const SignUp = ({ navigation }) => {
           <Input
             placeholder="Firstname"
             containerInput={styles.containerInput}
+            value={firstname}
+            onChangeText={setFirstname}
           ></Input>
         </View>
         <View>
           <Input
             placeholder="Lasttname"
             containerInput={styles.containerInput}
+            value={lastname}
+            onChangeText={setLastname}
           ></Input>
         </View>
         <View>
           <Input
             placeholder="Email"
             containerInput={styles.containerInput}
+            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
           ></Input>
         </View>
         <View>
@@ -29,6 +41,8 @@ const SignUp = ({ navigation }) => {
             placeholder="Password"
             containerInput={styles.containerInput}
             keyboardType="password"
+            value={password}
+            onChangeText={setPassword}
           ></Input>
         </View>
         <View>
@@ -42,11 +56,11 @@ const SignUp = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <PrimaryButton
           onPress={() => {
-            // navigation.navigate('On Boarding 1');
+            navigation.navigate("Confirm Email");
           }}
           btnStyle={styles.btnStyle}
         >
-          <Text>Sign Up</Text>
+          <Text style={styles.btnText}>Sign Up</Text>
         </PrimaryButton>
       </View>
     </ScrollView>
@@ -67,4 +81,8 @@ const styles = StyleSheet.create({
   btnStyle: {
     height: 46,
   },
+  btnText: {
+    fontSize: 20,
+    fontWeight: 700
+  }
 });

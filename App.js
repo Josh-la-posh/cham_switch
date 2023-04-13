@@ -3,12 +3,10 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Page1 from "./Sections/Onboarding/Page1";
-import Page2 from "./Sections/Onboarding/Page2";
-import Page3 from "./Sections/Onboarding/Page3";
-import Page4 from "./Sections/Onboarding/Page4";
-import Login from "./Sections/LoginAndSignup/Login/Login";
-import SignUp from "./Sections/LoginAndSignup/Signup/SignUp";
 import Login_And_Signup from "./Sections/LoginAndSignup/Login_And_Signup";
+import ConfirmEmail from "./Sections/LoginAndSignup/Signup/ConfirmEmail";
+import Verified from "./Sections/LoginAndSignup/Signup/Verified";
+import Onboarding from "./Sections/Onboarding/Onboarding";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -23,19 +21,9 @@ export default function App() {
               component={Page1}
             ></Stack.Screen>
             <Stack.Screen
-              name="On Boarding 2"
+              name="Onboarding"
               options={{ headerShown: false }}
-              component={Page2}
-            ></Stack.Screen>
-            <Stack.Screen
-              name="On Boarding 3"
-              options={{ headerShown: false }}
-              component={Page3}
-            ></Stack.Screen>
-            <Stack.Screen
-              name="On Boarding 4"
-              options={{ headerShown: false }}
-              component={Page4}
+              component={Onboarding}
             ></Stack.Screen>
             <Stack.Screen
               name="Login and Signup"
@@ -43,14 +31,14 @@ export default function App() {
               component={Login_And_Signup}
             ></Stack.Screen>
             <Stack.Screen
-              name="Login"
+              name="Confirm Email"
               options={{ headerShown: false }}
-              component={Login}
+              component={ConfirmEmail}
             ></Stack.Screen>
             <Stack.Screen
-              name="Sign Up"
+              name="Verified"
               options={{ headerShown: false }}
-              component={SignUp}
+              component={Verified}
             ></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>

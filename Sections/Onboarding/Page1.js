@@ -2,13 +2,16 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
 const Page1 = ({navigation}) => {
+
+  
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={require("../../assets/images/img_1.png")} />
       </View>
       <View style={styles.btnContainer}>
-        <PrimaryButton onPress={() => {navigation.navigate('On Boarding 2')}} btnStyle={styles.btnStyle}>
+        <PrimaryButton onPress={() => {navigation.navigate('Onboarding')}} btnStyle={styles.btnStyle}>
           <Text>Login</Text>
         </PrimaryButton>
       </View>

@@ -5,7 +5,7 @@ import { COLORS } from "../../constants";
 import Login from "./Login/Login";
 import SignUp from "./Signup/SignUp";
 
-const Login_And_Signup = () => {
+const Login_And_Signup = ({ navigation }) => {
   const [signUp, setSignUp] = useState(0);
   return (
     <View>
@@ -45,7 +45,13 @@ const Login_And_Signup = () => {
               </Pressable>
             </View>
           </View>
-          <View>{signUp === 0 ? <SignUp /> : <Login />}</View>
+          <View>
+            {signUp === 0 ? (
+              <SignUp navigation={navigation} />
+            ) : (
+              <Login navigation={navigation} />
+            )}
+          </View>
         </View>
       </AccountPage>
     </View>
