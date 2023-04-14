@@ -6,7 +6,7 @@ import Login from "./Login/Login";
 import SignUp from "./Signup/SignUp";
 
 const Login_And_Signup = ({ navigation }) => {
-  const [signUp, setSignUp] = useState(0);
+  const [signUp, setSignUp] = useState(1);
   return (
     <View>
       <AccountPage

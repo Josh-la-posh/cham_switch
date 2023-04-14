@@ -1,21 +1,26 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
-const Page1 = ({navigation}) => {
-
-  
-
+const Page1 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={require("../../assets/images/img_1.png")} />
       </View>
       <View style={styles.btnContainer}>
-        <PrimaryButton onPress={() => {navigation.navigate('Onboarding')}} btnStyle={styles.btnStyle}>
-          <Text>Login</Text>
+        <PrimaryButton
+          onPress={() => {
+            navigation.navigate("Onboarding");
+          }}
+          btnStyle={styles.btnStyle}
+        >
+          <Text style={{fontSize: 40, fontWeight: 400}}>Login</Text>
         </PrimaryButton>
       </View>
-      <Text>Forgot password? Reset.</Text>
+      <Pressable onPress={() => {navigation.navigate('Reset Password')}}>
+
+      <Text style={{fontSize: 25, fontWeight: 400}}>Forgot password? Reset.</Text>
+      </Pressable>
     </View>
   );
 };

@@ -8,12 +8,10 @@ const SuccessPage = ({ children, text, btnText, onPress }) => {
       <Text style={styles.text}>{text}</Text>
       <View style={styles.btnContainer}>
         <PrimaryButton
-          onPress={() => {
-            navigation.navigate("Confirm Email");
-          }}
+          onPress={onPress}
           btnStyle={styles.btnStyle}
         >
-          <Text>Sign Up</Text>
+          <Text style={styles.btnText}>{btnText}</Text>
         </PrimaryButton>
       </View>
     </View>
@@ -36,13 +34,14 @@ const styles = StyleSheet.create({
     fontWeight: 700,
     marginTop: 89,
     marginBottom: 104,
+    textAlign: 'center'
   },
   btnContainer: {
     borderRadius: 10,
     overflow: "hidden",
   },
   btnStyle: {
-    // width: 334,
+    width: 334,
     height: 46,
   },
   btnText: {

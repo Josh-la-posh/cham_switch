@@ -24,13 +24,13 @@ const Login = ({ navigation }) => {
           }}
           btnStyle={styles.btnStyle}
         >
-          <Text>Login</Text>
+          <Text style={styles.btnText}>Login</Text>
         </PrimaryButton>
       </View>
       <View style={{ marginTop: 44 }}>
         <Pressable
           onPress={() => {
-            // navigation.navigate("On Boarding 1");
+            navigation.navigate("Recover Password");
           }}
         >
           <Text style={styles.reset}>Forgot Password?</Text>
@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
   },
   btnStyle: {
     height: 46,
+  },
+  btnText: {
+    fontSize: 20,
+    fontWeight: 700
   },
   reset: {
     color: COLORS.dangerBtnColor,

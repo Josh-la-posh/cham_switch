@@ -22,11 +22,11 @@ const Onboarding = ({navigation}) => {
       {data[page]}
       <View style={styles.btnContainer}>
         <PrimaryButton onPress={() => {handlePage(page)}} btnStyle={styles.btnStyle}>
-          <Text>{page === 2 ? "Done" : "Next"}</Text>
+          <Text style={{fontSize: 40, fontWeight: 400}}>{page === 2 ? "Done" : "Next"}</Text>
         </PrimaryButton>
       </View>
       <Pressable onPress={() => navigation.navigate("Login and Signup")}>
-        {page === 2 ? "" : <Text>Skip</Text>}
+        {page === 2 ? "" : <Text style={{fontSize: 36, fontWeight: 400}}>Skip</Text>}
       </Pressable>
     </View>
   );
