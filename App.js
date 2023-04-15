@@ -13,6 +13,7 @@ import RecoverPasswordViaReset from "./Sections/LoginAndSignup/PasswordRecovery.
 import ResetSuccess from "./Sections/LoginAndSignup/PasswordRecovery.js/ResetSuccess";
 import WorkingDays from "./Sections/CompanySetup/WorkingDays";
 import { COLORS } from "./constants";
+import CompanySetupPage from "./Sections/CompanySetup/CompanySetupPage";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -67,9 +68,9 @@ export default function App() {
               component={ResetSuccess}
             ></Stack.Screen>
             <Stack.Screen
-              name="Working Days"
+              name="Company Setup"
               options={{ title: 'Set up your Company', headerTintColor: 'transparent', headerTitleStyle: {color: 'white', fontSize: '25%'},  headerStyle: {backgroundColor: COLORS.colorPrimaryDark} }}
-              component={WorkingDays}
+              component={CompanySetupPage}
             ></Stack.Screen>
           </Stack.Navigator>
         </NavigationContainer>

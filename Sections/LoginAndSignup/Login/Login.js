@@ -20,7 +20,7 @@ const Login = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <PrimaryButton
           onPress={() => {
-            navigation.navigate("Working Days");
+            navigation.navigate("Company Setup");
           }}
           btnStyle={styles.btnStyle}
         >

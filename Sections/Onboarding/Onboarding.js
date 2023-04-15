@@ -5,6 +5,7 @@ import Page3 from "../../components/Page3";
 import Page4 from "../../components/Page4";
 import { useState } from "react";
 import { COLORS } from "../../constants";
+import MappedData from "../../components/MappedData";
 
 const Onboarding = ({ navigation }) => {
   const [page, setPage] = useState(0);
@@ -21,17 +22,7 @@ const Onboarding = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <View style={styles.pointerContainer}>
-          {data.map(( icon, index ) => {
-            return (
-              <View key={index} style={[styles.pointer, index === page ? styles.activePointer : styles.inactivePointer ]}>
-                <Text>
-                  {icon}
-                </Text>
-              </View>
-            );
-          })}
-        </View>
+        <MappedData data={data} page={page}/>
         {data[page]}
         <View style={styles.btnContainer}>
           <PrimaryButton
@@ -63,21 +54,6 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     justifyContent: "center",
-  },
-  pointerContainer: {
-    flexDirection: "row",
-    gap: 15,
-  },
-  pointer: {
-    height: 12,
-    width: 12,
-    borderRadius: "50%",
-  },
-  activePointer: {
-    backgroundColor: COLORS.activePointer,
-  },
-  inactivePointer: {
-    backgroundColor: COLORS.inactivePointer,
   },
   content: {
     height: "90%",
