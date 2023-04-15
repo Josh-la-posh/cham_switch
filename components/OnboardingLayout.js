@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 const OnboardingLayout = ({ children, text }) => {
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.imageContainer}>{children}</View>
       <Text style={styles.text}>{text}</Text>      
     </View>
@@ -13,14 +13,17 @@ const OnboardingLayout = ({ children, text }) => {
 export default OnboardingLayout;
 
 const styles = StyleSheet.create({
+  container: {
+    height: '70%',
+    marginTop: '10%'
+  },
   imageContainer: {
-    height: 369,
+    height: '75%',
   },
   text: {
     fontSize: 40,
     textAlign: "center",
     fontWeight: 400,
-    marginBottom: 85,
     marginTop: 46,
   },
 });

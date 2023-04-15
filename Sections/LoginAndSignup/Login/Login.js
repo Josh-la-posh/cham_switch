@@ -5,7 +5,7 @@ import { COLORS } from "../../../constants";
 
 const Login = ({ navigation }) => {
   return (
-    <View>
+    <View style={{height: '100%'}}>
       <View>
         <View>
           <Input
@@ -20,14 +20,14 @@ const Login = ({ navigation }) => {
       <View style={styles.btnContainer}>
         <PrimaryButton
           onPress={() => {
-            // navigation.navigate("On Boarding 1");
+            navigation.navigate("Working Days");
           }}
           btnStyle={styles.btnStyle}
         >
           <Text style={styles.btnText}>Login</Text>
         </PrimaryButton>
       </View>
-      <View style={{ marginTop: 44 }}>
+      <View style={{ marginTop: '10%' }}>
         <Pressable
           onPress={() => {
             navigation.navigate("Recover Password");
@@ -44,20 +44,20 @@ export default Login;
 
 const styles = StyleSheet.create({
   containerInput: {
-    marginTop: 24,
-    marginBottom: 44,
+    marginTop: '5%',
+    marginBottom: '12%',
   },
   btnContainer: {
     borderRadius: 10,
     overflow: "hidden",
-    marginTop: 87,
+    marginTop: '20%',
   },
   btnStyle: {
     height: 46,
   },
   btnText: {
     fontSize: 20,
-    fontWeight: 700
+    fontWeight: 700,
   },
   reset: {
     color: COLORS.dangerBtnColor,

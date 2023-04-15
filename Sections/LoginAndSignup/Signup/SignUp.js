@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
@@ -9,61 +16,68 @@ const SignUp = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <ScrollView style={{ paddingBottom: 30 }}>
-      <View style={{ paddingTop: 22 }}>
-        <View>
-          <Input
-            placeholder="Firstname"
-            containerInput={styles.containerInput}
-            value={firstname}
-            onChangeText={setFirstname}
-          ></Input>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={{ height: "100%" }}
+      enabled
+      keyboardVerticalOffset={400}
+    >
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ paddingTop: 22 }}>
+          <View>
+            <Input
+              placeholder="Firstname"
+              containerInput={styles.containerInput}
+              value={firstname}
+              onChangeText={setFirstname}
+            ></Input>
+          </View>
+          <View>
+            <Input
+              placeholder="Lastname"
+              containerInput={styles.containerInput}
+              value={lastname}
+              onChangeText={setLastname}
+            ></Input>
+          </View>
+          <View>
+            <Input
+              placeholder="Email"
+              containerInput={styles.containerInput}
+              keyboardType="email-address"
+              value={email}
+              onChangeText={setEmail}
+            ></Input>
+          </View>
+          <View>
+            <Input
+              placeholder="Password"
+              containerInput={styles.containerInput}
+              keyboardType="password"
+              value={password}
+              onChangeText={setPassword}
+            ></Input>
+          </View>
+          <View>
+            <Input
+              placeholder="Confirm password"
+              containerInput={styles.containerInput}
+              keyboardType="password"
+            ></Input>
+          </View>
         </View>
-        <View>
-          <Input
-            placeholder="Lasttname"
-            containerInput={styles.containerInput}
-            value={lastname}
-            onChangeText={setLastname}
-          ></Input>
+        <View style={styles.btnContainer}>
+          <PrimaryButton
+            onPress={() => {
+              navigation.navigate("Confirm Email");
+            }}
+            btnStyle={styles.btnStyle}
+          >
+            <Text style={styles.btnText}>Sign Up</Text>
+          </PrimaryButton>
         </View>
-        <View>
-          <Input
-            placeholder="Email"
-            containerInput={styles.containerInput}
-            keyboardType="email-address"
-            value={email}
-            onChangeText={setEmail}
-          ></Input>
-        </View>
-        <View>
-          <Input
-            placeholder="Password"
-            containerInput={styles.containerInput}
-            keyboardType="password"
-            value={password}
-            onChangeText={setPassword}
-          ></Input>
-        </View>
-        <View>
-          <Input
-            placeholder="Confirm password"
-            containerInput={styles.containerInput}
-            keyboardType="password"
-          ></Input>
-        </View>
-      </View>
-      <View style={styles.btnContainer}>
-        <PrimaryButton
-          onPress={() => {
-            navigation.navigate("Confirm Email");
-          }}
-          btnStyle={styles.btnStyle}
-        >
-          <Text style={styles.btnText}>Sign Up</Text>
-        </PrimaryButton>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -77,12 +91,13 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: "hidden",
     marginTop: 22,
+    marginBottom: "55%",
   },
   btnStyle: {
     height: 46,
   },
   btnText: {
     fontSize: 20,
-    fontWeight: 700
-  }
+    fontWeight: 700,
+  },
 });

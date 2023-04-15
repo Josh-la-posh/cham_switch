@@ -1,18 +1,7 @@
-import {
-  TextInput,
-  View,
-  Text,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  behavior,
-} from "react-native";
-import { COLORS } from "../../constants";
+import { TextInput, View, StyleSheet } from "react-native";
 
 const Input = ({
-  children,
   textInputConfig,
-  invalid,
   containerInput,
   placeholder,
   value,
@@ -27,23 +16,19 @@ const Input = ({
   const defaultInputContainer = [styles.inputContainer, containerInput];
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-    >
-      <View style={styles.container}>
-        <View style={defaultInputContainer}>
-          <TextInput
-            style={styles.input}
-            {...textInputConfig}
-            cursorColor="#000000"
-            placeholder={placeholder}
-            value={value}
-            onChangeText={onChangeText}
-            keyboardType={keyboardType}
-          />
-        </View>
+    <View style={styles.container}>
+      <View style={defaultInputContainer}>
+        <TextInput
+          style={styles.input}
+          {...textInputConfig}
+          cursorColor="#000000"
+          placeholder={placeholder}
+          value={value}
+          onChangeText={onChangeText}
+          keyboardType={keyboardType}
+        />
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 

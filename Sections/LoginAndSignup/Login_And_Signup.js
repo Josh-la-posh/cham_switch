@@ -12,7 +12,7 @@ const Login_And_Signup = ({ navigation }) => {
       <AccountPage
         title={signUp === 0 ? "Create an account" : "Login to your account"}
       >
-        <View>
+        <View style={{height: '100%'}}>
           <View style={styles.navLinks}>
             <View>
               <Pressable
@@ -65,8 +65,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 21.5,
-    paddingTop: 63,
-    paddingBottom: 43,
+    paddingTop: '18%',
+    paddingBottom: '12%',
   },
   navLinkContainer: {
     gap: 10,

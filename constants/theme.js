@@ -9,6 +9,8 @@ export const COLORS = {
     dangerTextColor: '#F80D0D',
     dangerBtnColor: '#F80E0E',
     accountBackground: '#F2EEEE',
+    activePointer: '#F80D0D',
+    inactivePointer: '#F1D0D0'
 
 }
 
