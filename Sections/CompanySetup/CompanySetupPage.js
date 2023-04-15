@@ -5,7 +5,7 @@ import LeaveType from "./LeaveType";
 import WorkingDays from "./WorkingDays";
 
 const CompanySetupPage = () => {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const data = [<WorkingDays />, <LeaveType />];
   return (
     <View style={styles.container}>
