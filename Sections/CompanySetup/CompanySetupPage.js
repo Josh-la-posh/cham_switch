@@ -1,16 +1,24 @@
 import { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import MappedData from "../../components/MappedData";
 import LeaveType from "./LeaveType";
 import WorkingDays from "./WorkingDays";
 
+import PrimaryButton from "../../components/UI/PrimaryButton";
+
 const CompanySetupPage = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const data = [<WorkingDays />, <LeaveType />];
   return (
     <View style={styles.container}>
       <MappedData data={data} page={page} />
       {data[page]}
+
+      <View style={styles.btnContainer}>
+        <PrimaryButton onPress={() => setPage(1)} btnStyle={styles.btnStyle}>
+          <Text style={styles.btnText}>Continue</Text>
+        </PrimaryButton>
+      </View>
     </View>
   );
 };
@@ -18,8 +26,23 @@ const CompanySetupPage = () => {
 export default CompanySetupPage;
 
 const styles = StyleSheet.create({
-    container: {
-        alignItems: 'center',
-        paddingTop: '17%'
-    },
-})
+  container: {
+    alignItems: "center",
+    paddingVertical: "17%",
+    height: "100%",
+  },
+  btnContainer: {
+    borderRadius: 10,
+    overflow: "hidden",
+    width: 334,
+    marginTop: "4%",
+  },
+  btnStyle: {
+    width: "100%",
+    height: 46,
+  },
+  btnText: {
+    fontSize: 25,
+    fontWeight: 700,
+  },
+});

@@ -71,6 +71,11 @@ export default function App() {
               options={{ title: 'Set up your Company', headerTintColor: 'transparent', headerTitleStyle: {color: 'white', fontSize: '25%'},  headerStyle: {backgroundColor: COLORS.colorPrimaryDark} }}
               component={CompanySetupPage}
             ></Stack.Screen>
+             {/* <Stack.Screen
+              name="Leave Type"
+              options={{ headerShown: false }}
+              component={LeaveType}
+            ></Stack.Screen> */}
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
