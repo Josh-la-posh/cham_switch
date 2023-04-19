@@ -17,7 +17,7 @@ const Page1 = ({ navigation }) => {
           }}
           btnStyle={styles.btnStyle}
         >
-          <Text style={{ fontSize: 40, fontWeight: 400 }}>Login</Text>
+          <Text style={{ fontSize: 40, fontWeight: 400 }}>Get Started</Text>
         </PrimaryButton>
       </View>
       <Pressable

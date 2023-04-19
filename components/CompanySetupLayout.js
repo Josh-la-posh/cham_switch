@@ -13,8 +13,11 @@ export default CompanySetupLayout
 
 const styles = StyleSheet.create({
     title: {
+        alignItems: 'center',
+        // justifyContent: 'center',
+        width: '100%',
         marginBottom: 57,
         fontSize: 25,
-        fontWeight: 700
+        fontWeight: 700,
     }
 })

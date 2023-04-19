@@ -3,7 +3,7 @@ import { TextInput } from 'react-native-paper';
 import CompanySetupLayout from '../../components/CompanySetupLayout';
 
 const LeaveType = () => {
-    const leaveType = ['sick leave', 'casual leave'];
+    const leaveType = ['Sick Leave', 'Casual Leave', 'Annual Leave'];
   return (
       <ScrollView>
           <CompanySetupLayout title='Leave Types'>
