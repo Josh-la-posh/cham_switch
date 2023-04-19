@@ -11,7 +11,6 @@ import RecoverPassword from "./Sections/LoginAndSignup/PasswordRecovery.js/Recov
 import PasswordReset from "./Sections/LoginAndSignup/PasswordRecovery.js/PasswordRecovery";
 import RecoverPasswordViaReset from "./Sections/LoginAndSignup/PasswordRecovery.js/RecoverPaswordViaReset";
 import ResetSuccess from "./Sections/LoginAndSignup/PasswordRecovery.js/ResetSuccess";
-import WorkingDays from "./Sections/CompanySetup/WorkingDays";
 import { COLORS } from "./constants";
 import CompanySetupPage from "./Sections/CompanySetup/CompanySetupPage";
 
