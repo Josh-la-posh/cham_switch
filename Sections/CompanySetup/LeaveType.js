@@ -10,7 +10,7 @@ const LeaveType = () => {
               {leaveType.map((leave, index) => {
                   return (
                       <View>
-                          <Text style={styles.leaveText}>{leave} <TextInput keyboardType='numeric' style={styles.inputField} /> days pey year</Text>
+                          <Text style={styles.leaveText}>{leave} <TextInput keyboardType='numeric' style={styles.inputField} /> days pey year 1</Text>
                       </View>
                   )
               })}
