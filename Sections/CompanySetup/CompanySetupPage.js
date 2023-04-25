@@ -6,16 +6,24 @@ import WorkingDays from "./WorkingDays";
 
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
-const CompanySetupPage = () => {
+const CompanySetupPage = ({navigation}) => {
   const [page, setPage] = useState(0);
   const data = [<WorkingDays />, <LeaveType />];
+
+  const handleNext = () => {
+    if (page === 0) {
+      setPage(page + 1)
+    } else {
+      navigation.navigate('Homepage')
+    }
+  }
   return (
     <View style={styles.container}>
       <MappedData data={data} page={page} />
       {data[page]}
 
       <View style={styles.btnContainer}>
-        <PrimaryButton onPress={() => setPage(1)} btnStyle={styles.btnStyle}>
+        <PrimaryButton onPress={(e) => handleNext(e)} btnStyle={styles.btnStyle}>
           <Text style={styles.btnText}>Continue</Text>
         </PrimaryButton>
       </View>
