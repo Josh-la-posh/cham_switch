@@ -1,6 +1,6 @@
-import { COLORS } from "./constants";
-import CompanySetupPage from "./Sections/CompanySetup/CompanySetupPage";
-import AddLeaveType from "./Sections/CompanySetup/AddLeaveType";
+import { COLORS } from "../constants";
+import CompanySetupPage from "../Sections/CompanySetup/CompanySetupPage";
+import AddLeaveType from "../Sections/CompanySetup/AddLeaveType";
 
 const CompanySetupScreen = (Stack) => {
   return (

@@ -1,5 +1,5 @@
-import Page1 from "./Sections/Onboarding/Page1";
-import Onboarding from "./Sections/Onboarding/Onboarding";
+import Page1 from "../Sections/Onboarding/Page1";
+import Onboarding from "../Sections/Onboarding/Onboarding";
 
 const OnboardingScreen = (Stack) => {
   return (

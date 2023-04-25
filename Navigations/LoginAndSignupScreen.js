@@ -1,10 +1,10 @@
-import Login_And_Signup from "./Sections/LoginAndSignup/Login_And_Signup";
-import ConfirmEmail from "./Sections/LoginAndSignup/Signup/ConfirmEmail";
-import Verified from "./Sections/LoginAndSignup/Signup/Verified";
-import RecoverPassword from "./Sections/LoginAndSignup/PasswordRecovery.js/RecoverPassword";
-import PasswordReset from "./Sections/LoginAndSignup/PasswordRecovery.js/PasswordRecovery";
-import RecoverPasswordViaReset from "./Sections/LoginAndSignup/PasswordRecovery.js/RecoverPaswordViaReset";
-import ResetSuccess from "./Sections/LoginAndSignup/PasswordRecovery.js/ResetSuccess";
+import Login_And_Signup from "../Sections/LoginAndSignup/Login_And_Signup";
+import ConfirmEmail from "../Sections/LoginAndSignup/Signup/ConfirmEmail";
+import Verified from "../Sections/LoginAndSignup/Signup/Verified";
+import RecoverPassword from "../Sections/LoginAndSignup/PasswordRecovery.js/RecoverPassword";
+import PasswordReset from "../Sections/LoginAndSignup/PasswordRecovery.js/PasswordRecovery";
+import RecoverPasswordViaReset from "../Sections/LoginAndSignup/PasswordRecovery.js/RecoverPaswordViaReset";
+import ResetSuccess from "../Sections/LoginAndSignup/PasswordRecovery.js/ResetSuccess";
 
 const LoginAndSignupScreen = (Stack) => {
   return (
