@@ -5,6 +5,7 @@ import OnboardingScreen from "./Navigations/StackNavigation/OnboardingScreen";
 import LoginAndSignupScreen from "./Navigations/StackNavigation/LoginAndSignupScreen";
 import CompanySetupScreen from "./Navigations/StackNavigation/CompanySetupScreen";
 import HomeScreen from "./Navigations/StackNavigation/HomeScreen";
+import EmployeeScreen from "./Navigations/StackNavigation/EmployeeSecreen";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ export default function App() {
             {LoginAndSignupScreen(Stack)}
             {CompanySetupScreen(Stack)}
             {HomeScreen(Stack)}
+            {EmployeeScreen(Stack)}
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
