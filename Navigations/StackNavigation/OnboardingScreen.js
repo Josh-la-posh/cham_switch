@@ -1,5 +1,5 @@
-import Page1 from "../Sections/Onboarding/Page1";
-import Onboarding from "../Sections/Onboarding/Onboarding";
+import Page1 from "../../Sections/Onboarding/Page1";
+import Onboarding from "../../Sections/Onboarding/Onboarding";
 
 const OnboardingScreen = (Stack) => {
   return (
@@ -8,12 +8,12 @@ const OnboardingScreen = (Stack) => {
         name="On Boarding 1"
         options={{ headerShown: false }}
         component={Page1}
-      ></Stack.Screen>
+      />
       <Stack.Screen
         name="Onboarding"
         options={{ headerShown: false }}
         component={Onboarding}
-      ></Stack.Screen>
+      />
     </>
   );
 };

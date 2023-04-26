@@ -1,6 +1,6 @@
-import { COLORS } from "../constants";
-import CompanySetupPage from "../Sections/CompanySetup/CompanySetupPage";
-import AddLeaveType from "../Sections/CompanySetup/AddLeaveType";
+import { COLORS } from "../../constants";
+import CompanySetupPage from "../../Sections/CompanySetup/CompanySetupPage";
+import AddLeaveType from "../../Sections/CompanySetup/AddLeaveType";
 
 const CompanySetupScreen = (Stack) => {
   return (
@@ -14,12 +14,12 @@ const CompanySetupScreen = (Stack) => {
           headerStyle: { backgroundColor: COLORS.colorPrimaryDark },
         }}
         component={CompanySetupPage}
-      ></Stack.Screen>
+      />
       <Stack.Screen
         name="Leave Type"
         options={{ headerShown: false }}
         component={AddLeaveType}
-      ></Stack.Screen>
+      />
     </>
   );
 };

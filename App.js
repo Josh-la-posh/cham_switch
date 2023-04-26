@@ -1,9 +1,10 @@
 import { Provider as PaperProvider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import OnboardingScreen from "./Navigations/OnboardingScreen";
-import LoginAndSignupScreen from "./Navigations/LoginAndSignupScreen";
-import CompanySetupScreen from "./Navigations/CompanySetupScreen";
+import OnboardingScreen from "./Navigations/StackNavigation/OnboardingScreen";
+import LoginAndSignupScreen from "./Navigations/StackNavigation/LoginAndSignupScreen";
+import CompanySetupScreen from "./Navigations/StackNavigation/CompanySetupScreen";
+import HomeScreen from "./Navigations/StackNavigation/HomeScreen";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -15,6 +16,7 @@ export default function App() {
             {OnboardingScreen(Stack)}
             {LoginAndSignupScreen(Stack)}
             {CompanySetupScreen(Stack)}
+            {HomeScreen(Stack)}
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

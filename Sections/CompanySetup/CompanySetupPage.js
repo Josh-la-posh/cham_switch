@@ -14,7 +14,7 @@ const CompanySetupPage = ({navigation}) => {
     if (page === 0) {
       setPage(page + 1)
     } else {
-      navigation.navigate('Homepage')
+      navigation.navigate('Home')
     }
   }
   return (

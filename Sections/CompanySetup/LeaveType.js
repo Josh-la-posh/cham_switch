@@ -3,7 +3,7 @@ import { TextInput } from "react-native-paper";
 import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 
-const LeaveType = ({navigation}) => {
+const LeaveType = ({ navigation }) => {
   const leaveType = ["Sick Leave", "Casual Leave"];
   return (
     <View style={styles.container}>
@@ -31,7 +31,11 @@ const LeaveType = ({navigation}) => {
             );
           })}
         </ScrollView>
-        <Pressable onPress={() => navigation.navigate('Leave Type')}>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
           <Text style={styles.addBtn}>Add another Leave type</Text>
         </Pressable>
       </CompanySetupLayout>
