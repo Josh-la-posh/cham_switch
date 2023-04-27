@@ -6,9 +6,9 @@ import {
   Pressable,
   Image,
 } from "react-native";
-import { COLORS } from "../../../constants";
+import { COLORS } from "../../constants";
 
-const Employees = ({navigation}) => {
+const Employees = ({ navigation }) => {
   const employees = [
     {
       id: 1,
@@ -45,7 +45,11 @@ const Employees = ({navigation}) => {
                 </View>
                 <View style={styles.rightSection}>
                   <Image />
-                  <Text>View all</Text>
+                  <Pressable
+                    onPress={() => navigation.navigate("Employee Account")}
+                  >
+                    <Text>View all</Text>
+                  </Pressable>
                 </View>
               </View>
             );
@@ -60,7 +64,10 @@ const Employees = ({navigation}) => {
       </View>
 
       <View style={styles.btnContainer}>
-        <Pressable style={styles.btn} onPress={() => navigation.navigate('Add Employee')}>
+        <Pressable
+          style={styles.btn}
+          onPress={() => navigation.navigate("Add Employee")}
+        >
           <Text style={styles.btnText}>Invite Employee</Text>
         </Pressable>
       </View>
@@ -91,7 +98,7 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingLeft: 43,
     paddingTop: 43,
-    alignItems: 'center',
+    alignItems: "center",
     height: "75%",
   },
   employeeDetailContaier: {
@@ -135,21 +142,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: "4%",
   },
   btnContainer: {
-    width: '100%',
+    width: "100%",
     height: 68,
     alignItems: "center",
   },
   btn: {
     backgroundColor: COLORS.dangerBtnColorPrimary,
     width: 317,
-  height: '100%',
-  borderRadius: 22,
-  alignItems: 'center',
-  justifyContent: 'center'
+    height: "100%",
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center",
   },
   btnText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 25,
-    fontWeight: '700'
-  }
+    fontWeight: "700",
+  },
 });

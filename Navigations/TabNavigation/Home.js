@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Balance from "../../Sections/EmployeesPage/Balance/Balance";
-import Calendar from "../../Sections/EmployeesPage/Calendar/Calendar";
-import Employees from "../../Sections/EmployeesPage/Employees/Employees";
-import Settings from "../../Sections/EmployeesPage/Settings/Settings";
+import Balance from "../../Sections/BalancePage/Balance";
+import Calendar from "../../Sections/CalendarPage/Calendar";
+import Employees from "../../Sections/EmployeesPage/Employees";
+import Settings from "../../Sections/SettingsPage/Settings";
 
 const Tab = createBottomTabNavigator();
 
