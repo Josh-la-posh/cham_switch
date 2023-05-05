@@ -6,22 +6,27 @@ import WorkingDays from "./WorkingDays";
 
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
-const CompanySetupPage = () => {
+const CompanySetupPage = ({navigation}) => {
   const [page, setPage] = useState(0);
   const data = [<WorkingDays />, <LeaveType />];
+
+  const handleNext = () => {
+    if (page === 0) {
+      setPage(page + 1)
+    } else {
+      navigation.navigate('Home')
+    }
+  }
   return (
     <View style={styles.container}>
-      <MappedData data={data} page={page} style={{alignItems: 'center'}} />
+      <MappedData data={data} page={page} />
       {data[page]}
 
-       <View style={styles.btnContainer}>
-          <PrimaryButton
-            onPress={() => setPage(1)}
-            btnStyle={styles.btnStyle}
-          >
-            <Text style={styles.btnText}>Continue</Text>
-          </PrimaryButton>
-        </View>
+      <View style={styles.btnContainer}>
+        <PrimaryButton onPress={(e) => handleNext(e)} btnStyle={styles.btnStyle}>
+          <Text style={styles.btnText}>Continue</Text>
+        </PrimaryButton>
+      </View>
     </View>
   );
 };
@@ -29,24 +34,23 @@ const CompanySetupPage = () => {
 export default CompanySetupPage;
 
 const styles = StyleSheet.create({
-    container: {      
-      width: '100%',
-      // justifyContent: 'center',
-      alignItems: 'center',
-      padding: '17%'
-    },
-    btnContainer: {
-      borderRadius: 19,
-      marginBottom: 32,
-      overflow: "hidden",
-      width: 334
-    },
-    btnStyle: {
-      width: '100%',
-      height: 46,
-    },   
-    btnText: {
-      fontSize: 20,
-      fontWeight: 700,
-    },
-})
+  container: {
+    alignItems: "center",
+    paddingVertical: "17%",
+    height: "100%",
+  },
+  btnContainer: {
+    borderRadius: 10,
+    overflow: "hidden",
+    width: 334,
+    marginTop: "4%",
+  },
+  btnStyle: {
+    width: "100%",
+    height: 46,
+  },
+  btnText: {
+    fontSize: 25,
+    fontWeight: 700,
+  },
+});

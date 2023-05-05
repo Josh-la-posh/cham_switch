@@ -1,23 +1,21 @@
-import {View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
 
-const CompanySetupLayout = ({title, children}) => {
+const CompanySetupLayout = ({ title, children }) => {
   return (
-    <View style={{marginTop: '12%'}}>
-        <Text style={styles.title}>{title}</Text>
-        <View>{children}</View>
+    <View style={{ marginTop: "12%" }}>
+      <Text style={styles.title}>{title}</Text>
+      <View>{children}</View>
     </View>
-  )
-}
+  );
+};
 
-export default CompanySetupLayout
+export default CompanySetupLayout;
 
 const styles = StyleSheet.create({
-    title: {
-        alignItems: 'center',
-        // justifyContent: 'center',
-        width: '100%',
-        marginBottom: 57,
-        fontSize: 25,
-        fontWeight: 700,
-    }
-})
+  title: {
+    textAlign: "center",
+    marginBottom: '20%',
+    fontSize: 25,
+    fontWeight: 700,
+  },
+});

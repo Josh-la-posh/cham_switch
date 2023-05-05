@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, Switch, StyleSheet } from 'react-native';
+import { View, Switch, StyleSheet } from 'react-native';
 
 const SwitchToggle = () => {
     const [isEnabled, setIsEnabled] = useState(false);
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   },
   switchEnableBorder: {
   borderColor: 'none',
-  borderWidth: 1
+  borderWidth: 1,
   },
   switchDisableBorder: {
   borderColor: 'red',
