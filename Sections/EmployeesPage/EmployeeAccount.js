@@ -7,7 +7,6 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
-import Input from "../../components/UI/input";
 import { COLORS } from "../../constants";
 import BalancePage from "./BalancePage";
 import RequestPage from "./RequestPage";
@@ -30,10 +29,7 @@ function EmployeeAccount() {
           </Pressable>
           <Pressable onPress={() => setPage(1)}>
             <View
-              style={[
-                styles.btn,
-                page === 1 ? styles.btnActive : styles.btn,
-              ]}
+              style={[styles.btn, page === 1 ? styles.btnActive : styles.btn]}
             >
               <Text style={styles.btnText}>Balance</Text>
             </View>
@@ -43,13 +39,12 @@ function EmployeeAccount() {
       <View style={styles.content}>
         <View style={styles.searchYear}>
           <TextInput
-            placeholder="Search Input"
+            placeholder="Search year"
             keyboardType="numeric"
             style={styles.yearInput}
           />
         </View>
         {page === 0 ? <RequestPage /> : <BalancePage />}
-        
       </View>
     </View>
   );
@@ -123,6 +118,6 @@ const styles = StyleSheet.create({
   yearInput: {
     fontSize: 25,
     color: COLORS.placeholderText,
-    fontWeight: '700'
+    fontWeight: "700",
   },
 });
