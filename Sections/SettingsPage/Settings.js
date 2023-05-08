@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
 
@@ -11,12 +11,24 @@ const Settings = ({ navigation }) => {
         </View>
         <View style={styles.bottom}>
           <View style={styles.bottomContent}>
-            <Image source={require("../../assets/images/Voyage.png")} />
-            <Text style={styles.bottomContentText}>Holidays</Text>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Official Holidays Home");
+              }}
+            >
+              <Image source={require("../../assets/images/Voyage.png")} />
+              <Text style={styles.bottomContentText}>Holidays</Text>
+            </Pressable>
           </View>
           <View style={styles.bottomContent}>
-            <Image source={require("../../assets/images/GearSettings.png")} />
-            <Text style={styles.bottomContentText}>Settings</Text>
+            <Pressable
+              onPress={() => {
+                navigation.navigate("Settings Page");
+              }}
+            >
+              <Image source={require("../../assets/images/GearSettings.png")} />
+              <Text style={styles.bottomContentText}>Settings</Text>
+            </Pressable>
           </View>
         </View>
       </View>

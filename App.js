@@ -7,6 +7,7 @@ import CompanySetupScreen from "./Navigations/StackNavigation/CompanySetupScreen
 import HomeScreen from "./Navigations/StackNavigation/HomeScreen";
 import EmployeeScreen from "./Navigations/StackNavigation/EmployeeScreen";
 import SettingsSreen from "./Navigations/StackNavigation/SettingsSreen";
+import SettingsPageSreen from "./Navigations/StackNavigation/SettingsPageSreen";
 // import CalendarScreen from "./Navigations/StackNavigation/CalendarSecreen";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
             {HomeScreen(Stack)}
             {EmployeeScreen(Stack)}
             {SettingsSreen(Stack)}
+            {SettingsPageSreen(Stack)}
             {/* {CalendarScreen(Stack)} */}
           </Stack.Navigator>
         </NavigationContainer>

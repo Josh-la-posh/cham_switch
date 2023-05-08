@@ -1,3 +1,4 @@
+import LeaveType from '../../Sections/CompanySetup/LeaveType';
 import OfficialHolidays from '../../Sections/SettingsPage/Holidays/OfficialHolidays';
 import OfficialHolidaysSuccessful from '../../Sections/SettingsPage/Holidays/OfficialHolidaysSuccessful';
 import PushBroadcast from '../../Sections/SettingsPage/PushBroadcast';

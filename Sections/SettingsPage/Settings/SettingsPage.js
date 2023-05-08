@@ -1,6 +1,6 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 
-const SettingsPage = () => {
+const SettingsPage = ({ navigation }) => {
   const holidays = [
     {
       id: 1,
@@ -35,7 +35,13 @@ const SettingsPage = () => {
           return (
             <View style={{ width: "100%", borderBottomWidth: 2, borderBottomColor: "lightgray", padding: 20}}>
               <View style={{display: "flex", alignItems: "flex-start"}}>
-                <Text style={{ fontSize: 25, fontWeight: 600, marginBottom: 10}}>{holiday.name}</Text>
+                <Pressable
+                  onPress={() => {
+                    navigation.navigate("Settings for Leave Type");
+                  }}
+                >
+                  <Text style={{ fontSize: 25, fontWeight: 600, marginBottom: 10}}>{holiday.name}</Text>
+                </Pressable>
               </View>
             </View>
           );
