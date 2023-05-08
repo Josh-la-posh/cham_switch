@@ -1,9 +1,19 @@
 import { useState } from "react";
-import { View, Text, Image, Pressable, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  TextInput,
+} from "react-native";
+import Input from "../../components/UI/input";
 import { COLORS } from "../../constants";
+import BalancePage from "./BalancePage";
+import RequestPage from "./RequestPage";
 
 function EmployeeAccount() {
-  const [request, setRequest] = useState(0);
+  const [page, setPage] = useState(0);
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
@@ -13,16 +23,16 @@ function EmployeeAccount() {
         <Text style={styles.name}>Aderonke</Text>
         <Text style={styles.title}>Developer</Text>
         <View style={styles.btns}>
-          <Pressable onPress={() => setRequest(0)}>
-            <View style={[styles.btn, request === 0 ? styles.btnActive : ""]}>
+          <Pressable onPress={() => setPage(0)}>
+            <View style={[styles.btn, page === 0 ? styles.btnActive : ""]}>
               <Text style={styles.btnText}>Request</Text>
             </View>
           </Pressable>
-          <Pressable onPress={() => setRequest(1)}>
+          <Pressable onPress={() => setPage(1)}>
             <View
               style={[
                 styles.btn,
-                request === 1 ? styles.btnActive : styles.btn,
+                page === 1 ? styles.btnActive : styles.btn,
               ]}
             >
               <Text style={styles.btnText}>Balance</Text>
@@ -31,7 +41,15 @@ function EmployeeAccount() {
         </View>
       </View>
       <View style={styles.content}>
-        <Text>Main Page</Text>
+        <View style={styles.searchYear}>
+          <TextInput
+            placeholder="Search Input"
+            keyboardType="numeric"
+            style={styles.yearInput}
+          />
+        </View>
+        {page === 0 ? <RequestPage /> : <BalancePage />}
+        
       </View>
     </View>
   );
@@ -91,5 +109,20 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 19,
     fontWeight: "600",
+  },
+  content: {},
+  searchYear: {
+    marginVertical: 51,
+    backgroundColor: "#fff",
+    paddingHorizontal: 38,
+    marginHorizontal: 38,
+    height: 61,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  yearInput: {
+    fontSize: 25,
+    color: COLORS.placeholderText,
+    fontWeight: '700'
   },
 });
