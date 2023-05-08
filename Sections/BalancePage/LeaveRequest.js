@@ -9,7 +9,7 @@ import {
 import { COLORS } from "../../constants";
 import SelectDropdown from "react-native-select-dropdown";
 
-function LeaveRequest() {
+function LeaveRequest({ navigation }) {
   const leaveType = ["Casual", "Maternity"];
   return (
     <View style={styles.container}>
@@ -67,7 +67,7 @@ function LeaveRequest() {
         </View>
 
         <View style={styles.btnContainer}>
-          <Pressable>
+          <Pressable onPress={() => navigation.navigate("Request Success")}>
             <View style={styles.btn}>
               <Text style={styles.btnText}>Request day off</Text>
             </View>

@@ -1,4 +1,5 @@
 import LeaveRequest from "../../Sections/BalancePage/LeaveRequest";
+import RequestSuccess from "../../Sections/BalancePage/RequestSuccess";
 import AddedSuccess from "../../Sections/EmployeesPage/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/EmployeeAccount";
@@ -25,6 +26,11 @@ const EmployeeScreen = (Stack) => {
         name="Leave Request"
         options={{ headerShown: false }}
         component={LeaveRequest}
+      />
+      <Stack.Screen
+        name="Request Success"
+        options={{ headerShown: false }}
+        component={RequestSuccess}
       />
     </>
   );
