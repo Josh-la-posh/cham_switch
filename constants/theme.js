@@ -14,6 +14,7 @@ export const COLORS = {
   activePointer: "#F80D0D",
   inactivePointer: "#F1D0D0",
   placeholderText: "#E1DCDC",
+  
 };
 
 export const SIZES = {
