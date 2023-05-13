@@ -1,17 +1,17 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 import { COLORS } from "../../constants/theme";
 
 const RequestPage = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   const request = [];
   return (
     <View style={styles.container}>
       {request.length ? (
-        <View>
+        <ScrollView>
           <Text>Request</Text>
-        </View>
+        </ScrollView>
       ) : (
         <View style={styles.noRequest}>
           <Image source={require("../../assets/images/pleading.png")} />
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 46,
     paddingTop: "15%",
-    marginBottom: "40%",
+    height: "75%",
   },
   note: {
     fontSize: 25,

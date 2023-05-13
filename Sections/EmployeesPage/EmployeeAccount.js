@@ -6,6 +6,7 @@ import {
   Pressable,
   StyleSheet,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { COLORS } from "../../constants";
 import BalancePage from "./BalancePage";
@@ -17,7 +18,7 @@ function EmployeeAccount() {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.imgContainer}>
-          <Image />
+          <Image style={styles.image} source={require('../../assets/images/img-1.png')}/>
         </View>
         <Text style={styles.name}>Aderonke</Text>
         <Text style={styles.title}>Developer</Text>
@@ -36,7 +37,7 @@ function EmployeeAccount() {
           </Pressable>
         </View>
       </View>
-      <View style={styles.content}>
+      <ScrollView style={styles.content}>
         <View style={styles.searchYear}>
           <TextInput
             placeholder="Search year"
@@ -45,7 +46,7 @@ function EmployeeAccount() {
           />
         </View>
         {page === 0 ? <RequestPage /> : <BalancePage />}
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -58,7 +59,6 @@ const styles = StyleSheet.create({
     // paddingVertical: 20,
   },
   headerContainer: {
-    height: "35%",
     backgroundColor: COLORS.colorPrimaryDark,
     borderRadius: 23,
     paddingTop: "10%",
@@ -71,8 +71,14 @@ const styles = StyleSheet.create({
   imgContainer: {
     height: 120,
     width: 120,
+    alignItems: "center",
+    justifyContent: 'center',
     backgroundColor: "#fff",
     borderRadius: "70%",
+  },
+  image: {
+    height: '100%',
+    width: '100%'
   },
   name: {
     fontSize: 25,
@@ -86,6 +92,7 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: "yellow",
+    paddingBottom: 10
   },
   btns: {
     flexDirection: "row",

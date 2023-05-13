@@ -4,7 +4,7 @@ import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 
 const LeaveType = ({ navigation }) => {
-  const leaveType = ["Sick Leave", "Casual Leave"];
+  const leaveType = ["Sick Leave", "Casual Leave", "Annual Leave"];
   return (
     <View style={styles.container}>
       <CompanySetupLayout title="Leave Types">

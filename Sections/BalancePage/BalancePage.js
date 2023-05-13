@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { COLORS } from "../../constants";
 import PrimaryButton from "../../components/UI/PrimaryButton";
@@ -17,51 +17,53 @@ const BalancePage = () => {
         />
       </View>
 
-      {/* TABLE */}
+      <ScrollView>
+        {/* TABLE */}
 
-      <View style={styles.leaves}>
-        <View style={styles.leave}>
-          <View style={styles.leaveTextContainer}>
-            <Text style={styles.leaveText}>0/14</Text>
+        <View style={styles.leaves}>
+          <View style={styles.leave}>
+            <View style={styles.leaveTextContainer}>
+              <Text style={styles.leaveText}>0/14</Text>
+            </View>
+            <Text style={styles.leaveText}>Maternity</Text>
           </View>
-          <Text style={styles.leaveText}>Maternity</Text>
-        </View>
-        <View style={styles.leave}>
-          <View style={styles.leaveTextContainer}>
-            <Text style={styles.leaveText}>3/14</Text>
+          <View style={styles.leave}>
+            <View style={styles.leaveTextContainer}>
+              <Text style={styles.leaveText}>3/14</Text>
+            </View>
+            <Text style={styles.leaveText}>Casual</Text>
           </View>
-          <Text style={styles.leaveText}>Casual</Text>
         </View>
-      </View>
 
-      {/* PENDING REQUEST */}
+        {/* PENDING REQUEST */}
 
-      <Text style={styles.heading}>PENDING</Text>
-      <View>
-        <Text style={styles.vacRequest}>No pending vacation requests</Text>
-      </View>
-
-      {/* HISTORY */}
-
-      <Text style={styles.heading}>HISTORY</Text>
-      <View style={styles.historyContainer}>
+        <Text style={styles.heading}>PENDING</Text>
         <View>
-          <Text style={styles.days}>4 Days off</Text>
-          <Text style={styles.day}>2nd Feb, 2023</Text>
-          <Text style={styles.day}>6th Feb, 2023</Text>
+          <Text style={styles.vacRequest}>No pending vacation requests</Text>
         </View>
-        <View>
-          <Text style={styles.status}>accepted</Text>
+
+        {/* HISTORY */}
+
+        <Text style={styles.heading}>HISTORY</Text>
+        <View style={styles.historyContainer}>
+          <View>
+            <Text style={styles.days}>4 Days off</Text>
+            <Text style={styles.day}>2nd Feb, 2023</Text>
+            <Text style={styles.day}>6th Feb, 2023</Text>
+          </View>
+          <View>
+            <Text style={styles.status}>accepted</Text>
+          </View>
         </View>
-      </View>
-      <View style={styles.btnContainer}>
-        <PrimaryButton
-          onPress={() => navigation.navigate("Leave Request")}
-          btnContainer={styles.btn}
-        >
-          <Text style={styles.btnText}>Request day off</Text>
-        </PrimaryButton>
-      </View>
+        <View style={styles.btnContainer}>
+          <PrimaryButton
+            onPress={() => navigation.navigate("Leave Request")}
+            btnContainer={styles.btn}
+          >
+            <Text style={styles.btnText}>Request day off</Text>
+          </PrimaryButton>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -93,19 +95,18 @@ const styles = StyleSheet.create({
   },
   leaves: {
     flexDirection: "row",
-    justifyContent: "center",
-    gap: "35%",
+    justifyContent: "space-around",
     marginVertical: 16,
   },
   leave: {
     alignItems: "center",
     justifyContent: "center",
     width: 170,
-    height: 148,
     borderWidth: 5,
     borderColor: "#808080",
     borderRadius: 15,
     gap: 12,
+    paddingVertical: 5,
   },
   leaveTextContainer: {
     borderColor: COLORS.colorPrimaryDark,
@@ -166,6 +167,7 @@ const styles = StyleSheet.create({
     height: 65,
     overflow: "hidden",
     marginTop: 10,
+    marginBottom: "20%",
   },
   btn: {
     height: "100%",

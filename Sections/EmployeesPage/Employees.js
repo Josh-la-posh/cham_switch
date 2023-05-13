@@ -17,6 +17,7 @@ const Employees = ({ navigation }) => {
       casualLeave: 0,
       sickLeave: 3,
       maternityLeave: 20,
+      annualLeave: 50,
     },
   ];
   return (
@@ -42,13 +43,16 @@ const Employees = ({ navigation }) => {
                   <Text style={styles.leave}>
                     Maternity Leave: {employee.maternityLeave}/30
                   </Text>
+                  <Text style={styles.leave}>
+                    Annual Leave: {employee.annualLeave}/365
+                  </Text>
                 </View>
                 <View style={styles.rightSection}>
-                  <Image />
+                  <Image source={require("../../assets/images/img-1.png")} />
                   <Pressable
                     onPress={() => navigation.navigate("Employee Account")}
                   >
-                    <Text>View all</Text>
+                    <Text style={styles.linkText}>View all</Text>
                   </Pressable>
                 </View>
               </View>
@@ -81,7 +85,7 @@ const styles = StyleSheet.create({
   // container: { alignItems: "center", width: '100%' },
   inputFieldContainer: {
     width: "100%",
-    height: 114,
+    height: "15%",
     backgroundColor: "#EEE9E9",
     paddingTop: 21,
     paddingBottom: 13,
@@ -100,6 +104,7 @@ const styles = StyleSheet.create({
     paddingTop: 43,
     alignItems: "center",
     height: "75%",
+    marginBottom: -10,
   },
   employeeDetailContaier: {
     backgroundColor: COLORS.colorPrimaryDark,
@@ -132,6 +137,14 @@ const styles = StyleSheet.create({
   },
   rightSection: {
     justifyContent: "space-between",
+    alignItems: "center",
+    marginRight: "2%",
+    paddingBottom: 10,
+  },
+  linkText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: 600,
   },
   noEmployee: {
     fontSize: 25,
