@@ -21,15 +21,18 @@ const AddLeaveType = () => {
 export default AddLeaveType;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    height: "100%",
+    paddingTop: "10%",
+  },
   heading: {
-      fontSize: 25,
-      fontWeight: 600,
-      color: '#1B4760',
+    fontSize: 25,
+    fontWeight: 600,
+    color: "#1B4760",
   },
   inputContainer: {},
   inputField: {
-      borderWidth: 1,
+    borderWidth: 1,
   },
-  btnContainer: {}
+  btnContainer: {},
 });
