@@ -1,29 +1,39 @@
-import { useState } from "react";
-import { View, Text, Image, Pressable, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  Pressable,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+} from "react-native";
 import { COLORS } from "../../constants";
+import BalancePage from "./BalancePage";
+import RequestPage from "./RequestPage";
 
 function EmployeeAccount() {
-  const [request, setRequest] = useState(0);
+  const [page, setPage] = useState(0);
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.imgContainer}>
-          <Image />
+          <Image style={styles.image} source={require('../../assets/images/img-1.png')}/>
         </View>
         <Text style={styles.name}>Aderonke</Text>
         <Text style={styles.title}>Developer</Text>
         <View style={styles.btns}>
-          <Pressable onPress={() => setRequest(0)}>
-            <View style={[styles.btn, request === 0 ? styles.btnActive : ""]}>
+          <Pressable onPress={() => setPage(0)}>
+            <View style={[styles.btn, page === 0 ? styles.btnActive : ""]}>
               <Text style={styles.btnText}>Request</Text>
             </View>
           </Pressable>
-          <Pressable onPress={() => setRequest(1)}>
+          <Pressable onPress={() => setPage(1)}>
             <View
               style={[
                 styles.btn,
-                request === 1 ? styles.btnActive : styles.btn,
+                page === 1 ? styles.btnActive : styles.btn,
               ]}
+          
             >
               <Text style={styles.btnText}>Balance</Text>
             </View>
@@ -33,6 +43,16 @@ function EmployeeAccount() {
       <View style={styles.content}>
         <Text>Main Page</Text>
       </View>
+      <ScrollView style={styles.content}>
+        <View style={styles.searchYear}>
+          <TextInput
+            placeholder="Search year"
+            keyboardType="numeric"
+            style={styles.yearInput}
+          />
+        </View>
+        {page === 0 ? <RequestPage /> : <BalancePage />}
+      </ScrollView>
     </View>
   );
 }
@@ -45,7 +65,6 @@ const styles = StyleSheet.create({
     // paddingVertical: 20,
   },
   headerContainer: {
-    height: "35%",
     backgroundColor: COLORS.colorPrimaryDark,
     borderRadius: 23,
     paddingTop: "10%",
@@ -60,6 +79,12 @@ const styles = StyleSheet.create({
     width: 120,
     backgroundColor: "#fff",
     borderRadius: "70%",
+    alignItems: "center",
+    justifyContent: 'center',
+  },
+  image: {
+    height: '100%',
+    width: '100%'
   },
   name: {
     fontSize: 25,
@@ -73,6 +98,7 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: "yellow",
+    paddingBottom: 10
   },
   btns: {
     flexDirection: "row",
@@ -91,5 +117,20 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 19,
     fontWeight: "600",
+  },
+  content: {},
+  searchYear: {
+    marginVertical: 51,
+    backgroundColor: "#fff",
+    paddingHorizontal: 38,
+    marginHorizontal: 38,
+    height: 61,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  yearInput: {
+    fontSize: 25,
+    color: COLORS.placeholderText,
+    fontWeight: "700",
   },
 });
