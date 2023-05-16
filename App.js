@@ -5,10 +5,10 @@ import OnboardingScreen from "./Navigations/StackNavigation/OnboardingScreen";
 import LoginAndSignupScreen from "./Navigations/StackNavigation/LoginAndSignupScreen";
 import CompanySetupScreen from "./Navigations/StackNavigation/CompanySetupScreen";
 import HomeScreen from "./Navigations/StackNavigation/HomeScreen";
-import EmployeeScreen from "./Navigations/StackNavigation/EmployeeScreen";
+import EmployeeScreen from "./Navigations/StackNavigation/EmployeeSecreen";
 import SettingsSreen from "./Navigations/StackNavigation/SettingsSreen";
 import SettingsPageSreen from "./Navigations/StackNavigation/SettingsPageSreen";
-// import CalendarScreen from "./Navigations/StackNavigation/CalendarSecreen";
+
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -24,7 +24,6 @@ export default function App() {
             {EmployeeScreen(Stack)}
             {SettingsSreen(Stack)}
             {SettingsPageSreen(Stack)}
-            {/* {CalendarScreen(Stack)} */}
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

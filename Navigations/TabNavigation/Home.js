@@ -50,9 +50,9 @@ function Home() {
             },
           }}
         />
-        <Tab.Screen name="Settings" component={Settings} 
+        <Tab.Screen name="Settings" component={Settings}
           options={{
-            title: 'Settings',
+            tabBarLabel: 'Settings',         
             tabBarIcon: ({size,focused,color}) => {
               return (
                 <Image
