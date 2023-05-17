@@ -50,6 +50,8 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
     position: "relative",
+    height: "100%",
+    paddingTop: "10%",
   },
   heading: {
     fontSize: 25,

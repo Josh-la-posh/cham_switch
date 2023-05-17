@@ -11,6 +11,7 @@ export const COLORS = {
   dangerBtnColor: "#F80E0E",
   dangerBtnColorPrimary: "#CA1212",
   accountBackground: "#F2EEEE",
+  activePointer: "#F80D0D",
   inactivePointer: "#F1D0D0",
   placeholderText: "#E1DCDC",
   

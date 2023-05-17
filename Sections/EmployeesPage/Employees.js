@@ -16,8 +16,8 @@ const Employees = ({ navigation }) => {
       title: "Product Designer",
       casualLeave: 0,
       sickLeave: 3,
-      annualLeave: 21,
       maternityLeave: 20,
+      annualLeave: 50,
     },
   ];
   return (

@@ -10,13 +10,13 @@ import { COLORS } from "../../constants";
 import SelectDropdown from "react-native-select-dropdown";
 
 function LeaveRequest({ navigation }) {
-  const leaveType = ["Casual", "Maternity"];
+  const leaveType = ["Casual", "Maternity", "Annual"];
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
-            <Image />
+            <Image style={styles.image} source={require("../../assets/images/img-1.png")} />
           </View>
           <Text style={styles.name}>Your Request</Text>
           <Text style={styles.name}>Opeyemi</Text>
@@ -24,7 +24,7 @@ function LeaveRequest({ navigation }) {
         <Image source={require("../../assets/images/curve-arrow.png")} />
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
-            <Image />
+            <Image style={styles.image} source={require("../../assets/images/img-1.png")} />
           </View>
           <Text style={styles.name}>Approver</Text>
           <Text style={styles.name}>Emmanuel Ojo</Text>
@@ -100,10 +100,16 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   imgContainer: {
-    height: 120,
-    width: 97,
+    height: 110,
+    width: 110,
+    alignItems: "center",
+    justifyContent: 'center',
     backgroundColor: "#fff",
     borderRadius: "70%",
+  },
+  image: {
+    height: '100%',
+    width: '100%'
   },
   name: {
     fontSize: 17,

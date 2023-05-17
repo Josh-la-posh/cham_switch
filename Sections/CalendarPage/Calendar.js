@@ -82,8 +82,8 @@ const Calendar = () => {
                   employees.map((employee) => {
                     return (
                       <View key={employee.id} style={styles.employeeDetailContaier}>
-                        <View styles={{ width: "30%"}}>
-                          <Text>Image</Text>
+                        <View styles={styles.imgContainer}>
+                          <Image style={styles.image} source={require('../../assets/images/img-1.png')}/>
                         </View>
                         <View styles={{ width: "70%", marginLeft: 20}}>
                           <View>
@@ -216,6 +216,19 @@ const styles = StyleSheet.create({
     marginTop: 14,
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  imgContainer: {
+    width: 75,
+    height: 75,
+    // height: 110,
+    // width: 110,
+    alignItems: "center",
+    justifyContent: 'center',
+  },
+  image: {
+   marginRight: "5%",
+  //  width: "100%",
+  //  height: "100%",
   },
   // noEmployee: {
   //   fontSize: 25,
