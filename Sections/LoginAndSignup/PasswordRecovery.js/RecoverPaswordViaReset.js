@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from "react-native";
 import AccountPage from "../../../components/AccountPage";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 import Input from "../../../components/UI/input";
@@ -27,36 +34,41 @@ const RecoverPasswordViaReset = ({ navigation }) => {
     }
   };
   return (
-    <View>
+    <View style={styles.inner}>
       <AccountPage title="Recover your password">
-        <View>
-          <View style={{ marginVertical: 123, position: "relative" }}>
-            <View style={{ marginBottom: 44 }}>
-              <Input
-                placeholder="New Password"
-                keyboardType="password"
-                value={pwd}
-                onChangeText={setPwd}
-              ></Input>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          style={styles.container}
+        >
+          <ScrollView style={{ flex: 1 }}>
+            <View style={{ marginVertical: 123, position: "relative" }}>
+              <View style={{ marginBottom: 44 }}>
+                <Input
+                  placeholder="New Password"
+                  keyboardType="password"
+                  value={pwd}
+                  onChangeText={setPwd}
+                ></Input>
+              </View>
+              <View>
+                <Input
+                  placeholder="Confirm Password"
+                  keyboardType="password"
+                  value={confirmPwd}
+                  onChangeText={setConfirmPwd}
+                ></Input>
+              </View>
+              <View style={styles.errMsgContainer}>
+                <Text style={styles.errMsg}>{err}</Text>
+              </View>
             </View>
-            <View>
-              <Input
-                placeholder="Confirm Password"
-                keyboardType="password"
-                value={confirmPwd}
-                onChangeText={setConfirmPwd}
-              ></Input>
+            <View style={styles.btnContainer}>
+              <PrimaryButton onPress={handleSubmit} btnStyle={styles.btnStyle}>
+                <Text style={styles.btnText}>Done</Text>
+              </PrimaryButton>
             </View>
-            <View style={styles.errMsgContainer}>
-              <Text style={styles.errMsg}>{err}</Text>
-            </View>
-          </View>
-          <View style={styles.btnContainer}>
-            <PrimaryButton onPress={handleSubmit} btnStyle={styles.btnStyle}>
-              <Text style={styles.btnText}>Done</Text>
-            </PrimaryButton>
-          </View>
-        </View>
+          </ScrollView>
+        </KeyboardAvoidingView>
       </AccountPage>
     </View>
   );
@@ -65,6 +77,10 @@ const RecoverPasswordViaReset = ({ navigation }) => {
 export default RecoverPasswordViaReset;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  inner: { flex: 1 },
   text: {
     fontSize: 24,
     textAlign: "center",

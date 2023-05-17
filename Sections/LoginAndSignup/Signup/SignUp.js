@@ -18,11 +18,11 @@ const SignUp = ({ navigation }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={{ height: "100%" }}
-      enabled
-      keyboardVerticalOffset={400}
+      style={styles.outer}
+      // enabled
+      // keyboardVerticalOffset={400}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
           <View>
             <Input
@@ -76,7 +76,7 @@ const SignUp = ({ navigation }) => {
             <Text style={styles.btnText}>Sign Up</Text>
           </PrimaryButton>
         </View>
-      </ScrollView>
+      </View>
     </KeyboardAvoidingView>
   );
 };
@@ -84,6 +84,9 @@ const SignUp = ({ navigation }) => {
 export default SignUp;
 
 const styles = StyleSheet.create({
+  outer: {
+    flex: 1,
+  },
   containerInput: {
     marginBottom: 24,
   },
