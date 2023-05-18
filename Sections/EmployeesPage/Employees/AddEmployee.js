@@ -1,36 +1,36 @@
-import {View, Text} from 'react-native';
-import AccountPage from '../../../components/AccountPage';
-import Input from '../../../components/UI/input';
-import PrimaryButton from '../../../components/UI/PrimaryButton';
+import { View, Text } from "react-native";
+import AccountPage from "../../../components/AccountPage";
+import Input from "../../../components/UI/input";
+import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const AddEmployee = () => {
   return (
     <View>
-        <AccountPage title='Add Employee'>
+      <AccountPage title="Add Employee">
+        <View>
           <View>
-            <View>
-              <Input />
-            </View>
-            <View>
-              <Input />
-            </View>
-            <View>
-              <Input />
-            </View>
-            <View>
-              <Input />
-            </View>
-            <View>
-              <Input />
-            </View>
-            <View>
-              <Input />
-            </View>
+            <Input />
           </View>
-          <PrimaryButton>Invite Employee</PrimaryButton>
-        </AccountPage>
+          <View>
+            <Input />
+          </View>
+          <View>
+            <Input />
+          </View>
+          <View>
+            <Input />
+          </View>
+          <View>
+            <Input />
+          </View>
+          <View>
+            <Input />
+          </View>
+        </View>
+        <PrimaryButton>Invite Employee</PrimaryButton>
+      </AccountPage>
     </View>
-  )
-}
+  );
+};
 
-export default AddEmployee
+export default AddEmployee;

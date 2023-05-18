@@ -6,7 +6,7 @@ import {
   Platform,
   TouchableOpacity,
   ScrollView,
-  Image
+  Image,
 } from "react-native";
 import { useState } from "react";
 import DatePicker from "react-native-modern-datepicker";
@@ -43,84 +43,105 @@ const Calendar = () => {
 
   return (
     <ScrollView>
-        <View style={{ flex: 1, alignItems: "center" }}>
+      <View style={{ flex: 1, alignItems: "center" }}>
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: "2%",
+            paddingRight: "2%",
+            margin: 0,
+          }}
+        >
+          <DatePicker
+            mode="calendar"
+            minimumDate={startDate}
+            selected={startedDate}
+            onDateChanged={handleChangeStartDate}
+            onSelectedChange={(date) => setSelectedStartDate(date)}
+            options={{
+              backgroundColor: "#fff",
+              textHeaderColor: "#000",
+              textDefaultColor: "#080516",
+              selectedTextColor: "#080516",
+              mainColor: "orange",
+              textSecondaryColor: "#080516",
+              borderColor: "rgba(122, 146, 165, 0.1)",
+            }}
+          />
 
-        
-               <View style={{width: '100%', display: 'flex', alignItems: 'center', paddingLeft: '2%', paddingRight: '2%', margin: 0}}>
-                 <DatePicker
-                  mode="calendar"
-                  minimumDate={startDate}
-                  selected={startedDate}
-                  onDateChanged={handleChangeStartDate}
-                  onSelectedChange={(date) => setSelectedStartDate(date)}
-                  options={{
-                    backgroundColor: "#fff",
-                    textHeaderColor: "#000",
-                    textDefaultColor: "#080516",
-                    selectedTextColor: "#080516",
-                    mainColor: "orange",
-                    textSecondaryColor: "#080516",
-                    borderColor: "rgba(122, 146, 165, 0.1)",
-                  }}
-                />
+          <TouchableOpacity onPress={handleOnPressStartDate}>
+            <Text style={{ color: "white" }}>Close</Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "flex-start",
+            paddingLeft: "5%",
+            paddingRight: "2%",
+            marginTop: "3%",
+          }}
+        >
+          <TouchableOpacity
+            style={styles.inputBtn}
+            onPress={handleOnPressStartDate}
+          >
+            <Text style={{ fontSize: 18, fontWeight: 800 }}>
+              {selectedStartDate}
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-              <TouchableOpacity onPress={handleOnPressStartDate}> 
-                  <Text style={{ color: "white" }}>Close</Text>
-                </TouchableOpacity> 
-            </View>
-              <View style={{width: '100%', display: 'flex', alignItems: 'flex-start', paddingLeft: '5%', paddingRight: '2%', marginTop: "3%" }}>                
-                <TouchableOpacity
-                  style={styles.inputBtn}
-                  onPress={handleOnPressStartDate}
-                >
-                  <Text style={{ fontSize: 18, fontWeight: 800, }}>{selectedStartDate}</Text>
-                </TouchableOpacity>
-              </View>
-
-              <View style={styles.contentContainer}>
-                {employees.length ? (
-                  employees.map((employee) => {
-                    return (
-                      <View key={employee.id} style={styles.employeeDetailContaier}>
-                        <View styles={styles.imgContainer}>
-                          <Image style={styles.image} source={require('../../assets/images/img-1.png')}/>
-                        </View>
-                        <View styles={{ width: "70%", marginLeft: 20}}>
-                          <View>
-                            <Text style={styles.name}>{employee.name}</Text>
-                            <Text style={styles.title}>{employee.title}</Text>
-                            <Text style={styles.leave}>
-                              Casual Leave: {employee.casualLeave}/14
-                            </Text>
-                            <Text style={styles.leave}>
-                              Sick Leave: {employee.sickLeave}/7
-                            </Text>
-                            <Text style={styles.leave}>
-                              Maternity Leave: {employee.maternityLeave}/30
-                            </Text>
-                          </View>
-                          <View style={styles.rightSection}>                          
-                            <Text style={{color: "red"}}>3 Days off</Text>
-                            <Text style={{color: "green"}}>Schedule</Text>
-                          </View>
-                        </View>
-                      </View>
-                    );
-                  })
-                ) : (
-                  <View>
-                    <Text style={styles.noEmployee}>
-                      You have no employee on the list.
-                    </Text>
+        <View style={styles.contentContainer}>
+          {employees.length ? (
+            employees.map((employee) => {
+              return (
+                <View key={employee.id} style={styles.employeeDetailContaier}>
+                  <View styles={styles.imgContainer}>
+                    <Image
+                      style={styles.image}
+                      source={require("../../assets/images/img-1.png")}
+                    />
                   </View>
-                )}
-              </View>
-             </View>                  
-     </ScrollView>
-  )
-}
+                  <View styles={{ width: "70%", marginLeft: 20 }}>
+                    <View>
+                      <Text style={styles.name}>{employee.name}</Text>
+                      <Text style={styles.title}>{employee.title}</Text>
+                      <Text style={styles.leave}>
+                        Casual Leave: {employee.casualLeave}/14
+                      </Text>
+                      <Text style={styles.leave}>
+                        Sick Leave: {employee.sickLeave}/7
+                      </Text>
+                      <Text style={styles.leave}>
+                        Maternity Leave: {employee.maternityLeave}/30
+                      </Text>
+                    </View>
+                    <View style={styles.rightSection}>
+                      <Text style={{ color: "red" }}>3 Days off</Text>
+                      <Text style={{ color: "green" }}>Schedule</Text>
+                    </View>
+                  </View>
+                </View>
+              );
+            })
+          ) : (
+            <View>
+              <Text style={styles.noEmployee}>
+                You have no employee on the list.
+              </Text>
+            </View>
+          )}
+        </View>
+      </View>
+    </ScrollView>
+  );
+};
 
-export default Calendar
+export default Calendar;
 
 const styles = StyleSheet.create({
   // textHeader: {
@@ -177,7 +198,7 @@ const styles = StyleSheet.create({
     // paddingLeft: 43,
     // paddingTop: 43,
     marginTop: 43,
-    alignItems: 'center',
+    alignItems: "center",
     height: "75%",
     width: "100%",
   },
@@ -223,12 +244,12 @@ const styles = StyleSheet.create({
     // height: 110,
     // width: 110,
     alignItems: "center",
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   image: {
-   marginRight: "5%",
-  //  width: "100%",
-  //  height: "100%",
+    marginRight: "5%",
+    //  width: "100%",
+    //  height: "100%",
   },
   // noEmployee: {
   //   fontSize: 25,

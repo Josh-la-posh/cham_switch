@@ -1,12 +1,38 @@
-import { View, Text, StyleSheet, ScrollView, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Pressable,
+  Image,
+} from "react-native";
 import { TextInput } from "react-native-paper";
 import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 
 const LeaveType = () => {
   const navigation = useNavigation();
-  const leaveType = ["Sick Leave", "Casual Leave", "Annual Leave"];
+  const [days, setDays] = useState(5);
+  const leaveType = [
+    {
+      name: "Sick Leave",
+      days: `${days}`,
+    },
+    // {
+    //   name: "Casual Leave",
+    //   days: "1",
+    // },
+    // {
+    //   name: "Annual Leave",
+    //   days: "6",
+    // },
+  ];
+  const handleClickForDays = (e) => {
+    setDays(e.target.value);
+    console.log(e);
+  };
   return (
     <View style={styles.container}>
       <CompanySetupLayout title="Leave Types">
@@ -14,21 +40,29 @@ const LeaveType = () => {
           style={styles.contentContainer}
           showsVerticalScrollIndicator={false}
         >
-          {leaveType.map((leave, index) => {
+          {leaveType.map(({ name, days }, index) => {
             return (
               <View key={index} style={styles.content}>
                 <View style={styles.switch}>
                   <SwitchToggle />
                 </View>
                 <View style={styles.textContainer}>
-                  <Text style={styles.leaveText}>{leave}</Text>
+                  <Text style={styles.leaveText}>{name}</Text>
                   <TextInput
                     keyboardType="numeric"
                     style={styles.inputField}
                     maxLength={2}
+                    value={days}
+                    onChange={(e) => setDays(e.target.value)}
                   />
                   <Text style={styles.leaveText}>days pey year</Text>
                 </View>
+                <Pressable onPress={handleClickForDays}>
+                  <Image
+                    source={require("../../assets/icons/edit.png")}
+                    style={styles.editImg}
+                  />
+                </Pressable>
               </View>
             );
           })}
@@ -61,13 +95,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: "10%",
+    paddingHorizontal: "2%",
   },
   textContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
   },
   leaveText: {
-    fontSize: 19,
+    fontSize: 18,
     fontWeight: 700,
     color: "#8B8686",
   },
@@ -79,8 +114,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 8,
     width: "18%",
     textAlign: "center",
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "700",
+  },
+  editImg: {
+    tintColor: "black",
+    height: 30,
   },
   addBtn: {
     color: "#1B4760",

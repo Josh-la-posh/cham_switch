@@ -5,6 +5,26 @@ import PrimaryButton from "../../components/UI/PrimaryButton";
 
 const BalancePage = () => {
   const navigation = useNavigation();
+
+  const data = [
+    { day: "0", constant: "14", leaveType: "Maternity" },
+    { day: "3", constant: "14", leaveType: "Casual" },
+    { day: "38", constant: "365", leaveType: "Annual" },
+  ];
+  const history = [
+    {
+      days: "4",
+      start: "14th Feb, 2023",
+      end: "14th Feb, 2023",
+      stat: "accepted",
+    },
+    {
+      days: "4",
+      start: "14th Feb, 2023",
+      end: "14th Feb, 2023",
+      stat: "rejected",
+    },
+  ];
   return (
     <View style={styles.container}>
       {/* YEAR */}
@@ -19,41 +39,20 @@ const BalancePage = () => {
 
       <ScrollView>
         {/* TABLE */}
-
-        <View style={styles.leaves}>
-          <View style={styles.leave}>
-            <View style={styles.leaveTextContainer}>
-              <Text style={styles.leaveText}>0/14</Text>
-            </View>
-            <Text style={styles.leaveText}>Maternity</Text>
-          </View>
-          <View style={styles.leave}>
-            <View style={styles.leaveTextContainer}>
-              <Text style={styles.leaveText}>3/14</Text>
-            </View>
-            <Text style={styles.leaveText}>Casual</Text>
-          </View>
-        </View>
         <ScrollView horizontal={true}>
           <View style={styles.leaves}>
-            <View style={styles.leave}>
-              <View style={styles.leaveTextContainer}>
-                <Text style={styles.leaveText}>0/14</Text>
-              </View>
-              <Text style={styles.leaveText}>Maternity</Text>
-            </View>
-            <View style={styles.leave}>
-              <View style={styles.leaveTextContainer}>
-                <Text style={styles.leaveText}>3/14</Text>
-              </View>
-              <Text style={styles.leaveText}>Casual</Text>
-            </View>
-            <View style={styles.leave}>
-              <View style={styles.leaveTextContainer}>
-                <Text style={styles.leaveText}>38/365</Text>
-              </View>
-              <Text style={styles.leaveText}>Annual</Text>
-            </View>
+            {data.map(({ day, constant, leaveType }, index) => {
+              return (
+                <View style={styles.leave} key={index}>
+                  <View style={styles.leaveTextContainer}>
+                    <Text style={styles.leaveText}>
+                      {day}/{constant}
+                    </Text>
+                  </View>
+                  <Text style={styles.leaveText}>{leaveType}</Text>
+                </View>
+              );
+            })}
           </View>
         </ScrollView>
 
@@ -67,16 +66,27 @@ const BalancePage = () => {
         {/* HISTORY */}
 
         <Text style={styles.heading}>HISTORY</Text>
-        <View style={styles.historyContainer}>
-          <View>
-            <Text style={styles.days}>4 Days off</Text>
-            <Text style={styles.day}>2nd Feb, 2023</Text>
-            <Text style={styles.day}>6th Feb, 2023</Text>
-          </View>
-          <View>
-            <Text style={styles.status}>accepted</Text>
-          </View>
-        </View>
+        {history.map(({ days, start, end, stat }, index) => {
+          return (
+            <View style={styles.historyContainer} key={index}>
+              <View>
+                <Text style={styles.days}>{days} Days off</Text>
+                <Text style={styles.day}>{start}</Text>
+                <Text style={styles.day}>{end}</Text>
+              </View>
+              <View>
+                <Text
+                  style={[
+                    styles.status,
+                    stat === "rejected" && { color: "red" },
+                  ]}
+                >
+                  {stat}
+                </Text>
+              </View>
+            </View>
+          );
+        })}
         <View style={styles.btnContainer}>
           <PrimaryButton
             onPress={() => navigation.navigate("Leave Request")}
@@ -119,10 +129,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginVertical: 16,
-<<<<<<< HEAD
-=======
-    gap: 14,
->>>>>>> origin/chams_switch_dof
   },
   leave: {
     alignItems: "center",
@@ -133,6 +139,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     gap: 12,
     paddingVertical: 5,
+    marginLeft: 14,
   },
   leaveTextContainer: {
     borderColor: COLORS.colorPrimaryDark,

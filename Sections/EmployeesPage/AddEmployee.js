@@ -69,7 +69,7 @@ const AddEmployee = ({ navigation }) => {
           <View style={styles.btnContainer}>
             <PrimaryButton onPress={() => navigation.navigate("Added Success")}>
               <View style={styles.btn}>
-                <Text style={styles.btnText}>Invite Employer</Text>
+                <Text style={styles.btnText}>Invite Employee</Text>
               </View>
             </PrimaryButton>
           </View>

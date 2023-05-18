@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Text,
@@ -10,6 +11,7 @@ import {
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
 const AddLeaveType = () => {
+  const [input, setInput] = useState("");
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -21,6 +23,8 @@ const AddLeaveType = () => {
           <TextInput
             style={[styles.inputField, styles.input1]}
             placeholder="Leave type"
+            value={input}
+            onChangeText={(e) => setInput(e.target.value)}
           />
           <TextInput
             style={styles.inputField}
