@@ -1,9 +1,9 @@
-import LeaveType from '../../Sections/CompanySetup/LeaveType';
-import OfficialHolidays from '../../Sections/SettingsPage/Holidays/OfficialHolidays';
-import OfficialHolidaysSuccessful from '../../Sections/SettingsPage/Holidays/OfficialHolidaysSuccessful';
-import PushBroadcast from '../../Sections/SettingsPage/PushBroadcast';
-import PushBroadcastSuccessful from '../../Sections/SettingsPage/PushBroadcastSuccessful';
-import SettingsPage from '../../Sections/SettingsPage/Settings/SettingsPage';
+import LeaveType from "../../Sections/CompanySetup/LeaveType";
+import OfficialHolidays from "../../Sections/EmployeesPage//SettingsPage/Holidays/OfficialHolidays";
+import OfficialHolidaysSuccessful from "../../Sections/EmployeesPage//SettingsPage/Holidays/OfficialHolidaysSuccessful";
+import PushBroadcast from "../../Sections/EmployeesPage//SettingsPage/PushBroadcast";
+import PushBroadcastSuccessful from "../../Sections/EmployeesPage//SettingsPage/PushBroadcastSuccessful";
+import SettingsPage from "../../Sections/EmployeesPage//SettingsPage/Settings/SettingsPage";
 
 const SettingsSreen = (Stack) => {
   return (
@@ -24,8 +24,7 @@ const SettingsSreen = (Stack) => {
           title: "Official Holidays",
           headerTintColor: "transparent",
           headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: 
-            { backgroundColor: "white" },
+          headerStyle: { backgroundColor: "white" },
         }}
         component={OfficialHolidays}
       />
@@ -34,19 +33,18 @@ const SettingsSreen = (Stack) => {
         options={{ headerShown: false }}
         component={OfficialHolidaysSuccessful}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="Settings Page"
-        options={{ 
+        options={{
           title: "Settings",
           headerTintColor: "transparent",
           headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: 
-            { backgroundColor: "white" },
-         }}
+          headerStyle: { backgroundColor: "white" },
+        }}
         component={SettingsPage}
       />
     </>
   );
 };
 
-export default SettingsSreen
+export default SettingsSreen;

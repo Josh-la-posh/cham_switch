@@ -1,13 +1,14 @@
-import { View, Text, StyleSheet, Image, Pressable } from 'react-native';
-import PrimaryButton from "../../components/UI/PrimaryButton";
-
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
+import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const Settings = ({ navigation }) => {
   return (
     <View>
-      <View style={{backgroundColor: "white", height: "60%"}}>
+      <View style={{ backgroundColor: "white", height: "60%" }}>
         <View style={styles.top}>
-          <Image source={require("../../assets/images/CompanyBuilding.png")} />
+          <Image
+            source={require("../../../assets/images/CompanyBuilding.png")}
+          />
         </View>
         <View style={styles.bottom}>
           <View style={styles.bottomContent}>
@@ -16,7 +17,7 @@ const Settings = ({ navigation }) => {
                 navigation.navigate("Official Holidays Home");
               }}
             >
-              <Image source={require("../../assets/images/Voyage.png")} />
+              <Image source={require("../../../assets/images/Voyage.png")} />
               <Text style={styles.bottomContentText}>Holidays</Text>
             </Pressable>
           </View>
@@ -26,31 +27,42 @@ const Settings = ({ navigation }) => {
                 navigation.navigate("Settings Page");
               }}
             >
-              <Image source={require("../../assets/images/GearSettings.png")} />
+              <Image
+                source={require("../../../assets/images/GearSettings.png")}
+              />
               <Text style={styles.bottomContentText}>Settings</Text>
             </Pressable>
           </View>
         </View>
       </View>
-      <View style={{ alignItems: "center", justifyContent: "center", backgroundColor: "#8DC2A9", height: "40%"}}>
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#8DC2A9",
+          height: "40%",
+        }}
+      >
         <View style={styles.btnContainer}>
-            <PrimaryButton onPress={() => navigation.navigate("Push Broadcast")} btnStyle={styles.btnStyle}>
+          <PrimaryButton
+            onPress={() => navigation.navigate("Push Broadcast")}
+            btnStyle={styles.btnStyle}
+          >
             <Text style={styles.btnText}>Send Announcements</Text>
-            </PrimaryButton>
+          </PrimaryButton>
         </View>
       </View>
     </View>
-    
-  )
-}
+  );
+};
 
-export default Settings
+export default Settings;
 
 const styles = StyleSheet.create({
   top: {
     margin: 20,
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   bottom: {
     width: "100%",
@@ -66,7 +78,7 @@ const styles = StyleSheet.create({
   bottomContentText: {
     marginTop: 10,
     fontSize: 20,
-    fontWeight: 600
+    fontWeight: 600,
   },
   btnContainer: {
     // margin: 50,

@@ -8,7 +8,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../../constants";
 import BalancePage from "./BalancePage";
 import RequestPage from "./RequestPage";
 
@@ -16,11 +16,17 @@ function EmployeeAccount() {
   const [page, setPage] = useState(0);
   return (
     <View style={styles.container}>
+      <Pressable style={[styles.icon, styles.icon1]}>
+        <Image source={require("../../../assets/icons/arrow_left.png")} />
+      </Pressable>
+      <Pressable style={[styles.icon, styles.icon2]}>
+        <Image source={require("../../../assets/icons/trash.png")} />
+      </Pressable>
       <View style={styles.headerContainer}>
         <View style={styles.imgContainer}>
           <Image
             style={styles.image}
-            source={require("../../assets/images/img-1.png")}
+            source={require("../../../assets/images/img-1.png")}
           />
         </View>
         <Text style={styles.name}>Aderonke</Text>
@@ -48,6 +54,7 @@ function EmployeeAccount() {
             keyboardType="numeric"
             style={styles.yearInput}
           />
+          <Image source={require("../../../assets/icons/calendar.png")} />
         </View>
         {page === 0 ? <RequestPage /> : <BalancePage />}
       </ScrollView>
@@ -61,6 +68,19 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     // paddingVertical: 20,
+    position: "relative",
+  },
+  icon: {
+    position: "absolute",
+    zIndex: 10000,
+  },
+  icon1: {
+    left: 15,
+    top: "7%",
+  },
+  icon2: {
+    right: 5,
+    top: "8%",
   },
   headerContainer: {
     backgroundColor: COLORS.colorPrimaryDark,
@@ -129,8 +149,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 38,
     marginHorizontal: 38,
     height: 61,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
   yearInput: {
     fontSize: 25,

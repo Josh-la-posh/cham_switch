@@ -13,10 +13,19 @@ function LeaveRequest({ navigation }) {
   const leaveType = ["Casual", "Maternity", "Annual"];
   return (
     <View style={styles.container}>
+      <View>
+        <Image
+          style={styles.image}
+          source={require("../../assets/icons/arrow_left.png")}
+        />
+      </View>
       <View style={styles.header}>
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
-            <Image style={styles.image} source={require("../../assets/images/img-1.png")} />
+            <Image
+              style={styles.image}
+              source={require("../../assets/images/img-1.png")}
+            />
           </View>
           <Text style={styles.name}>Your Request</Text>
           <Text style={styles.name}>Opeyemi</Text>
@@ -24,7 +33,10 @@ function LeaveRequest({ navigation }) {
         <Image source={require("../../assets/images/curve-arrow.png")} />
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
-            <Image style={styles.image} source={require("../../assets/images/img-1.png")} />
+            <Image
+              style={styles.image}
+              source={require("../../assets/images/img-1.png")}
+            />
           </View>
           <Text style={styles.name}>Approver</Text>
           <Text style={styles.name}>Emmanuel Ojo</Text>
@@ -66,6 +78,11 @@ function LeaveRequest({ navigation }) {
           <TextInput placeholder="Reason" style={styles.reasonText} />
         </View>
 
+        <View>
+          <Image source={require("../../assets/icons/attach.png")} />
+          <Text>Attach file</Text>
+        </View>
+
         <View style={styles.btnContainer}>
           <Pressable onPress={() => navigation.navigate("Request Success")}>
             <View style={styles.btn}>
@@ -103,13 +120,13 @@ const styles = StyleSheet.create({
     height: 110,
     width: 110,
     alignItems: "center",
-    justifyContent: 'center',
+    justifyContent: "center",
     backgroundColor: "#fff",
     borderRadius: "70%",
   },
   image: {
-    height: '100%',
-    width: '100%'
+    height: "100%",
+    width: "100%",
   },
   name: {
     fontSize: 17,

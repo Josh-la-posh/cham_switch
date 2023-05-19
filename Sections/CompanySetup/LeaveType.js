@@ -20,14 +20,14 @@ const LeaveType = () => {
       name: "Sick Leave",
       days: `${days}`,
     },
-    // {
-    //   name: "Casual Leave",
-    //   days: "1",
-    // },
-    // {
-    //   name: "Annual Leave",
-    //   days: "6",
-    // },
+    {
+      name: "Casual Leave",
+      days: "143",
+    },
+    {
+      name: "Annual Leave",
+      days: "6",
+    },
   ];
   const handleClickForDays = (e) => {
     setDays(e.target.value);
@@ -55,7 +55,7 @@ const LeaveType = () => {
                     value={days}
                     onChange={(e) => setDays(e.target.value)}
                   />
-                  <Text style={styles.leaveText}>days pey year</Text>
+                  <Text style={styles.leaveText}>days per year</Text>
                 </View>
                 <Pressable onPress={handleClickForDays}>
                   <Image
@@ -84,11 +84,14 @@ export default LeaveType;
 const styles = StyleSheet.create({
   container: {
     width: "98%",
+    paddingHorizontal: "1%",
+    flex: 1,
   },
   contentContainer: {
     minHeight: 250,
     maxHeight: "75%",
     marginTop: "-5%",
+    // flex: 1,
   },
   content: {
     flexDirection: "row",
@@ -97,14 +100,19 @@ const styles = StyleSheet.create({
     marginBottom: "10%",
     paddingHorizontal: "2%",
   },
+  switch: {
+    // width: "15%",
+    flex: 1,
+  },
   textContainer: {
     flexDirection: "row",
-    flexWrap: "wrap",
+    flex: 5,
+    width: "60%",
   },
   leaveText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 700,
-    color: "#8B8686",
+    color: "#8B8686",    
   },
   inputField: {
     backgroundColor: "transparent",
@@ -116,10 +124,12 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     fontWeight: "700",
+    padding: 0,
   },
   editImg: {
     tintColor: "black",
     height: 30,
+    flex: 1,
   },
   addBtn: {
     color: "#1B4760",

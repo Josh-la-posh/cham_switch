@@ -2,17 +2,18 @@ import {
   Text,
   View,
   StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
   TouchableOpacity,
   ScrollView,
   Image,
 } from "react-native";
+import { useRoute } from "@react-navigation/native";
 import { useState } from "react";
 import DatePicker from "react-native-modern-datepicker";
 import { getFormatedDate } from "react-native-modern-datepicker";
 
 const Calendar = () => {
+  const route = useRoute();
+  const { itemId, otherParam } = route.params;
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
   const today = new Date();
   const startDate = getFormatedDate(
@@ -34,10 +35,13 @@ const Calendar = () => {
     {
       id: 1,
       name: "Tabitha",
+      start: "4th Jan, 2023",
+      end: "6th Jan, 2023",
       title: "Product Designer",
       casualLeave: 0,
       sickLeave: 3,
       maternityLeave: 20,
+      reason: "I have malaria and doctor asked me to rest for 3 days.",
     },
   ];
 
@@ -100,39 +104,33 @@ const Calendar = () => {
             employees.map((employee) => {
               return (
                 <View key={employee.id} style={styles.employeeDetailContaier}>
-                  <View styles={styles.imgContainer}>
+                  <View style={styles.imgContainer}>
                     <Image
                       style={styles.image}
-                      source={require("../../assets/images/img-1.png")}
+                      source={require("../../../assets/images/img-1.png")}
                     />
                   </View>
-                  <View styles={{ width: "70%", marginLeft: 20 }}>
+                  <View style={styles.textContainer}>
                     <View>
                       <Text style={styles.name}>{employee.name}</Text>
-                      <Text style={styles.title}>{employee.title}</Text>
-                      <Text style={styles.leave}>
-                        Casual Leave: {employee.casualLeave}/14
-                      </Text>
-                      <Text style={styles.leave}>
-                        Sick Leave: {employee.sickLeave}/7
-                      </Text>
-                      <Text style={styles.leave}>
-                        Maternity Leave: {employee.maternityLeave}/30
-                      </Text>
+                      <Text style={styles.date}>{employee.start}</Text>
+                      <Text style={styles.date}>{employee.end}</Text>
                     </View>
                     <View style={styles.rightSection}>
-                      <Text style={{ color: "red" }}>3 Days off</Text>
-                      <Text style={{ color: "green" }}>Schedule</Text>
+                      <Text style={styles.dayOff}>3 Days off</Text>
+                      <Text style={styles.schedule}>Schedule</Text>
                     </View>
+                    <Image
+                      source={require("../../../assets/icons/arrow_down.png")}
+                      style={styles.icon}
+                    />
                   </View>
                 </View>
               );
             })
           ) : (
             <View>
-              <Text style={styles.noEmployee}>
-                You have no employee on the list.
-              </Text>
+              <Text style={styles.noEmployee}>Nobody is off on this day</Text>
             </View>
           )}
         </View>
@@ -195,8 +193,6 @@ const styles = StyleSheet.create({
   //   elevation: 5,
   // },
   contentContainer: {
-    // paddingLeft: 43,
-    // paddingTop: 43,
     marginTop: 43,
     alignItems: "center",
     height: "75%",
@@ -204,59 +200,60 @@ const styles = StyleSheet.create({
   },
   employeeDetailContaier: {
     backgroundColor: "white",
-    display: "flex",
-    width: "100%",
+    width: "95%",
+    gap: "30%",
     padding: 10,
     flexDirection: "row",
-    // justifyContent: "center",
-    // height: 206,
-    // borderTopLeftRadius: 37,
-    // borderBottomLeftRadius: 37,
-    // paddingTop: 26,
-    // paddingLeft: 40,
-  },
-  // name: {
-  //   fontSize: 25,
-  //   color: "#fff",
-  //   fontWeight: "700",
-  //   marginBottom: "15%",
-  // },
-  // title: {
-  //   fontSize: 15,
-  //   color: "#fff",
-  //   fontWeight: "400",
-  //   marginBottom: "10%",
-  // },
-  // leave: {
-  //   color: "#fff",
-  //   fontWeight: "400",
-  //   fontSize: 13,
-  //   marginBottom: "5%",
-  // },
-  rightSection: {
-    marginTop: 14,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    borderWidth: 1,
+    borderColor: "#F2EEEE",
   },
   imgContainer: {
-    width: 75,
-    height: 75,
-    // height: 110,
-    // width: 110,
+    flex: 1,
+    width: 80,
+    height: 80,
     alignItems: "center",
     justifyContent: "center",
+    marginTop: "5%",
   },
-  image: {
-    marginRight: "5%",
-    //  width: "100%",
-    //  height: "100%",
+  textContainer: {
+    flex: 3,
   },
-  // noEmployee: {
-  //   fontSize: 25,
-  //   fontWeight: "700",
-  //   marginTop: "40%",
-  //   color: "#8B8686",
-  //   textAlign: "center",
-  //   paddingHorizontal: "4%",
-  // },
+  name: {
+    fontSize: 19,
+    fontWeight: "700",
+    marginBottom: "12%",
+  },
+  date: {
+    fontWeight: 600,
+    fontSize: 19,
+    marginBottom: 7,
+  },
+  icon: {
+    position: "absolute",
+    bottom: "5%",
+    left: "-8%",
+  },
+  rightSection: {
+    marginTop: "5%",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
+  },
+  dayOff: {
+    fontWeight: 700,
+    fontSize: 19,
+    color: "#CA1212",
+  },
+  schedule: {
+    fontWeight: 700,
+    fontSize: 17,
+    color: "#15844F",
+  },
+  noEmployee: {
+    fontSize: 20,
+    fontWeight: "700",
+    color: "#8B8686",
+    textAlign: "center",
+  },
 });

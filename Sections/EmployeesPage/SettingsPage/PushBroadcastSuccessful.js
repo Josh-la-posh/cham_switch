@@ -1,5 +1,5 @@
-import { View, Image } from 'react-native'
-import SuccessPage from "../../components/SuccessPage";
+import { View, Image } from "react-native";
+import SuccessPage from "../../../components/SuccessPage";
 
 const PushBroadcastSuccessful = ({ navigation }) => {
   return (
@@ -12,10 +12,12 @@ const PushBroadcastSuccessful = ({ navigation }) => {
           navigation.navigate("Settings Page");
         }}
       >
-        <Image source={require("../../assets/images/SentSuccessfully.png")} />
+        <Image
+          source={require("../../../assets/images/SentSuccessfully.png")}
+        />
       </SuccessPage>
     </View>
   );
-}
+};
 
-export default PushBroadcastSuccessful
+export default PushBroadcastSuccessful;

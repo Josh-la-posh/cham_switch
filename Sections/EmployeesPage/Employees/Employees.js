@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { COLORS } from "../../../constants";
 
-const Employees = ({navigation}) => {
+const Employees = ({ navigation }) => {
   const employees = [
     {
       id: 1,
@@ -17,12 +17,16 @@ const Employees = ({navigation}) => {
       casualLeave: 0,
       sickLeave: 3,
       maternityLeave: 20,
+      annualLeave: 50,
     },
   ];
   return (
     <View style={styles.container}>
-      <View style={styles.inputFieldContainer}>
-        <TextInput style={styles.inputField} placeholder="All Employees" />
+      <View style={styles.inputFieldBackground}>
+        <View style={styles.inputFieldContainer}>
+          <TextInput style={styles.inputField} placeholder="All Employees" />
+          <Image source={require("../../../assets/icons/filter.png")} />
+        </View>
       </View>
 
       <View style={styles.contentContainer}>
@@ -42,10 +46,27 @@ const Employees = ({navigation}) => {
                   <Text style={styles.leave}>
                     Maternity Leave: {employee.maternityLeave}/30
                   </Text>
+                  <Text style={styles.leave}>
+                    Annual Leave: {employee.annualLeave}/365
+                  </Text>
                 </View>
                 <View style={styles.rightSection}>
-                  <Image />
-                  <Text>View all</Text>
+                  <View style={styles.topImg}>
+                    <Image
+                      source={require("../../../assets/images/img-1.png")}
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </View>
+                  <View style={styles.bottomLink}>
+                    <Image
+                      source={require("../../../assets/icons/phone.png")}
+                    />
+                    <Pressable
+                      onPress={() => navigation.navigate("Employee Account")}
+                    >
+                      <Text style={styles.linkText}>View all</Text>
+                    </Pressable>
+                  </View>
                 </View>
               </View>
             );
@@ -60,7 +81,10 @@ const Employees = ({navigation}) => {
       </View>
 
       <View style={styles.btnContainer}>
-        <Pressable style={styles.btn} onPress={() => navigation.navigate('Add Employee')}>
+        <Pressable
+          style={styles.btn}
+          onPress={() => navigation.navigate("Add Employee")}
+        >
           <Text style={styles.btnText}>Invite Employee</Text>
         </Pressable>
       </View>
@@ -72,27 +96,37 @@ export default Employees;
 
 const styles = StyleSheet.create({
   // container: { alignItems: "center", width: '100%' },
-  inputFieldContainer: {
+  inputFieldBackground: {
     width: "100%",
-    height: 114,
+    height: "15%",
     backgroundColor: "#EEE9E9",
     paddingTop: 21,
     paddingBottom: 13,
     paddingHorizontal: 26,
   },
-  inputField: {
+  inputFieldContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#fff",
     borderRadius: 15,
+    paddingRight: 10,
+    paddingVertical: 5,
+  },
+  inputField: {
     backgroundColor: "#fff",
     height: "100%",
     padding: 15,
     fontSize: 25,
     fontWeight: "700",
+    borderRadius: 15,
   },
   contentContainer: {
     paddingLeft: 43,
     paddingTop: 43,
-    alignItems: 'center',
+    alignItems: "center",
     height: "75%",
+    marginBottom: -10,
   },
   employeeDetailContaier: {
     backgroundColor: COLORS.colorPrimaryDark,
@@ -125,6 +159,25 @@ const styles = StyleSheet.create({
   },
   rightSection: {
     justifyContent: "space-between",
+    alignItems: "center",
+    marginRight: "2%",
+    paddingBottom: 10,
+  },
+  topImg: {
+    width: 100,
+    height: 100,
+  },
+  bottomLink: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    paddingRight: 10,
+  },
+  linkText: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: 600,
   },
   noEmployee: {
     fontSize: 25,
@@ -135,21 +188,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: "4%",
   },
   btnContainer: {
-    width: '100%',
+    width: "100%",
     height: 68,
     alignItems: "center",
   },
   btn: {
     backgroundColor: COLORS.dangerBtnColorPrimary,
     width: 317,
-  height: '100%',
-  borderRadius: 22,
-  alignItems: 'center',
-  justifyContent: 'center'
+    height: "100%",
+    borderRadius: 22,
+    alignItems: "center",
+    justifyContent: "center",
   },
   btnText: {
-    color: '#fff',
+    color: "#fff",
     fontSize: 25,
-    fontWeight: '700'
-  }
+    fontWeight: "700",
+  },
 });

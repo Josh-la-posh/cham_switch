@@ -1,5 +1,5 @@
 import { Image, View } from "react-native";
-import SuccessPage from "../../components/SuccessPage";
+import SuccessPage from "../../../components/SuccessPage";
 
 const AddedSuccess = ({ navigation }) => {
   return (
@@ -12,7 +12,7 @@ const AddedSuccess = ({ navigation }) => {
           navigation.navigate("Home");
         }}
       >
-        <Image source={require("../../assets/images/checked.png")} />
+        <Image source={require("../../../assets/images/checked.png")} />
       </SuccessPage>
     </View>
   );

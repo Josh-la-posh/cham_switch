@@ -1,5 +1,5 @@
-import { View, Image } from 'react-native'
-import SuccessPage from "../../../components/SuccessPage";
+import { View, Image } from "react-native";
+import SuccessPage from "../../../../components/SuccessPage";
 
 const OfficialHolidaysSuccessful = ({ navigation }) => {
   return (
@@ -12,10 +12,12 @@ const OfficialHolidaysSuccessful = ({ navigation }) => {
           navigation.navigate("Official Holidays Home");
         }}
       >
-        <Image source={require("../../../assets/images/OfficialHolidays.png")} />
+        <Image
+          source={require("../../../../assets/images/OfficialHolidays.png")}
+        />
       </SuccessPage>
     </View>
   );
-}
+};
 
-export default OfficialHolidaysSuccessful
+export default OfficialHolidaysSuccessful;

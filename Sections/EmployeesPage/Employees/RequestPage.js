@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
-import { COLORS } from "../../constants";
+import { View, Text, StyleSheet, Image } from "react-native";
+import { COLORS } from "../../../constants";
 
 const RequestPage = () => {
   return (
@@ -20,6 +20,10 @@ const RequestPage = () => {
         <View>
           <Text style={styles.view}>View</Text>
         </View>
+        <Image
+          source={require("../../../assets/icons/arrow_down.png")}
+          style={styles.icon}
+        />
       </View>
     </View>
   );
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     paddingVertical: 15,
     paddingHorizontal: 29,
-    marginBottom: 30
+    marginBottom: 30,
   },
   historyContainer: {
     flexDirection: "row",
@@ -51,6 +55,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 17,
     backgroundColor: "#fff",
+    position: "relative",
   },
   days: {
     fontSize: 25,
@@ -64,6 +69,11 @@ const styles = StyleSheet.create({
     fontSize: 19,
     fontWeight: "600",
     marginTop: 7,
+  },
+  icon: {
+    position: "absolute",
+    left: 5,
+    bottom: "18%",
   },
   view: {
     fontSize: 20,

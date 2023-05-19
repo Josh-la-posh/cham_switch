@@ -6,7 +6,7 @@ const CalendarScreen = (Stack) => {
       name="Calendar"
       options={{ headerShown: false }}
       component={Calendar}
-    />   
+    />
   );
 };
 
