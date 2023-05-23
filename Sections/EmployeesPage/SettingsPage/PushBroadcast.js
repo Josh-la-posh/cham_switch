@@ -3,15 +3,15 @@ import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const PushBroadcast = ({ navigation }) => {
   return (
-    <View style={{ width: "100%", alignItems: "center" }}>
+    <View style={styles.container}>
       <View style={styles.imageHeader}>
-        <Image source={require("../../../assets/images/SentSuccessfully.png")} />
+        <Image
+          source={require("../../../assets/images/SentSuccessfully.png")}
+        />
       </View>
       <View
         style={{
-          backgroundColor: "white",
           height: "50%",
-          width: "100%",
           alignItems: "center",
         }}
       >
@@ -27,11 +27,6 @@ const PushBroadcast = ({ navigation }) => {
         >
           Message
         </Text>
-        {/* <TextInput
-            multiline={true}
-            numberOfLines={4}
-            style={{ margin: 20, padding: 20, height:200, textAlignVertical: 'top', backgroundColor: 'lightgray'}}
-        /> */}
         <TextInput
           style={styles.textArea}
           underlineColorAndroid="transparent"
@@ -48,13 +43,6 @@ const PushBroadcast = ({ navigation }) => {
             <Text style={styles.btnText}>Send Message</Text>
           </PrimaryButton>
         </View>
-        {/* <View style={styles.btnContainer}>
-            <PrimaryButton onPress={() => navigation.navigate("Sent Successfully")}>
-              <View style={styles.btn}>
-                <Text style={styles.btnText}>Send Message</Text>
-              </View>
-            </PrimaryButton>
-          </View> */}
       </View>
     </View>
   );
@@ -63,6 +51,11 @@ const PushBroadcast = ({ navigation }) => {
 export default PushBroadcast;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    margin: 0,
+    padding: 0,
+  },
   imageHeader: {
     display: "flex",
     justifyContent: "center",
@@ -70,31 +63,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     backgroundColor: "#8DC2A9",
     height: "50%",
-    width: "100%",
-    // marginTop: 20,
-    // height: "100%",
-    // width: "80%"
   },
-  //   btnContainer: {
-  //     display: "flex",
-  //     justifyContent: "center",
-  //     alignItems: "center",
-  //     borderRadius: 10,
-  //     overflow: "hidden",
-  //     marginTop: 20,
-  //   },
-  //   btn: {
-  //     height: 46,
-  //     alignItems: "center",
-  //     justifyContent: "center",
-  //     padding: 12,
-  //     borderRadius: 22
-  //   },
-  //   btnText: {
-  //     fontSize: 20,
-  //     fontWeight: 700,
-  //     color: "#fff",
-  //   },
   btnContainer: {
     width: "80%",
     display: "flex",
@@ -112,7 +81,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
   },
   textAreaContainer: {
-    // borderColor: "grey",
     borderWidth: 1,
     padding: 5,
   },

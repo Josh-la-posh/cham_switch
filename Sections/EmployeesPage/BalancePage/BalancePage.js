@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { COLORS } from "../../constants";
-import PrimaryButton from "../../components/UI/PrimaryButton";
+import { COLORS } from "../../../constants";
+import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const BalancePage = () => {
   const navigation = useNavigation();

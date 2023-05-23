@@ -12,11 +12,16 @@ import { COLORS } from "../../../constants";
 import BalancePage from "./BalancePage";
 import RequestPage from "./RequestPage";
 
-function EmployeeAccount() {
+function EmployeeAccount({ navigation }) {
   const [page, setPage] = useState(0);
   return (
     <View style={styles.container}>
-      <Pressable style={[styles.icon, styles.icon1]}>
+      <Pressable
+        style={[styles.icon, styles.icon1]}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
         <Image source={require("../../../assets/icons/arrow_left.png")} />
       </Pressable>
       <Pressable style={[styles.icon, styles.icon2]}>

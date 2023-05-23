@@ -13,6 +13,8 @@ import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const AddEmployee = ({ navigation }) => {
+
+
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
@@ -22,7 +24,12 @@ const AddEmployee = ({ navigation }) => {
 
   return (
     <View style={{ position: "relative" }}>
-      <Pressable style={[styles.icon, styles.icon1]}>
+      <Pressable
+        style={[styles.icon, styles.icon1]}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
         <Image source={require("../../../assets/icons/arrow_left.png")} />
       </Pressable>
       <Image

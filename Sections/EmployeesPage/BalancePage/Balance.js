@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import { COLORS } from "../../constants/theme";
+import { COLORS } from "../../../constants/theme";
 import BalancePage from "./BalancePage";
 import RequestPage from "./RequestPage";
 

@@ -14,10 +14,14 @@ function LeaveRequest({ navigation }) {
   return (
     <View style={styles.container}>
       <View>
-        <Image
+        <Pressable
           style={styles.image}
-          source={require("../../assets/icons/arrow_left.png")}
-        />
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
+          <Image source={require("../../assets/icons/arrow_left.png")} />
+        </Pressable>
       </View>
       <View style={styles.header}>
         <View style={styles.headerContainer}>

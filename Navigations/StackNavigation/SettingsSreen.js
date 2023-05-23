@@ -4,13 +4,27 @@ import OfficialHolidaysSuccessful from "../../Sections/EmployeesPage//SettingsPa
 import PushBroadcast from "../../Sections/EmployeesPage//SettingsPage/PushBroadcast";
 import PushBroadcastSuccessful from "../../Sections/EmployeesPage//SettingsPage/PushBroadcastSuccessful";
 import SettingsPage from "../../Sections/EmployeesPage//SettingsPage/Settings/SettingsPage";
+import Header from "../../components/HeaderComponent";
 
 const SettingsSreen = (Stack) => {
   return (
     <>
       <Stack.Screen
         name="Push Broadcast"
-        options={{ headerShown: false }}
+        options={{
+          headerTitle: () => (
+            <Header
+              title="Push Broadcast"
+              style={{ color: "#fff", fontSize: 27, fontWeight: "800" }}
+            />
+          ),
+          headerTintColor: "transparent",
+          headerStyle: {
+            backgroundColor: "#8DC2A9",
+            borderBottomColor: "#FFF",
+            borderBottomWidth: 1,
+          },
+        }}
         component={PushBroadcast}
       />
       <Stack.Screen

@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import PrimaryButton from "../../components/UI/PrimaryButton";
-import { COLORS } from "../../constants/theme";
+import PrimaryButton from "../../../components/UI/PrimaryButton";
+import { COLORS } from "../../../constants/theme";
 
 const RequestPage = () => {
   const navigation = useNavigation();

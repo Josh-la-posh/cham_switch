@@ -1,5 +1,5 @@
-import LeaveType from '../../Sections/CompanySetup/LeaveType';
-import WorkingDays from '../../Sections/CompanySetup/WorkingDays';
+import LeaveType from "../../Sections/CompanySetup/LeaveType";
+import WorkingDays from "../../Sections/CompanySetup/WorkingDays";
 
 const SettingsPageSreen = (Stack) => {
   return (
@@ -9,13 +9,9 @@ const SettingsPageSreen = (Stack) => {
         options={{ headerShown: false }}
         component={WorkingDays}
       />
-      <Stack.Screen
-        name="Settings for Leave Type"
-        options={{ headerShown: false }}
-        component={LeaveType}
-      />
+      <Stack.Screen name="Settings for Leave Type" component={LeaveType} />
     </>
   );
 };
 
-export default SettingsPageSreen
+export default SettingsPageSreen;

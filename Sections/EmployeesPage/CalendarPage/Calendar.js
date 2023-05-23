@@ -5,15 +5,18 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Pressable,
 } from "react-native";
-import { useRoute } from "@react-navigation/native";
+import { useRoute, Link, useNavigation } from "@react-navigation/native";
 import { useState } from "react";
+import { employees } from "../../../Data/data";
 import DatePicker from "react-native-modern-datepicker";
 import { getFormatedDate } from "react-native-modern-datepicker";
 
-const Calendar = () => {
-  const route = useRoute();
-  const { itemId, otherParam } = route.params;
+const Calendar = ({ navigation }) => {
+  // const route = useRoute();
+  // const { itemId, otherParam } = route.params;
+  // const navigation = useNavigation();
   const [openStartDatePicker, setOpenStartDatePicker] = useState(false);
   const today = new Date();
   const startDate = getFormatedDate(
@@ -30,20 +33,6 @@ const Calendar = () => {
   const handleOnPressStartDate = () => {
     setOpenStartDatePicker(!openStartDatePicker);
   };
-
-  const employees = [
-    {
-      id: 1,
-      name: "Tabitha",
-      start: "4th Jan, 2023",
-      end: "6th Jan, 2023",
-      title: "Product Designer",
-      casualLeave: 0,
-      sickLeave: 3,
-      maternityLeave: 20,
-      reason: "I have malaria and doctor asked me to rest for 3 days.",
-    },
-  ];
 
   return (
     <ScrollView>
@@ -118,7 +107,22 @@ const Calendar = () => {
                     </View>
                     <View style={styles.rightSection}>
                       <Text style={styles.dayOff}>3 Days off</Text>
-                      <Text style={styles.schedule}>Schedule</Text>
+                      <Pressable
+                        onPress={() =>
+                          navigation.navigate("Calendar Details", {
+                            id: employee.id,
+                            name: employee.name,
+                            title: employee.title,
+                            start: employee.start,
+                            end: employee.end,
+                            reason: employee.reason,
+                          })
+                        }
+                      >
+                        <View>
+                          <Text style={styles.schedule}>Schedule</Text>
+                        </View>
+                      </Pressable>
                     </View>
                     <Image
                       source={require("../../../assets/icons/arrow_down.png")}
