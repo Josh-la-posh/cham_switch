@@ -1,12 +1,6 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
@@ -16,13 +10,13 @@ const SignUp = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={{ height: "100%" }}
-      enabled
-      keyboardVerticalOffset={400}
+    <KeyboardAwareScrollView
+    // behavior={Platform.OS === "ios" ? "padding" : "height"}
+    // style={styles.outer}
+    // enabled
+    // keyboardVerticalOffset={400}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
           <View>
             <Input
@@ -76,14 +70,17 @@ const SignUp = ({ navigation }) => {
             <Text style={styles.btnText}>Sign Up</Text>
           </PrimaryButton>
         </View>
-      </ScrollView>
-    </KeyboardAvoidingView>
+      </View>
+    </KeyboardAwareScrollView>
   );
 };
 
 export default SignUp;
 
 const styles = StyleSheet.create({
+  outer: {
+    // flex: 1,
+  },
   containerInput: {
     marginBottom: 24,
   },

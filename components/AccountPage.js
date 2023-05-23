@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   topContainer: {
     backgroundColor: COLORS.colorPrimaryDark,
     height: "44.8%",
+    paddingLeft: 10,
   },
   text: {
     width: 271,
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 40,
     fontWeight: 700,
-    marginTop: "30%",
+    marginTop: "40%",
   },
   formContainer: {
     backgroundColor: "white",
@@ -42,6 +43,6 @@ const styles = StyleSheet.create({
     borderRadius: 19,
     paddingLeft: 26.5,
     paddingRight: 26.5,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
 });

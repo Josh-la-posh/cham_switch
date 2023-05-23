@@ -1,35 +1,103 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
 const AddLeaveType = () => {
+  const [input, setInput] = useState("");
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Add Leave Type</Text>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.inputField} placeholder="Leave type" />
-        <TextInput style={styles.inputField} placeholder="days" key="numeric" />
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.container}
+    >
+      <View keyboardDismissMode="on-drag" style={styles.inner}>
+        <Text style={styles.heading}>Add Leave Type</Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={[styles.inputField, styles.input1]}
+            placeholder="Leave type"
+            value={input}
+            onChangeText={(e) => setInput(e.target.value)}
+          />
+          <TextInput
+            style={styles.inputField}
+            placeholder="days"
+            keyboardType="numeric"
+          />
+        </View>
+        <View style={styles.btnContainer}>
+          <PrimaryButton>
+            <View style={styles.btn}>
+              <Text style={styles.btnText}>Continue</Text>
+            </View>
+          </PrimaryButton>
+        </View>
       </View>
-      <View style={styles.btnContainer}>
-        <PrimaryButton>
-          <Text>Continue</Text>
-        </PrimaryButton>
-      </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
 export default AddLeaveType;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+  },
+  inner: {
+    flex: 1,
+    paddingHorizontal: 15,
+    position: "relative",
+    height: "100%",
+    paddingTop: "10%",
+  },
   heading: {
-      fontSize: 25,
-      fontWeight: 600,
-      color: '#1B4760',
+    fontSize: 25,
+    fontWeight: 600,
+    color: "#1B4760",
+    marginTop: 80,
+    marginBottom: 31,
+    textAlign: "center",
   },
-  inputContainer: {},
+  inputContainer: {
+    flexDirection: "row",
+    paddingTop: "10%",
+    gap: 12,
+  },
+  input1: {
+    width: "70%",
+    height: 72,
+  },
   inputField: {
-      borderWidth: 1,
+    borderWidth: 1,
+    borderColor: "#F80E0E",
+    borderRadius: 17,
+    width: "20%",
+    textAlign: "center",
   },
-  btnContainer: {}
+  btnContainer: {
+    borderRadius: 10,
+    overflow: "hidden",
+    width: 334,
+    marginTop: "4%",
+    position: "absolute",
+    bottom: "10%",
+    left: "11%",
+  },
+  btn: {
+    height: 46,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  btnText: {
+    fontSize: 20,
+    fontWeight: 700,
+    color: "#fff",
+  },
 });

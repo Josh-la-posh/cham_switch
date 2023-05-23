@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     borderRadius: "50%",
   },
   activePointer: {
-    backgroundColor: COLORS.activePointer,
+    backgroundColor: COLORS.dangerTextColor,
   },
   inactivePointer: {
     backgroundColor: COLORS.inactivePointer,
