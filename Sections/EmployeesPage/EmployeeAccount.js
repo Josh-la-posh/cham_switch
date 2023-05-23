@@ -18,7 +18,14 @@ function EmployeeAccount() {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <View style={styles.imgContainer}>
+<<<<<<< HEAD
           <Image style={styles.image} source={require('../../assets/images/img-1.png')}/>
+=======
+          <Image
+            style={styles.image}
+            source={require("../../assets/images/img-1.png")}
+          />
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
         </View>
         <Text style={styles.name}>Aderonke</Text>
         <Text style={styles.title}>Developer</Text>
@@ -31,6 +38,10 @@ function EmployeeAccount() {
           <Pressable onPress={() => setPage(1)}>
             <View
               style={[styles.btn, page === 1 ? styles.btnActive : styles.btn]}
+<<<<<<< HEAD
+=======
+              style={[styles.btn, page === 1 ? styles.btnActive : styles.btn]}
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
             >
               <Text style={styles.btnText}>Balance</Text>
             </View>
@@ -72,9 +83,23 @@ const styles = StyleSheet.create({
     height: 120,
     width: 120,
     alignItems: "center",
+<<<<<<< HEAD
     justifyContent: 'center',
+=======
+    justifyContent: "center",
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
     backgroundColor: "#fff",
     borderRadius: "70%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    height: "100%",
+    width: "100%",
+  },
+  image: {
+    height: "100%",
+    width: "100%",
   },
   image: {
     height: '100%',
@@ -92,7 +117,11 @@ const styles = StyleSheet.create({
   },
   content: {
     backgroundColor: "yellow",
+<<<<<<< HEAD
     paddingBottom: 10
+=======
+    paddingBottom: 10,
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
   },
   btns: {
     flexDirection: "row",

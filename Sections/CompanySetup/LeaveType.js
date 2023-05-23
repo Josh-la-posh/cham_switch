@@ -10,6 +10,7 @@ import { TextInput } from "react-native-paper";
 import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 import { useNavigation } from "@react-navigation/native";
+<<<<<<< HEAD
 import { useState } from "react";
 
 const LeaveType = () => {
@@ -33,6 +34,12 @@ const LeaveType = () => {
     setDays(e.target.value);
     console.log(e);
   };
+=======
+
+const LeaveType = () => {
+  const navigation = useNavigation();
+  const leaveType = ["Sick Leave", "Casual Leave", "Annual Leave"];
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
   return (
     <View style={styles.container}>
       <CompanySetupLayout title="Leave Types">

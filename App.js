@@ -8,7 +8,11 @@ import HomeScreen from "./Navigations/StackNavigation/HomeScreen";
 import EmployeeScreen from "./Navigations/StackNavigation/EmployeeSecreen";
 import SettingsSreen from "./Navigations/StackNavigation/SettingsSreen";
 import SettingsPageSreen from "./Navigations/StackNavigation/SettingsPageSreen";
+<<<<<<< HEAD
 import CalendarScreen from "./Navigations/StackNavigation/CalendarScreen";
+=======
+
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
 
 export default function App() {
   const Stack = createNativeStackNavigator();

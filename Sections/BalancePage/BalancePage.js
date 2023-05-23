@@ -19,6 +19,24 @@ const BalancePage = () => {
 
       <ScrollView>
         {/* TABLE */}
+<<<<<<< HEAD
+=======
+
+        <View style={styles.leaves}>
+          <View style={styles.leave}>
+            <View style={styles.leaveTextContainer}>
+              <Text style={styles.leaveText}>0/14</Text>
+            </View>
+            <Text style={styles.leaveText}>Maternity</Text>
+          </View>
+          <View style={styles.leave}>
+            <View style={styles.leaveTextContainer}>
+              <Text style={styles.leaveText}>3/14</Text>
+            </View>
+            <Text style={styles.leaveText}>Casual</Text>
+          </View>
+        </View>
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
         <ScrollView horizontal={true}>
           <View style={styles.leaves}>
             <View style={styles.leave}>
@@ -104,7 +122,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     marginVertical: 16,
+<<<<<<< HEAD
     gap: 14,
+=======
+<<<<<<< HEAD
+=======
+    gap: 14,
+>>>>>>> origin/chams_switch_dof
+>>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
   },
   leave: {
     alignItems: "center",
