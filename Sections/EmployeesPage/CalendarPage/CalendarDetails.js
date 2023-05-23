@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../../../constants";
+import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 const CalendarDetails = ({ route }) => {
   const id = route.params.id;
@@ -41,14 +42,17 @@ const CalendarDetails = ({ route }) => {
         </View>
         <View style={styles.reasonContainer}>
           <Text style={styles.reasonTitle}>Employee Balance</Text>
-        </View>
 
+          <Text style={styles.reason}>{reason}</Text>
+        </View>
         <View style={styles.btnContainer}>
-          <Pressable onPress={() => navigation.navigate("Request Success")}>
+          <PrimaryButton
+          //   onPress={() => navigation.navigate("Added Success")}
+          >
             <View style={styles.btn}>
               <Text style={styles.btnText}>Okay, Got it!</Text>
             </View>
-          </Pressable>
+          </PrimaryButton>
         </View>
       </View>
     </SafeAreaView>
@@ -59,6 +63,7 @@ export default CalendarDetails;
 const styles = StyleSheet.create({
   container: {
     padding: "5%",
+    alignItems: "center",
   },
   employeeDetailContaier: {
     gap: "30%",
@@ -115,21 +120,19 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   btnContainer: {
-    alignItems: "center",
-    marginTop: 37,
+    borderRadius: 10,
+    width: 300,
+    overflow: "hidden",
+    marginTop: "20%",
   },
   btn: {
-    width: 317,
-    height: 65,
-    borderWidth: 1,
-    borderRadius: 22,
-    borderColor: COLORS.colorPrimaryDark,
+    height: 46,
     alignItems: "center",
     justifyContent: "center",
   },
   btnText: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: COLORS.dangerTextColor,
+    fontSize: 20,
+    fontWeight: 700,
+    color: "#fff",
   },
 });
