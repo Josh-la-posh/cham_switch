@@ -7,7 +7,6 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { useRoute, Link, useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { employees } from "../../../Data/data";
 import DatePicker from "react-native-modern-datepicker";

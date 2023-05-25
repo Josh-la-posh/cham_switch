@@ -1,4 +1,3 @@
-import LeaveType from "../../Sections/CompanySetup/LeaveType";
 import OfficialHolidays from "../../Sections/EmployeesPage//SettingsPage/Holidays/OfficialHolidays";
 import OfficialHolidaysSuccessful from "../../Sections/EmployeesPage//SettingsPage/Holidays/OfficialHolidaysSuccessful";
 import PushBroadcast from "../../Sections/EmployeesPage//SettingsPage/PushBroadcast";
@@ -16,6 +15,7 @@ const SettingsSreen = (Stack) => {
             <Header
               title="Push Broadcast"
               style={{ color: "#fff", fontSize: 27, fontWeight: "800" }}
+              image={require("../../assets/icons/arrow_left.png")}
             />
           ),
           headerTintColor: "transparent",
@@ -35,10 +35,19 @@ const SettingsSreen = (Stack) => {
       <Stack.Screen
         name="Official Holidays Home"
         options={{
-          title: "Official Holidays",
+          headerTitle: () => (
+            <Header
+              title="Official Holidays"
+              style={{ color: "#000", fontSize: 27, fontWeight: "800" }}
+              image={require("../../assets/icons/arrow_left_black.png")}
+            />
+          ),
           headerTintColor: "transparent",
-          headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: { backgroundColor: "white" },
+          headerStyle: {
+            backgroundColor: "#fff",
+            borderBottomColor: "#000",
+            borderBottomWidth: 1,
+          },
         }}
         component={OfficialHolidays}
       />
@@ -50,10 +59,21 @@ const SettingsSreen = (Stack) => {
       <Stack.Screen
         name="Settings Page"
         options={{
-          title: "Settings",
+          headerTitle: () => (
+            <Header
+              title="Settings"
+              style={{ color: "#000", fontSize: 27, fontWeight: "400" }}
+              image={require("../../assets/icons/arrow_left_black.png")}
+              imageHeader={require("../../assets/images/GearSettings.png")}
+              imageStyle={{width: "100%", height: "100%", resizeMode: 'contain'}}
+            />
+          ),
           headerTintColor: "transparent",
-          headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: { backgroundColor: "white" },
+          headerStyle: {
+            backgroundColor: "#fff",
+            borderBottomColor: "#000",
+            borderBottomWidth: 1,
+          },
         }}
         component={SettingsPage}
       />

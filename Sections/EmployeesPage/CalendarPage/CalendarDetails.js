@@ -1,6 +1,7 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, ScrollView, Text, Image, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
+import { COLORS } from "../../../constants";
 
 const CalendarDetails = ({ route }) => {
   const id = route.params.id;
@@ -9,6 +10,14 @@ const CalendarDetails = ({ route }) => {
   const start = route.params.start;
   const end = route.params.end;
   const reason = route.params.reason;
+
+  const data = [
+    { day: "3", constant: "14", leaveType: "Total" },
+    { day: "9", constant: "14", leaveType: "Sick" },
+    { day: "38", constant: "365", leaveType: "Maternity" },
+    { day: "38", constant: "365", leaveType: "Annual" },
+  ];
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -35,15 +44,32 @@ const CalendarDetails = ({ route }) => {
             />
           </View>
         </View>
-        <View style={styles.reasonContainer}>
-          <Text style={styles.reasonTitle}>REASON</Text>
-          <Text style={styles.reason}>{reason}</Text>
-        </View>
-        <View style={styles.reasonContainer}>
-          <Text style={styles.reasonTitle}>Employee Balance</Text>
+        <ScrollView>
+          <View style={styles.reasonContainer}>
+            <Text style={styles.reasonTitle}>REASON</Text>
+            <Text style={styles.reason}>{reason}</Text>
+          </View>
+          <View style={styles.reasonContainer}>
+            <Text style={styles.reasonTitle}>Employee Balance</Text>
 
-          <Text style={styles.reason}>{reason}</Text>
-        </View>
+            <ScrollView horizontal={true}>
+              <View style={styles.leaves}>
+                {data.map(({ day, constant, leaveType }, index) => {
+                  return (
+                    <View style={styles.leave} key={index}>
+                      <View style={styles.leaveTextContainer}>
+                        <Text style={styles.leaveText}></Text>
+                      </View>
+                      <Text style={styles.leaveText}>
+                        {leaveType}: {day}/{constant}
+                      </Text>
+                    </View>
+                  );
+                })}
+              </View>
+            </ScrollView>
+          </View>
+        </ScrollView>
         <View style={styles.btnContainer}>
           <PrimaryButton
           //   onPress={() => navigation.navigate("Added Success")}
@@ -117,6 +143,35 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     fontSize: 20,
     marginTop: 25,
+  },
+  leaves: {
+    height: 150,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 16,
+  },
+  leave: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 150,
+    borderWidth: 5,
+    borderColor: "#808080",
+    gap: 12,
+    // paddingVertical: 5,
+    marginLeft: 14,
+  },
+  leaveTextContainer: {
+    borderColor: COLORS.colorPrimaryDark,
+    borderWidth: 12,
+    width: 90,
+    height: 85,
+    borderRadius: "70%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  leaveText: {
+    fontSize: 15,
+    fontWeight: "700",
   },
   btnContainer: {
     borderRadius: 10,

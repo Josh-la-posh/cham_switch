@@ -11,10 +11,6 @@ const SignUp = ({ navigation }) => {
   const [password, setPassword] = useState("");
   return (
     <KeyboardAwareScrollView
-    // behavior={Platform.OS === "ios" ? "padding" : "height"}
-    // style={styles.outer}
-    // enabled
-    // keyboardVerticalOffset={400}
     >
       <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
@@ -79,7 +75,7 @@ export default SignUp;
 
 const styles = StyleSheet.create({
   outer: {
-    // flex: 1,
+    flex: 1,
   },
   containerInput: {
     marginBottom: 24,

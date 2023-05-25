@@ -5,6 +5,7 @@ import {
   Pressable,
   StyleSheet,
   TextInput,
+  ScrollView,
 } from "react-native";
 import { COLORS } from "../../../constants";
 import SelectDropdown from "react-native-select-dropdown";
@@ -13,17 +14,15 @@ function LeaveRequest({ navigation }) {
   const leaveType = ["Casual", "Maternity", "Annual"];
   return (
     <View style={styles.container}>
-      <View>
+      <View style={styles.header}>
         <Pressable
-          style={styles.image}
+          style={styles.icon}
           onPress={() => {
             navigation.goBack();
           }}
         >
           <Image source={require("../../../assets/icons/arrow_left.png")} />
         </Pressable>
-      </View>
-      <View style={styles.header}>
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
             <Image
@@ -46,7 +45,7 @@ function LeaveRequest({ navigation }) {
           <Text style={styles.name}>Emmanuel Ojo</Text>
         </View>
       </View>
-      <View style={styles.content}>
+      <ScrollView style={styles.content}>
         <View style={styles.inputContainer}>
           <SelectDropdown
             data={leaveType}
@@ -82,9 +81,11 @@ function LeaveRequest({ navigation }) {
           <TextInput placeholder="Reason" style={styles.reasonText} />
         </View>
 
-        <View>
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image source={require("../../../assets/icons/attach.png")} />
-          <Text>Attach file</Text>
+          <Text style={{ color: "#8B8686", fontSize: 18, fontWeight: "700" }}>
+            Attach file
+          </Text>
         </View>
 
         <View style={styles.btnContainer}>
@@ -94,7 +95,7 @@ function LeaveRequest({ navigation }) {
             </View>
           </Pressable>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
@@ -110,11 +111,16 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.colorPrimaryDark,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
+    justifyContent: "space-around",
     paddingTop: "10%",
     paddingBottom: 2,
     paddingHorizontal: "5%",
+    position: "relative",
+  },
+  icon: {
+    position: "absolute",
+    top: 20,
+    left: 15,
   },
   headerContainer: {
     alignItems: "center",

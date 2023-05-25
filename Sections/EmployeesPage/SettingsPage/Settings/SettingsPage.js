@@ -5,17 +5,17 @@ const SettingsPage = ({ navigation }) => {
     {
       id: 1,
       name: "Working Days",
-      navigateUrl: "Settings for Working Days"
+      navigateUrl: "Custom Settings for Working Days"
     },
     {
       id: 2,
       name: "Leave Types",
-      navigateUrl: "Settings for Leave Type"
+      navigateUrl: "Custom Settings for Leave Type"
     },
     {
       id: 3,
       name: "My Profile",
-      navigateUrl: ""
+      navigateUrl: "Profile Page"
     },
     {
       id: 4,

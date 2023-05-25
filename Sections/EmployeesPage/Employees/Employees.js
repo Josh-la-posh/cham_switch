@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Text,
@@ -5,72 +6,74 @@ import {
   TextInput,
   Pressable,
   Image,
+  ScrollView,
 } from "react-native";
 import { COLORS } from "../../../constants";
+import { employees } from "../../../Data/data";
 
 const Employees = ({ navigation }) => {
-  const employees = [
-    {
-      id: 1,
-      name: "Tabitha",
-      title: "Product Designer",
-      casualLeave: 0,
-      sickLeave: 3,
-      maternityLeave: 20,
-      annualLeave: 50,
-    },
-  ];
+  const [search, setSearch] = useState("");
   return (
     <View style={styles.container}>
       <View style={styles.inputFieldBackground}>
         <View style={styles.inputFieldContainer}>
-          <TextInput style={styles.inputField} placeholder="All Employees" />
+          <TextInput
+            style={styles.inputField}
+            placeholder="All Employees"
+            value={search}
+            onChangeText={(e) => setSearch(e.target.value)}
+          />
           <Image source={require("../../../assets/icons/filter.png")} />
         </View>
       </View>
 
       <View style={styles.contentContainer}>
         {employees.length ? (
-          employees.map((employee) => {
-            return (
-              <View key={employee.id} style={styles.employeeDetailContaier}>
-                <View>
-                  <Text style={styles.name}>{employee.name}</Text>
-                  <Text style={styles.title}>{employee.title}</Text>
-                  <Text style={styles.leave}>
-                    Casual Leave: {employee.casualLeave}/14
-                  </Text>
-                  <Text style={styles.leave}>
-                    Sick Leave: {employee.sickLeave}/7
-                  </Text>
-                  <Text style={styles.leave}>
-                    Maternity Leave: {employee.maternityLeave}/30
-                  </Text>
-                  <Text style={styles.leave}>
-                    Annual Leave: {employee.annualLeave}/365
-                  </Text>
-                </View>
-                <View style={styles.rightSection}>
-                  <View style={styles.topImg}>
-                    <Image
-                      source={require("../../../assets/images/img-1.png")}
-                      style={{ width: "100%", height: "100%" }}
-                    />
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={styles.content}
+          >
+            {employees.map((employee) => {
+              return (
+                <View key={employee.id} style={styles.employeeDetailContaier}>
+                  <View>
+                    <Text style={styles.name}>{employee.name}</Text>
+                    <Text style={styles.title}>{employee.title}</Text>
+                    <Text style={styles.leave}>
+                      Casual Leave: {employee.casualLeave}/14
+                    </Text>
+                    <Text style={styles.leave}>
+                      Sick Leave: {employee.sickLeave}/7
+                    </Text>
+                    <Text style={styles.leave}>
+                      Maternity Leave: {employee.maternityLeave}/30
+                    </Text>
+                    <Text style={styles.leave}>
+                      Annual Leave: {employee.annualLeave}/365
+                    </Text>
                   </View>
-                  <View style={styles.bottomLink}>
-                    <Image
-                      source={require("../../../assets/icons/phone.png")}
-                    />
-                    <Pressable
-                      onPress={() => navigation.navigate("Employee Account")}
-                    >
-                      <Text style={styles.linkText}>View all</Text>
-                    </Pressable>
+                  <View style={styles.rightSection}>
+                    <View style={styles.topImg}>
+                      <Image
+                        source={require("../../../assets/images/img-1.png")}
+                        style={{ width: "100%", height: "100%" }}
+                      />
+                    </View>
+                    <View style={styles.bottomLink}>
+                      <Image
+                        source={require("../../../assets/icons/phone.png")}
+                      />
+                      <Pressable
+                        onPress={() => navigation.navigate("Employee Account")}
+                      >
+                        <Text style={styles.linkText}>View all</Text>
+                      </Pressable>
+                    </View>
                   </View>
                 </View>
-              </View>
-            );
-          })
+              );
+            })}
+          </ScrollView>
         ) : (
           <View>
             <Text style={styles.noEmployee}>
@@ -95,7 +98,6 @@ const Employees = ({ navigation }) => {
 export default Employees;
 
 const styles = StyleSheet.create({
-  // container: { alignItems: "center", width: '100%' },
   inputFieldBackground: {
     width: "100%",
     height: "15%",
@@ -122,15 +124,15 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   contentContainer: {
-    paddingLeft: 43,
-    paddingTop: 43,
     alignItems: "center",
-    height: "75%",
-    marginBottom: -10,
+    height: "73%",
+  },
+  content: {
+    paddingLeft: 50,
+    paddingTop: 23,
   },
   employeeDetailContaier: {
     backgroundColor: COLORS.colorPrimaryDark,
-    width: "100%",
     height: 206,
     borderTopLeftRadius: 37,
     borderBottomLeftRadius: 37,
@@ -138,18 +140,19 @@ const styles = StyleSheet.create({
     paddingLeft: 40,
     flexDirection: "row",
     justifyContent: "space-between",
+    marginBottom: 20,
   },
   name: {
-    fontSize: 25,
     color: "#fff",
+    fontSize: 25,
     fontWeight: "700",
-    marginBottom: "15%",
+    marginBottom: "11%",
   },
   title: {
     fontSize: 15,
     color: "#fff",
     fontWeight: "400",
-    marginBottom: "10%",
+    marginBottom: "8%",
   },
   leave: {
     color: "#fff",
@@ -191,6 +194,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 68,
     alignItems: "center",
+    marginTop: "2%",
   },
   btn: {
     backgroundColor: COLORS.dangerBtnColorPrimary,

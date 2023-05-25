@@ -6,7 +6,6 @@ import {
   StyleSheet,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
 } from "react-native";
 import PrimaryButton from "../../components/UI/PrimaryButton";
 
@@ -84,14 +83,15 @@ const styles = StyleSheet.create({
   btnContainer: {
     borderRadius: 10,
     overflow: "hidden",
-    width: 334,
+    width: "84%",
+    height: 46,
     marginTop: "4%",
     position: "absolute",
     bottom: "10%",
-    left: "11%",
+    left: "12%",
   },
   btn: {
-    height: 46,
+    height: "100%",
     alignItems: "center",
     justifyContent: "center",
   },
