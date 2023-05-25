@@ -14,7 +14,7 @@ const RequestPage = () => {
         </ScrollView>
       ) : (
         <View style={styles.noRequest}>
-          <Image source={require("../../assets/images/pleading.png")} />
+          <Image source={require("../../../assets/images/pleading.png")} />
           <Text style={styles.note}>No Pending Requests</Text>
         </View>
       )}

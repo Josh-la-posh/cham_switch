@@ -1,5 +1,5 @@
 import { Image, View } from "react-native";
-import SuccessPage from "../../components/SuccessPage";
+import SuccessPage from "../../../components/SuccessPage";
 
 const RequestSuccess = ({ navigation }) => {
   return (
@@ -12,7 +12,7 @@ const RequestSuccess = ({ navigation }) => {
         }}
         note="Waiting for Manager's approval"
       >
-        <Image source={require("../../assets/images/request.png")} />
+        <Image source={require("../../../assets/images/request.png")} />
       </SuccessPage>
     </View>
   );

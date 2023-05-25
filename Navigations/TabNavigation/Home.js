@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Balance from "../../Sections/BalancePage/Balance";
+import Balance from "../../Sections/EmployeesPage/BalancePage/Balance";
 import Calendar from "../../Sections/EmployeesPage/CalendarPage/Calendar";
 import Employees from "../../Sections/EmployeesPage/Employees/Employees";
 import Settings from "../../Sections/EmployeesPage/SettingsPage/Settings";

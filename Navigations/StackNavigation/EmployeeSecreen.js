@@ -1,5 +1,5 @@
-import LeaveRequest from "../../Sections/BalancePage/LeaveRequest";
-import RequestSuccess from "../../Sections/BalancePage/RequestSuccess";
+import LeaveRequest from "../../Sections/EmployeesPage/BalancePage/LeaveRequest";
+import RequestSuccess from "../../Sections/EmployeesPage/BalancePage/RequestSuccess";
 import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";

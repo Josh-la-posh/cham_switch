@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
-import { COLORS } from "../../constants";
+import { COLORS } from "../../../constants";
 import SelectDropdown from "react-native-select-dropdown";
 
 function LeaveRequest({ navigation }) {
@@ -20,7 +20,7 @@ function LeaveRequest({ navigation }) {
             navigation.goBack();
           }}
         >
-          <Image source={require("../../assets/icons/arrow_left.png")} />
+          <Image source={require("../../../assets/icons/arrow_left.png")} />
         </Pressable>
       </View>
       <View style={styles.header}>
@@ -28,18 +28,18 @@ function LeaveRequest({ navigation }) {
           <View style={styles.imgContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/images/img-1.png")}
+              source={require("../../../assets/images/img-1.png")}
             />
           </View>
           <Text style={styles.name}>Your Request</Text>
           <Text style={styles.name}>Opeyemi</Text>
         </View>
-        <Image source={require("../../assets/images/curve-arrow.png")} />
+        <Image source={require("../../../assets/images/curve-arrow.png")} />
         <View style={styles.headerContainer}>
           <View style={styles.imgContainer}>
             <Image
               style={styles.image}
-              source={require("../../assets/images/img-1.png")}
+              source={require("../../../assets/images/img-1.png")}
             />
           </View>
           <Text style={styles.name}>Approver</Text>
@@ -83,7 +83,7 @@ function LeaveRequest({ navigation }) {
         </View>
 
         <View>
-          <Image source={require("../../assets/icons/attach.png")} />
+          <Image source={require("../../../assets/icons/attach.png")} />
           <Text>Attach file</Text>
         </View>
 
