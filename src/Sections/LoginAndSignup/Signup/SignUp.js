@@ -4,14 +4,39 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../../../config/firebase";
+
 const SignUp = ({ navigation }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSignUp = () => {
+    const auth = getAuth();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user.email);
+        console.log(user.password);
+        user && navigation.navigate("Confirm Email");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error.message);
+        // ..
+      });
+
+    // setEmail("");
+    // setPassword("");
+  };
+
   return (
-    <KeyboardAwareScrollView
-    >
+    <KeyboardAwareScrollView>
       <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
           <View>
@@ -57,12 +82,7 @@ const SignUp = ({ navigation }) => {
           </View>
         </View>
         <View style={styles.btnContainer}>
-          <PrimaryButton
-            onPress={() => {
-              navigation.navigate("Confirm Email");
-            }}
-            btnStyle={styles.btnStyle}
-          >
+          <PrimaryButton onPress={handleSignUp} btnStyle={styles.btnStyle}>
             <Text style={styles.btnText}>Sign Up</Text>
           </PrimaryButton>
         </View>

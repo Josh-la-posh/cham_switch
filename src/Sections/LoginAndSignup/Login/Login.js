@@ -1,28 +1,43 @@
+import React, { useContext, useEffect } from "react";
 import { View, Text, StyleSheet, Pressable } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { useState } from "react";
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 import { COLORS } from "../../../constants";
+import { AuthContext } from "../../../context/AuthContext";
 
 const Login = ({ navigation }) => {
+  const { login } = useContext(AuthContext);
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+
   return (
     <KeyboardAwareScrollView>
       <View style={styles.inner}>
         <View>
           <View>
             <Input
-              placeholder="Firstname"
+              placeholder="Email"
               containerInput={styles.containerInput}
-            ></Input>
+              value={email}
+              onChangeText={setEmail}
+            />
           </View>
           <View>
-            <Input placeholder="Password" keyboardType="password"></Input>
+            <Input
+              placeholder="Password"
+              // keyboardType="password"
+              secureTextEntry
+              value={pass}
+              onChangeText={setPass}
+            />
           </View>
         </View>
         <View style={styles.btnContainer}>
           <PrimaryButton
             onPress={() => {
-              navigation.navigate("Company Setup");
+              login(email, pass);
             }}
             btnStyle={styles.btnStyle}
           >
