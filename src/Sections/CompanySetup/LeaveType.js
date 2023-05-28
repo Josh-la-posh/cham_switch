@@ -14,19 +14,16 @@ import { useState } from "react";
 
 const LeaveType = () => {
   const navigation = useNavigation();
-  const [days, setDays] = useState(5);
+  const [days, setDays] = useState("");
   const leaveType = [
     {
       name: "Sick Leave",
-      days: `${days}`,
     },
     {
       name: "Casual Leave",
-      days: "143",
     },
     {
       name: "Annual Leave",
-      days: "6",
     },
   ];
   const handleClickForDays = (e) => {
@@ -53,7 +50,7 @@ const LeaveType = () => {
                     style={styles.inputField}
                     maxLength={2}
                     value={days}
-                    onChange={(e) => setDays(e.target.value)}
+                    onChangeText={setDays}
                   />
                   <Text style={styles.leaveText}>days per year</Text>
                 </View>
@@ -112,7 +109,7 @@ const styles = StyleSheet.create({
   leaveText: {
     fontSize: 16,
     fontWeight: 700,
-    color: "#8B8686",    
+    color: "#8B8686",
   },
   inputField: {
     backgroundColor: "transparent",

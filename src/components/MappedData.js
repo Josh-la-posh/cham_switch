@@ -1,19 +1,21 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Pressable } from "react-native";
 import { COLORS } from "../constants";
+import SettingsPage from "../Sections/EmployeesPage/SettingsPage/Settings/SettingsPage";
 
-const MappedData = ({ data, page }) => {
+const MappedData = ({ data, page, setPage }) => {
   return (
     <View style={styles.pointerContainer}>
       {data.map((icon, index) => {
         return (
-          <View
+          <Pressable
             key={index}
             style={[
               styles.pointer,
               index === page ? styles.activePointer : styles.inactivePointer,
             ]}
+            onPress={()=>{setPage(index)}}
           >
-          </View>
+          </Pressable>
         );
       })}
     </View>

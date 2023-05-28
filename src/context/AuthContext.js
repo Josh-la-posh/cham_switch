@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
+import { auth } from "../config/firebase";
 
 export const AuthContext = createContext();
 
@@ -13,10 +14,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("Perfect");
+        console.log(user.email);
         // ...
       } else {
         console.log("Inperfect");
@@ -26,26 +26,22 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {
     setIsLoading(true);
-
-    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user.email);
-        login(email);
-        // ...
+        console.log("firebase email = " + user.email, "email = " + email);
+        console.log("firebase password = " + user.uid, "password = " + password);
+        // login(email, password);
+        user && setUser(email);
+        user && AsyncStorage.setItem("user", email);
+        user && setIsLoading(false);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(error.message);
+        console.log("error message = " + error.message);
       });
-
-    setUser(email);
-    AsyncStorage.setItem("user", email);
-    setIsLoading(false);
-    console.log(email);
   };
 
   const logout = () => {

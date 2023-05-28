@@ -19,7 +19,7 @@ const CompanySetupPage = ({ navigation }) => {
   };
   return (
     <View style={styles.container}>
-      <MappedData data={data} page={page} />
+      <MappedData data={data} page={page} setPage={setPage} />
       {data[page]}
 
       <View style={styles.btnContainer}>

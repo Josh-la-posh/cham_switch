@@ -10,7 +10,7 @@ import { AuthContext } from "../../../context/AuthContext";
 const Login = ({ navigation }) => {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <KeyboardAwareScrollView>
@@ -29,15 +29,15 @@ const Login = ({ navigation }) => {
               placeholder="Password"
               // keyboardType="password"
               secureTextEntry
-              value={pass}
-              onChangeText={setPass}
+              value={password}
+              onChangeText={setPassword}
             />
           </View>
         </View>
         <View style={styles.btnContainer}>
           <PrimaryButton
             onPress={() => {
-              login(email, pass);
+              login(email, password);
             }}
             btnStyle={styles.btnStyle}
           >

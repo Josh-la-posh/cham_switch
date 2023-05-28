@@ -5,7 +5,7 @@ import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../../../config/firebase";
+import { auth } from "../../../config/firebase";
 
 const SignUp = ({ navigation }) => {
   const [firstname, setFirstname] = useState("");
@@ -14,7 +14,6 @@ const SignUp = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
   const handleSignUp = () => {
-    const auth = getAuth();
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
