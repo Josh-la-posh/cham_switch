@@ -1,20 +1,14 @@
 import LeaveRequest from "../../Sections/BalancePage/LeaveRequest";
 import RequestSuccess from "../../Sections/BalancePage/RequestSuccess";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";
-=======
 import AddedSuccess from "../../Sections/EmployeesPage/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/EmployeeAccount";
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
 import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";
->>>>>>> origin
 
 const EmployeeScreen = (Stack) => {
   return (
