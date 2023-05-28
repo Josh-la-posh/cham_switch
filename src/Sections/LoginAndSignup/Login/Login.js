@@ -47,7 +47,7 @@ const Login = ({ navigation }) => {
         <View style={{ marginTop: "10%" }}>
           <Pressable
             onPress={() => {
-              navigation.navigate("Recover Password");
+              navigation.navigate("Forgot Password");
             }}
           >
             <Text style={styles.reset}>Forgot Password?</Text>

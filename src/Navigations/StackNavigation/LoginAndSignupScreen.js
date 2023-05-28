@@ -5,6 +5,7 @@ import RecoverPassword from "../../Sections/LoginAndSignup/PasswordRecovery.js/R
 import PasswordReset from "../../Sections/LoginAndSignup/PasswordRecovery.js/PasswordRecovery";
 import RecoverPasswordViaReset from "../../Sections/LoginAndSignup/PasswordRecovery.js/RecoverPaswordViaReset";
 import ResetSuccess from "../../Sections/LoginAndSignup/PasswordRecovery.js/ResetSuccess";
+import ForgotPassword from "../../Sections/LoginAndSignup/PasswordRecovery.js/ForgotPassword";
 
 const LoginAndSignupScreen = (Stack) => {
   return (
@@ -28,6 +29,11 @@ const LoginAndSignupScreen = (Stack) => {
         name="Recover Password"
         options={{ headerShown: false }}
         component={RecoverPassword}
+      />
+      <Stack.Screen
+        name="Forgot Password"
+        options={{ headerShown: false }}
+        component={ForgotPassword}
       />
       <Stack.Screen
         name="Reset Password"
