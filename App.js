@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Provider as PaperProvider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -10,29 +11,17 @@ import SettingsSreen from "./Navigations/StackNavigation/SettingsSreen";
 import SettingsPageSreen from "./Navigations/StackNavigation/SettingsPageSreen";
 import CalendarScreen from "./Navigations/StackNavigation/CalendarScreen";
 import CalendarScreen from "./Navigations/StackNavigation/CalendarScreen";
+=======
+import { AuthProvider } from "./src/context/AuthContext";
+import AppNav from "./src/Navigations/AppNav";
+>>>>>>> origin
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
   return (
     <>
-      <PaperProvider>
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              contentStyle: { backgroundColor: "#fff" },
-            }}
-          >
-            {OnboardingScreen(Stack)}
-            {LoginAndSignupScreen(Stack)}
-            {CompanySetupScreen(Stack)}
-            {HomeScreen(Stack)}
-            {CalendarScreen(Stack)}
-            {EmployeeScreen(Stack)}
-            {SettingsSreen(Stack)}
-            {SettingsPageSreen(Stack)}
-          </Stack.Navigator>
-        </NavigationContainer>
-      </PaperProvider>
+      <AuthProvider>
+        <AppNav />
+      </AuthProvider>
     </>
   );
 }
