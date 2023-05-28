@@ -1,22 +1,8 @@
-<<<<<<< HEAD:Navigations/StackNavigation/EmployeeSecreen.js
-import LeaveRequest from "../../Sections/BalancePage/LeaveRequest";
-import RequestSuccess from "../../Sections/BalancePage/RequestSuccess";
-import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
-import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
-import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";
-import AddedSuccess from "../../Sections/EmployeesPage/AddedSuccess";
-import AddEmployee from "../../Sections/EmployeesPage/AddEmployee";
-import EmployeeAccount from "../../Sections/EmployeesPage/EmployeeAccount";
-import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
-import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
-import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";
-=======
 import LeaveRequest from "../../Sections/EmployeesPage/BalancePage/LeaveRequest";
 import RequestSuccess from "../../Sections/EmployeesPage/BalancePage/RequestSuccess";
 import AddedSuccess from "../../Sections/EmployeesPage/Employees/AddedSuccess";
 import AddEmployee from "../../Sections/EmployeesPage/Employees/AddEmployee";
 import EmployeeAccount from "../../Sections/EmployeesPage/Employees/EmployeeAccount";
->>>>>>> origin:src/Navigations/StackNavigation/EmployeeSecreen.js
 
 const EmployeeScreen = (Stack) => {
   return (

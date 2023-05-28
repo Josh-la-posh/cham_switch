@@ -35,30 +35,7 @@ const SignUp = ({ navigation }) => {
   };
 
   return (
-<<<<<<< HEAD:Sections/LoginAndSignup/Signup/SignUp.js
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin
-    <KeyboardAwareScrollView
-    // behavior={Platform.OS === "ios" ? "padding" : "height"}
-    // style={styles.outer}
-    // enabled
-    // keyboardVerticalOffset={400}
-<<<<<<< HEAD
-=======
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.outer}
-      // enabled
-      // keyboardVerticalOffset={400}
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
->>>>>>> origin
-    >
-=======
     <KeyboardAwareScrollView>
->>>>>>> origin:src/Sections/LoginAndSignup/Signup/SignUp.js
       <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
           <View>
@@ -109,19 +86,7 @@ const SignUp = ({ navigation }) => {
           </PrimaryButton>
         </View>
       </View>
-<<<<<<< HEAD:Sections/LoginAndSignup/Signup/SignUp.js
-<<<<<<< HEAD
-<<<<<<< HEAD
     </KeyboardAwareScrollView>
-=======
-    </KeyboardAvoidingView>
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
-    </KeyboardAwareScrollView>
->>>>>>> origin
-=======
-    </KeyboardAwareScrollView>
->>>>>>> origin:src/Sections/LoginAndSignup/Signup/SignUp.js
   );
 };
 
@@ -129,19 +94,7 @@ export default SignUp;
 
 const styles = StyleSheet.create({
   outer: {
-<<<<<<< HEAD:Sections/LoginAndSignup/Signup/SignUp.js
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // flex: 1,
-=======
     flex: 1,
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
-    // flex: 1,
->>>>>>> origin
-=======
-    flex: 1,
->>>>>>> origin:src/Sections/LoginAndSignup/Signup/SignUp.js
   },
   containerInput: {
     marginBottom: 24,

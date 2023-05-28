@@ -1,15 +1,4 @@
-<<<<<<< HEAD:Sections/CompanySetup/AddLeaveType.js
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { useState } from "react";
-=======
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
-import { useState } from "react";
->>>>>>> origin
-=======
-import { useState } from "react";
->>>>>>> origin:src/Sections/CompanySetup/AddLeaveType.js
 import {
   View,
   Text,
@@ -33,21 +22,8 @@ const AddLeaveType = () => {
           <TextInput
             style={[styles.inputField, styles.input1]}
             placeholder="Leave type"
-<<<<<<< HEAD:Sections/CompanySetup/AddLeaveType.js
-<<<<<<< HEAD
-<<<<<<< HEAD
             value={input}
             onChangeText={(e) => setInput(e.target.value)}
-=======
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
-            value={input}
-            onChangeText={(e) => setInput(e.target.value)}
->>>>>>> origin
-=======
-            value={input}
-            onChangeText={(e) => setInput(e.target.value)}
->>>>>>> origin:src/Sections/CompanySetup/AddLeaveType.js
           />
           <TextInput
             style={styles.inputField}

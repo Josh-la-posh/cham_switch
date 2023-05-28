@@ -3,6 +3,7 @@ import OfficialHolidaysSuccessful from "../../Sections/EmployeesPage//SettingsPa
 import PushBroadcast from "../../Sections/EmployeesPage//SettingsPage/PushBroadcast";
 import PushBroadcastSuccessful from "../../Sections/EmployeesPage//SettingsPage/PushBroadcastSuccessful";
 import SettingsPage from "../../Sections/EmployeesPage//SettingsPage/Settings/SettingsPage";
+import AddOfficialHoliday from "../../Sections/EmployeesPage/SettingsPage/Holidays/AddOfficialHoliday";
 import Header from "../../components/HeaderComponent";
 
 const SettingsSreen = (Stack) => {
@@ -15,14 +16,7 @@ const SettingsSreen = (Stack) => {
             <Header
               title="Push Broadcast"
               style={{ color: "#fff", fontSize: 27, fontWeight: "800" }}
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsSreen.js
-<<<<<<< HEAD
               image={require("../../assets/icons/arrow_left.png")}
-=======
->>>>>>> origin
-=======
-              image={require("../../assets/icons/arrow_left.png")}
->>>>>>> origin:src/Navigations/StackNavigation/SettingsSreen.js
             />
           ),
           headerTintColor: "transparent",
@@ -50,24 +44,32 @@ const SettingsSreen = (Stack) => {
             />
           ),
           headerTintColor: "transparent",
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsSreen.js
-<<<<<<< HEAD
-=======
->>>>>>> origin:src/Navigations/StackNavigation/SettingsSreen.js
           headerStyle: {
             backgroundColor: "#fff",
             borderBottomColor: "#000",
             borderBottomWidth: 1,
           },
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsSreen.js
-=======
-          headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: { backgroundColor: "white" },
->>>>>>> origin
-=======
->>>>>>> origin:src/Navigations/StackNavigation/SettingsSreen.js
         }}
         component={OfficialHolidays}
+      />
+      <Stack.Screen
+        name="Add Official Holidays"
+        options={{
+          headerTitle: () => (
+            <Header
+              title="Add Official Holiday"
+              style={{ color: "#000", fontSize: 27, fontWeight: "800" }}
+              image={require("../../assets/icons/arrow_left_black.png")}
+            />
+          ),
+          headerTintColor: "transparent",
+          headerStyle: {
+            backgroundColor: "#fff",
+            borderBottomColor: "#000",
+            borderBottomWidth: 1,
+          },
+        }}
+        component={AddOfficialHoliday}
       />
       <Stack.Screen
         name="Official Holidays Successful"
@@ -77,10 +79,6 @@ const SettingsSreen = (Stack) => {
       <Stack.Screen
         name="Settings Page"
         options={{
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsSreen.js
-<<<<<<< HEAD
-=======
->>>>>>> origin:src/Navigations/StackNavigation/SettingsSreen.js
           headerTitle: () => (
             <Header
               title="Settings"
@@ -96,15 +94,6 @@ const SettingsSreen = (Stack) => {
             borderBottomColor: "#000",
             borderBottomWidth: 1,
           },
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsSreen.js
-=======
-          title: "Settings",
-          headerTintColor: "transparent",
-          headerTitleStyle: { color: "black", fontSize: "25%" },
-          headerStyle: { backgroundColor: "white" },
->>>>>>> origin
-=======
->>>>>>> origin:src/Navigations/StackNavigation/SettingsSreen.js
         }}
         component={SettingsPage}
       />

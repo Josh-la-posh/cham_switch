@@ -2,15 +2,7 @@ import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SIZES } from "../constants";
 
-<<<<<<< HEAD:components/HeaderComponent.js
-<<<<<<< HEAD
-function Header({ image, imageHeader, title, style, imageStyle }) {
-=======
-function Header({ title, style }) {
->>>>>>> origin
-=======
 function Header({ image, icon2, imageHeader, title, style, imageStyle }) {
->>>>>>> origin:src/components/HeaderComponent.js
   const navigation = useNavigation();
   return (
     <View style={styles.header}>
@@ -21,11 +13,6 @@ function Header({ image, icon2, imageHeader, title, style, imageStyle }) {
             navigation.goBack();
           }}
         >
-<<<<<<< HEAD:components/HeaderComponent.js
-<<<<<<< HEAD
-          {/* <Image source={require("../assets/icons/arrow_left.png")} /> */}
-=======
->>>>>>> origin:src/components/HeaderComponent.js
           <Image source={image} />
         </Pressable>
       </View>
@@ -44,15 +31,6 @@ function Header({ image, icon2, imageHeader, title, style, imageStyle }) {
             <Text style={style}>{title}</Text>
           </View>
         </View>
-<<<<<<< HEAD:components/HeaderComponent.js
-=======
-          <Image source={require("../assets/icons/arrow_left.png")} />
-        </Pressable>
-      </View>
-      <View style={styles.headerContent}>
-        <Text style={style}>{title}</Text>
->>>>>>> origin
-=======
       )}
       <View style={styles.trash}>
         <Pressable
@@ -63,7 +41,6 @@ function Header({ image, icon2, imageHeader, title, style, imageStyle }) {
         >
           <Image source={icon2} />
         </Pressable>
->>>>>>> origin:src/components/HeaderComponent.js
       </View>
     </View>
   );
@@ -86,15 +63,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 10,
   },
-<<<<<<< HEAD:components/HeaderComponent.js
-<<<<<<< HEAD
-  headerContent: {
-    display: "flex",
-    flexDirection: "row",
-    // width: SIZES.width,
-=======
   trash: {
->>>>>>> origin:src/components/HeaderComponent.js
     position: "absolute",
     right: 20,
   },
@@ -111,14 +80,6 @@ const styles = StyleSheet.create({
   imageStyle: {
     width: "100%",
     height: "100%",
-<<<<<<< HEAD:components/HeaderComponent.js
-    resizeMode: 'contain'
-  }
-=======
-  headerContent: {},
->>>>>>> origin
-=======
     resizeMode: "contain",
   },
->>>>>>> origin:src/components/HeaderComponent.js
 });

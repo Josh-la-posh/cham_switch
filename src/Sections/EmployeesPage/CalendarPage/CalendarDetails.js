@@ -75,15 +75,7 @@ const CalendarDetails = ({ route }) => {
           //   onPress={() => navigation.navigate("Added Success")}
           >
             <View style={styles.btn}>
-<<<<<<< HEAD:Sections/EmployeesPage/CalendarPage/CalendarDetails.js
-<<<<<<< HEAD
-              <Text style={styles.btnText}>Okay,`Got it!</Text>
-=======
               <Text style={styles.btnText}>Okay, Got it!</Text>
->>>>>>> origin
-=======
-              <Text style={styles.btnText}>Okay, Got it!</Text>
->>>>>>> origin:src/Sections/EmployeesPage/CalendarPage/CalendarDetails.js
             </View>
           </PrimaryButton>
         </View>

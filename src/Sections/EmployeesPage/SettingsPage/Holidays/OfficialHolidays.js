@@ -77,7 +77,7 @@ const OfficialHolidays = ({ navigation }) => {
       <View>
         <View style={styles.btnContainer}>
           <PrimaryButton
-            onPress={() => navigation.navigate("Official Holidays Successful")}
+            onPress={() => navigation.navigate("Add Official Holidays")}
             btnStyle={styles.btnStyle}
           >
             <Text style={styles.btnText}>Add Holiday</Text>

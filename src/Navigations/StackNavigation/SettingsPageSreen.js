@@ -1,14 +1,9 @@
 import LeaveType from "../../Sections/CompanySetup/LeaveType";
 import WorkingDays from "../../Sections/CompanySetup/WorkingDays";
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsPageSreen.js
-<<<<<<< HEAD
-import Header from "../../components/HeaderComponent";
-=======
->>>>>>> origin
-=======
 import Header from "../../components/HeaderComponent";
 import ProfilePage from "../../Sections/EmployeesPage/SettingsPage/Profile/ProfilePage";
->>>>>>> origin:src/Navigations/StackNavigation/SettingsPageSreen.js
+import ChangePassword from "../../Sections/EmployeesPage/SettingsPage/ChangePassword/ChangePassword";
+import ChangePasswordSuccess from "../../Sections/EmployeesPage/SettingsPage/ChangePassword/ChangePasswordSuccess";
 
 const SettingsPageSreen = (Stack) => {
   return (
@@ -32,12 +27,7 @@ const SettingsPageSreen = (Stack) => {
         }}
         component={WorkingDays}
       />
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsPageSreen.js
-<<<<<<< HEAD
-       <Stack.Screen
-=======
       <Stack.Screen
->>>>>>> origin:src/Navigations/StackNavigation/SettingsPageSreen.js
         name="Custom Settings for Leave Type"
         options={{
           headerTitle: () => (
@@ -57,11 +47,6 @@ const SettingsPageSreen = (Stack) => {
         }}
         component={LeaveType}
       />
-<<<<<<< HEAD:Navigations/StackNavigation/SettingsPageSreen.js
-=======
-      <Stack.Screen name="Settings for Leave Type" component={LeaveType} />
->>>>>>> origin
-=======
       <Stack.Screen
         name="Profile Page"
         options={{
@@ -69,7 +54,32 @@ const SettingsPageSreen = (Stack) => {
         }}
         component={ProfilePage}
       />
->>>>>>> origin:src/Navigations/StackNavigation/SettingsPageSreen.js
+      <Stack.Screen
+        name="Settings Change Passsword Page"
+        options={{
+          headerTitle: () => (
+            <Header
+              title="Change Passsword"
+              style={{ color: "#000", fontSize: 27, fontWeight: "400" }}
+              image={require("../../assets/icons/arrow_left_black.png")}
+              imageHeader={require("../../assets/images/GearSettings.png")}
+              imageStyle={{width: "100%", height: "100%", resizeMode: 'contain'}}
+            />
+          ),
+          headerTintColor: "transparent",
+          headerStyle: {
+            backgroundColor: "#fff",
+            borderBottomColor: "#000",
+            borderBottomWidth: 1,
+          },
+        }}
+        component={ChangePassword}
+      />
+      <Stack.Screen
+        name="Password Change Successful"
+        options={{ headerShown: false }}
+        component={ ChangePasswordSuccess}
+      />
     </>
   );
 };

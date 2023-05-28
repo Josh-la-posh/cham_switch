@@ -10,30 +10,10 @@ import { TextInput } from "react-native-paper";
 import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 import { useNavigation } from "@react-navigation/native";
-<<<<<<< HEAD:Sections/CompanySetup/LeaveType.js
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin:src/Sections/CompanySetup/LeaveType.js
 import { useState } from "react";
 
 const LeaveType = () => {
   const navigation = useNavigation();
-<<<<<<< HEAD:Sections/CompanySetup/LeaveType.js
-  const [days, setDays] = useState(5);
-  const leaveType = [
-    {
-      name: "Sick Leave",
-      days: `${days}`,
-    },
-    {
-      name: "Casual Leave",
-      days: "143",
-    },
-    {
-      name: "Annual Leave",
-      days: "6",
-=======
   const [days, setDays] = useState("");
   const leaveType = [
     {
@@ -44,47 +24,12 @@ const LeaveType = () => {
     },
     {
       name: "Annual Leave",
->>>>>>> origin:src/Sections/CompanySetup/LeaveType.js
     },
   ];
   const handleClickForDays = (e) => {
     setDays(e.target.value);
     console.log(e);
   };
-<<<<<<< HEAD:Sections/CompanySetup/LeaveType.js
-=======
-
-const LeaveType = () => {
-  const navigation = useNavigation();
-  const leaveType = ["Sick Leave", "Casual Leave", "Annual Leave"];
->>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
-=======
-import { useState } from "react";
-
-const LeaveType = () => {
-  const navigation = useNavigation();
-  const [days, setDays] = useState(5);
-  const leaveType = [
-    {
-      name: "Sick Leave",
-      days: `${days}`,
-    },
-    {
-      name: "Casual Leave",
-      days: "143",
-    },
-    {
-      name: "Annual Leave",
-      days: "6",
-    },
-  ];
-  const handleClickForDays = (e) => {
-    setDays(e.target.value);
-    console.log(e);
-  };
->>>>>>> origin
-=======
->>>>>>> origin:src/Sections/CompanySetup/LeaveType.js
   return (
     <View style={styles.container}>
       <CompanySetupLayout title="Leave Types">

@@ -23,7 +23,7 @@ const SettingsPage = ({ navigation }) => {
     {
       id: 4,
       name: "Change Password",
-      navigateUrl: "",
+      navigateUrl: "Settings Change Passsword Page",
     },
     {
       id: 5,
