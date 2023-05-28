@@ -1,6 +1,9 @@
 import LeaveType from "../../Sections/CompanySetup/LeaveType";
 import WorkingDays from "../../Sections/CompanySetup/WorkingDays";
+<<<<<<< HEAD
 import Header from "../../components/HeaderComponent";
+=======
+>>>>>>> origin
 
 const SettingsPageSreen = (Stack) => {
   return (
@@ -24,6 +27,7 @@ const SettingsPageSreen = (Stack) => {
         }}
         component={WorkingDays}
       />
+<<<<<<< HEAD
        <Stack.Screen
         name="Custom Settings for Leave Type"
         options={{
@@ -45,6 +49,9 @@ const SettingsPageSreen = (Stack) => {
         }}
         component={LeaveType}
       />
+=======
+      <Stack.Screen name="Settings for Leave Type" component={LeaveType} />
+>>>>>>> origin
     </>
   );
 };

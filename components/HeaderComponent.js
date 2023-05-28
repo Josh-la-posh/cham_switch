@@ -2,7 +2,11 @@ import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SIZES } from "../constants";
 
+<<<<<<< HEAD
 function Header({ image, imageHeader, title, style, imageStyle }) {
+=======
+function Header({ title, style }) {
+>>>>>>> origin
   const navigation = useNavigation();
   return (
     <View style={styles.header}>
@@ -13,6 +17,7 @@ function Header({ image, imageHeader, title, style, imageStyle }) {
             navigation.goBack();
           }}
         >
+<<<<<<< HEAD
           {/* <Image source={require("../assets/icons/arrow_left.png")} /> */}
           <Image source={image} />
         </Pressable>
@@ -24,6 +29,13 @@ function Header({ image, imageHeader, title, style, imageStyle }) {
         <View style={styles.headerContentImage}>
           <Image source={imageHeader} style={imageStyle}/>
         </View>
+=======
+          <Image source={require("../assets/icons/arrow_left.png")} />
+        </Pressable>
+      </View>
+      <View style={styles.headerContent}>
+        <Text style={style}>{title}</Text>
+>>>>>>> origin
       </View>
     </View>
   );
@@ -46,6 +58,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     left: 10,
   },
+<<<<<<< HEAD
   headerContent: {
     display: "flex",
     flexDirection: "row",
@@ -65,4 +78,7 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: 'contain'
   }
+=======
+  headerContent: {},
+>>>>>>> origin
 });

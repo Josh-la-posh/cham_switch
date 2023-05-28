@@ -50,7 +50,11 @@ const CalendarDetails = ({ route }) => {
           //   onPress={() => navigation.navigate("Added Success")}
           >
             <View style={styles.btn}>
+<<<<<<< HEAD
               <Text style={styles.btnText}>Okay,`Got it!</Text>
+=======
+              <Text style={styles.btnText}>Okay, Got it!</Text>
+>>>>>>> origin
             </View>
           </PrimaryButton>
         </View>

@@ -16,7 +16,10 @@ const SettingsSreen = (Stack) => {
             <Header
               title="Push Broadcast"
               style={{ color: "#fff", fontSize: 27, fontWeight: "800" }}
+<<<<<<< HEAD
               image={require("../../assets/icons/arrow_left.png")}
+=======
+>>>>>>> origin
             />
           ),
           headerTintColor: "transparent",
@@ -44,11 +47,16 @@ const SettingsSreen = (Stack) => {
             />
           ),
           headerTintColor: "transparent",
+<<<<<<< HEAD
           headerStyle: {
             backgroundColor: "#fff",
             borderBottomColor: "#000",
             borderBottomWidth: 1,
           },
+=======
+          headerTitleStyle: { color: "black", fontSize: "25%" },
+          headerStyle: { backgroundColor: "white" },
+>>>>>>> origin
         }}
         component={OfficialHolidays}
       />
@@ -60,6 +68,7 @@ const SettingsSreen = (Stack) => {
       <Stack.Screen
         name="Settings Page"
         options={{
+<<<<<<< HEAD
           headerTitle: () => (
             <Header
               title="Settings"
@@ -75,6 +84,12 @@ const SettingsSreen = (Stack) => {
             borderBottomColor: "#000",
             borderBottomWidth: 1,
           },
+=======
+          title: "Settings",
+          headerTintColor: "transparent",
+          headerTitleStyle: { color: "black", fontSize: "25%" },
+          headerStyle: { backgroundColor: "white" },
+>>>>>>> origin
         }}
         component={SettingsPage}
       />

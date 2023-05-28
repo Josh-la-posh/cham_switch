@@ -11,6 +11,7 @@ import CompanySetupLayout from "../../components/CompanySetupLayout";
 import SwitchToggle from "../../components/UI/switch";
 import { useNavigation } from "@react-navigation/native";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { useState } from "react";
 
 const LeaveType = () => {
@@ -40,6 +41,31 @@ const LeaveType = () => {
   const navigation = useNavigation();
   const leaveType = ["Sick Leave", "Casual Leave", "Annual Leave"];
 >>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
+=======
+import { useState } from "react";
+
+const LeaveType = () => {
+  const navigation = useNavigation();
+  const [days, setDays] = useState(5);
+  const leaveType = [
+    {
+      name: "Sick Leave",
+      days: `${days}`,
+    },
+    {
+      name: "Casual Leave",
+      days: "143",
+    },
+    {
+      name: "Annual Leave",
+      days: "6",
+    },
+  ];
+  const handleClickForDays = (e) => {
+    setDays(e.target.value);
+    console.log(e);
+  };
+>>>>>>> origin
   return (
     <View style={styles.container}>
       <CompanySetupLayout title="Leave Types">

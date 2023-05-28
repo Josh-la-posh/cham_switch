@@ -16,6 +16,9 @@ function Home() {
         component={Employees}
         options={{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin
           title: "Employees",
           tabBarIcon: ({ size, focused, color }) => {
             return (
@@ -72,6 +75,7 @@ function Home() {
           },
         }}
       />
+<<<<<<< HEAD
 =======
             title: 'Employees',
             tabBarIcon: ({size,focused,color}) => {
@@ -124,6 +128,8 @@ function Home() {
           }}
         />
 >>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
+=======
+>>>>>>> origin
     </Tab.Navigator>
   );
 }

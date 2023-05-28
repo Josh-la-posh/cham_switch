@@ -11,11 +11,15 @@ const SignUp = ({ navigation }) => {
   const [password, setPassword] = useState("");
   return (
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin
     <KeyboardAwareScrollView
     // behavior={Platform.OS === "ios" ? "padding" : "height"}
     // style={styles.outer}
     // enabled
     // keyboardVerticalOffset={400}
+<<<<<<< HEAD
 =======
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
@@ -23,6 +27,8 @@ const SignUp = ({ navigation }) => {
       // enabled
       // keyboardVerticalOffset={400}
 >>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
+=======
+>>>>>>> origin
     >
       <View style={{ flex: 1 }}>
         <View style={{ paddingTop: 22 }}>
@@ -80,10 +86,14 @@ const SignUp = ({ navigation }) => {
         </View>
       </View>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </KeyboardAwareScrollView>
 =======
     </KeyboardAvoidingView>
 >>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
+=======
+    </KeyboardAwareScrollView>
+>>>>>>> origin
   );
 };
 
@@ -92,10 +102,14 @@ export default SignUp;
 const styles = StyleSheet.create({
   outer: {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // flex: 1,
 =======
     flex: 1,
 >>>>>>> 1f303af12fce8a27d6b5f1d74e9e9733dd380a4f
+=======
+    // flex: 1,
+>>>>>>> origin
   },
   containerInput: {
     marginBottom: 24,
