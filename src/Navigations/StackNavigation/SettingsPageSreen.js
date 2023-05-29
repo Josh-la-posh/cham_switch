@@ -1,9 +1,11 @@
-import LeaveType from "../../Sections/CompanySetup/LeaveType";
-import WorkingDays from "../../Sections/CompanySetup/WorkingDays";
+// import LeaveType from "../../Sections/CompanySetup/LeaveType";
+// import WorkingDays from "../../Sections/CompanySetup/WorkingDays";
 import Header from "../../components/HeaderComponent";
 import ProfilePage from "../../Sections/EmployeesPage/SettingsPage/Profile/ProfilePage";
 import ChangePassword from "../../Sections/EmployeesPage/SettingsPage/ChangePassword/ChangePassword";
 import ChangePasswordSuccess from "../../Sections/EmployeesPage/SettingsPage/ChangePassword/ChangePasswordSuccess";
+import SettingForWorkingDays from "../../Sections/EmployeesPage/SettingsPage/SettingsList/SettingForWorkingDays";
+import SettingForLeaveTypes from "../../Sections/EmployeesPage/SettingsPage/SettingsList/SettingForLeaveTypes";
 
 const SettingsPageSreen = (Stack) => {
   return (
@@ -25,7 +27,7 @@ const SettingsPageSreen = (Stack) => {
             borderBottomWidth: 1,
           },
         }}
-        component={WorkingDays}
+        component={SettingForWorkingDays}
       />
       <Stack.Screen
         name="Custom Settings for Leave Type"
@@ -45,7 +47,7 @@ const SettingsPageSreen = (Stack) => {
             borderBottomWidth: 1,
           },
         }}
-        component={LeaveType}
+        component={SettingForLeaveTypes}
       />
       <Stack.Screen
         name="Profile Page"
