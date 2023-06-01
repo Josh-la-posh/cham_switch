@@ -3,6 +3,7 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
+  // Josh
   apiKey: "AIzaSyAzvufRu_8wnDTbp9hp7LnegEHADZ1neaU",
 
   authDomain: "chams-83c1b.firebaseapp.com",
@@ -19,6 +20,7 @@ const firebaseConfig = {
 };
 
 // const firebaseConfig = {
+//   // Dof
 //   apiKey: "AIzaSyC4Qaoe9XJ2Jtar7-nsA2rO5pMRf8FdJXY",
 
 //   authDomain: "chams-elms.firebaseapp.com",
