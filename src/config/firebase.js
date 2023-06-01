@@ -3,22 +3,38 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC4Qaoe9XJ2Jtar7-nsA2rO5pMRf8FdJXY",
+  apiKey: "AIzaSyAzvufRu_8wnDTbp9hp7LnegEHADZ1neaU",
 
-  authDomain: "chams-elms.firebaseapp.com",
+  authDomain: "chams-83c1b.firebaseapp.com",
 
   databaseURL: "https://chams-83c1b-default-rtdb.firebaseio.com",
 
-  projectId: "chams-elms",
+  projectId: "chams-83c1b",
 
-  storageBucket: "chams-elms.appspot.com",
+  storageBucket: "chams-83c1b.appspot.com",
 
-  messagingSenderId: "554197890570",
+  messagingSenderId: "651088505135",
 
-  appId: "1:554197890570:web:67e547550516a2313b11f3",
-
-  measurementId: "G-ZDH5F2FSVZ"
+  appId: "1:651088505135:web:d69f145132012e412b59da",
 };
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyC4Qaoe9XJ2Jtar7-nsA2rO5pMRf8FdJXY",
+
+//   authDomain: "chams-elms.firebaseapp.com",
+
+//   databaseURL: "https://chams-83c1b-default-rtdb.firebaseio.com",
+
+//   projectId: "chams-elms",
+
+//   storageBucket: "chams-elms.appspot.com",
+
+//   messagingSenderId: "554197890570",
+
+//   appId: "1:554197890570:web:67e547550516a2313b11f3",
+
+//   measurementId: "G-ZDH5F2FSVZ"
+// };
 
 const app = initializeApp(firebaseConfig);
 
