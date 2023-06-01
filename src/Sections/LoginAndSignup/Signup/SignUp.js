@@ -17,14 +17,15 @@ const SignUp = ({ navigation }) => {
   const [conPass, setConPass] = useState("");
 
   function create() {
-    set(ref(db, "users/" + firstname), {
+    const newKey = push(child(ref(database), "users")).key;
+    set(ref(db, "users/" + newKey), {
       firstname: firstname,
       lastname: lastname,
       email: email,
       password: password,
     })
       .then(() => {
-        alert("data updated");
+        alert("data submitted");
       })
       .catch((error) => {
         alert(error);
