@@ -4,34 +4,57 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../config/firebase";
+import { ref, set } from "firebase/database";
+import { db } from "../../../config/firebase";
 
 const SignUp = ({ navigation }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [conPass, setConPass] = useState("");
 
-  const handleSignUp = () => {
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user.email);
-        console.log(user.password);
-        user && navigation.navigate("Confirm Email");
+  function create() {
+    set(ref(db, "users/" + firstname), {
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      password: password,
+    })
+      .then(() => {
+        alert("data updated");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(error.message);
-        // ..
+        alert(error);
       });
+  }
 
-    // setEmail("");
-    // setPassword("");
+  const handleSignUp = () => {
+    if (password === conPass) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user.email);
+          console.log(user.password);
+          user && create();
+          user && navigation.navigate("Confirm Email");
+          setFirstname("");
+          setLastname("");
+          setEmail("");
+          setPassword("");
+          setConPass("");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(error.message);
+          // ..
+        });
+    } else {
+      alert("Password do not match");
+    }
   };
 
   return (
@@ -43,7 +66,7 @@ const SignUp = ({ navigation }) => {
               placeholder="Firstname"
               containerInput={styles.containerInput}
               value={firstname}
-              onChangeText={setFirstname}
+              onChangeText={(name) => setFirstname(name)}
             ></Input>
           </View>
           <View>
@@ -51,7 +74,7 @@ const SignUp = ({ navigation }) => {
               placeholder="Lastname"
               containerInput={styles.containerInput}
               value={lastname}
-              onChangeText={setLastname}
+              onChangeText={(name) => setLastname(name)}
             ></Input>
           </View>
           <View>
@@ -60,7 +83,7 @@ const SignUp = ({ navigation }) => {
               containerInput={styles.containerInput}
               keyboardType="email-address"
               value={email}
-              onChangeText={setEmail}
+              onChangeText={(email) => setEmail(email)}
             ></Input>
           </View>
           <View>
@@ -69,7 +92,7 @@ const SignUp = ({ navigation }) => {
               containerInput={styles.containerInput}
               keyboardType="password"
               value={password}
-              onChangeText={setPassword}
+              onChangeText={(pass) => setPassword(pass)}
             ></Input>
           </View>
           <View>
@@ -77,6 +100,8 @@ const SignUp = ({ navigation }) => {
               placeholder="Confirm password"
               containerInput={styles.containerInput}
               keyboardType="password"
+              value={conPass}
+              onChangeText={(pass) => setConPass(pass)}
             ></Input>
           </View>
         </View>
