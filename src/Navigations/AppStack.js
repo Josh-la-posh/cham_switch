@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CompanySetupScreen from "./StackNavigation/CompanySetupScreen";
@@ -7,8 +7,10 @@ import EmployeeScreen from "./StackNavigation/EmployeeSecreen";
 import SettingsSreen from "./StackNavigation/SettingsSreen";
 import SettingsPageSreen from "./StackNavigation/SettingsPageSreen";
 import CalendarScreen from "./StackNavigation/CalendarScreen";
+import { AuthContext } from "../context/AuthContext";
 
 const AppStack = () => {
+  const { role } = useContext(AuthContext);
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator
@@ -16,7 +18,7 @@ const AppStack = () => {
         contentStyle: { backgroundColor: "#fff" },
       }}
     >
-      {CompanySetupScreen(Stack)}
+      {role === "hr" && CompanySetupScreen(Stack)}
       {HomeScreen(Stack)}
       {CalendarScreen(Stack)}
       {EmployeeScreen(Stack)}

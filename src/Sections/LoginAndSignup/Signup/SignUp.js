@@ -3,11 +3,10 @@ import { View, Text, StyleSheet } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Input from "../../../components/UI/input";
 import PrimaryButton from "../../../components/UI/PrimaryButton";
-
+import RadioButtonSelect from "../../../components/UI/radioButton";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../../config/firebase";
+import { auth, db } from "../../../config/firebase";
 import { ref, set } from "firebase/database";
-import { db } from "../../../config/firebase";
 
 const SignUp = ({ navigation }) => {
   const [firstname, setFirstname] = useState("");
@@ -15,14 +14,25 @@ const SignUp = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conPass, setConPass] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
+
+  const radioOptions = [
+    { label: "Employee", value: "employee" },
+    { label: "Line Manager", value: "lineManager" },
+    { label: "Human Resource Manager", value: "hr" },
+  ];
+
+  const handleValueChange = (value) => {
+    setSelectedValue(value);
+  };
 
   function create() {
-    const newKey = push(child(ref(database), "users")).key;
-    set(ref(db, "users/" + newKey), {
+    set(ref(db, "users/" + password), {
       firstname: firstname,
       lastname: lastname,
       email: email,
       password: password,
+      role: selectedValue,
     })
       .then(() => {
         alert("data submitted");
@@ -33,28 +43,32 @@ const SignUp = ({ navigation }) => {
   }
 
   const handleSignUp = () => {
-    if (password === conPass) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          console.log(user.email);
-          console.log(user.password);
-          user && create();
-          user && navigation.navigate("Confirm Email");
-          setFirstname("");
-          setLastname("");
-          setEmail("");
-          setPassword("");
-          setConPass("");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(error.message);
-          // ..
-        });
+    console.log(selectedValue);
+    if (firstname && lastname && selectedValue) {
+      if (password === conPass) {
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            user && navigation.navigate("Confirm Email");
+            user && create();
+            setFirstname("");
+            setLastname("");
+            setEmail("");
+            setPassword("");
+            setConPass("");
+            setSelectedValue("");
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(error.message, errorCode, errorMessage);
+            // ..
+          });
+      } else {
+        alert("Password do not match");
+      }
     } else {
-      alert("Password do not match");
+      alert("Some fields are missing");
     }
   };
 
@@ -104,6 +118,13 @@ const SignUp = ({ navigation }) => {
               value={conPass}
               onChangeText={(pass) => setConPass(pass)}
             ></Input>
+          </View>
+          <View>
+            <RadioButtonSelect
+              radioOptions={radioOptions}
+              selectedValue={selectedValue}
+              onValueChange={handleValueChange}
+            />
           </View>
         </View>
         <View style={styles.btnContainer}>

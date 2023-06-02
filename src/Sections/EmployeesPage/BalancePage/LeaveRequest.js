@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   View,
   Text,
@@ -9,8 +10,10 @@ import {
 } from "react-native";
 import { COLORS } from "../../../constants";
 import SelectDropdown from "react-native-select-dropdown";
+import { AuthContext } from "../../../context/AuthContext";
 
 function LeaveRequest({ navigation }) {
+  const { role } = useContext(AuthContext);
   const leaveType = ["Casual", "Maternity", "Annual"];
   return (
     <View style={styles.container}>
@@ -24,7 +27,12 @@ function LeaveRequest({ navigation }) {
           <Image source={require("../../../assets/icons/arrow_left.png")} />
         </Pressable>
         <View style={styles.headerContainer}>
-          <View style={styles.imgContainer}>
+          <View
+            style={[
+              styles.imgContainer,
+              role !== "hr" ? styles.imgContainer1 : styles.imgContainer2,
+            ]}
+          >
             <Image
               style={styles.image}
               source={require("../../../assets/images/img-1.png")}
@@ -35,7 +43,12 @@ function LeaveRequest({ navigation }) {
         </View>
         <Image source={require("../../../assets/images/curve-arrow.png")} />
         <View style={styles.headerContainer}>
-          <View style={styles.imgContainer}>
+          <View
+            style={[
+              styles.imgContainer,
+              role !== "hr" ? styles.imgContainer1 : styles.imgContainer2,
+            ]}
+          >
             <Image
               style={styles.image}
               source={require("../../../assets/images/img-1.png")}
@@ -44,6 +57,26 @@ function LeaveRequest({ navigation }) {
           <Text style={styles.name}>Approver</Text>
           <Text style={styles.name}>Emmanuel Ojo</Text>
         </View>
+        {role !== "hr" && (
+          <Image source={require("../../../assets/images/curve-arrow.png")} />
+        )}
+        {role !== "hr" && (
+          <View style={styles.headerContainer}>
+            <View
+              style={[
+                styles.imgContainer,
+                role !== "hr" ? styles.imgContainer1 : styles.imgContainer2,
+              ]}
+            >
+              <Image
+                style={styles.image}
+                source={require("../../../assets/images/img-1.png")}
+              />
+            </View>
+            <Text style={styles.name}>Approver</Text>
+            <Text style={styles.name}>Emmanuel Ojo</Text>
+          </View>
+        )}
       </View>
       <ScrollView style={styles.content}>
         <View style={styles.inputContainer}>
@@ -127,12 +160,18 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   imgContainer: {
-    height: 110,
-    width: 110,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#fff",
     borderRadius: "70%",
+  },
+  imgContainer1: {
+    height: 70,
+    width: 70,
+  },
+  imgContainer2: {
+    height: 110,
+    width: 110,
   },
   image: {
     height: "100%",

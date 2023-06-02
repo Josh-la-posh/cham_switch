@@ -1,49 +1,58 @@
 import React, { createContext, useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { auth } from "../config/firebase";
+import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../config/firebase";
+import { ref, onValue } from "firebase/database";
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [role, setRole] = useState("");
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        console.log(user.email);
-        // ...
-      } else {
-        console.log("Inperfect");
-      }
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       console.log(user.email);
+  //       // ...
+  //     } else {
+  //       console.log("Inperfect");
+  //     }
+  //   });
+  // }, []);
+
+  //GET ROLE FROM FIREBASE
+  function getRole(password) {
+    const starCountRef = ref(db, "users/" + password);
+    onValue(starCountRef, (snapshot) => {
+      const data = snapshot.val();
+      setRole(data.role);
+      console.log(role);
     });
-  }, []);
+  }
 
+  // LOGIN WITH FIREBASE
   const login = (email, password) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log("firebase email = " + user.email, "email = " + email);
-        console.log("firebase password = " + user.uid, "password = " + password);
         // login(email, password);
         user && setUser(email);
         user && AsyncStorage.setItem("user", email);
         user && setIsLoading(false);
+        user && getRole(password);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+        // const errorCode = error.code;
+        // const errorMessage = error.message;
         console.log("error message = " + error.message);
       });
   };
 
+  // LOGGING OUR A USER
   const logout = () => {
     setIsLoading(false);
     setUser(null);

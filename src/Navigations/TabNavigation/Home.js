@@ -1,31 +1,36 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useContext } from "react";
 import Balance from "../../Sections/EmployeesPage/BalancePage/Balance";
 import Calendar from "../../Sections/EmployeesPage/CalendarPage/Calendar";
 import Employees from "../../Sections/EmployeesPage/Employees/Employees";
 import Settings from "../../Sections/EmployeesPage/SettingsPage/Settings";
+import { AuthContext } from "../../context/AuthContext";
 
 import { Image } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
 function Home() {
+  const { role } = useContext(AuthContext);
   return (
     <Tab.Navigator>
-      <Tab.Screen
-        name="Employees"
-        component={Employees}
-        options={{
-          title: "Employees",
-          tabBarIcon: ({ size, focused, color }) => {
-            return (
-              <Image
-                style={{ width: size, height: size }}
-                source={require("../../assets/tab-images/employees-tab.png")}
-              />
-            );
-          },
-        }}
-      />
+      {role === "hr" && (
+        <Tab.Screen
+          name="Employees"
+          component={Employees}
+          options={{
+            title: "Employees",
+            tabBarIcon: ({ size, focused, color }) => {
+              return (
+                <Image
+                  style={{ width: size, height: size }}
+                  source={require("../../assets/tab-images/employees-tab.png")}
+                />
+              );
+            },
+          }}
+        />
+      )}
       <Tab.Screen
         name="Calendar"
         component={Calendar}
