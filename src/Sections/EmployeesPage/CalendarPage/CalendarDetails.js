@@ -36,7 +36,7 @@ const CalendarDetails = ({ route }) => {
               <Text style={styles.date}>{end}</Text>
             </View>
             <View style={styles.rightSection}>
-              <Text style={styles.dayOff}>3 Days off</Text>
+              <Text style={[styles.dayOff, {backgroundColor:''}]}>3 Days off</Text>
             </View>
             <Image
               source={require("../../../assets/icons/arrow_down.png")}

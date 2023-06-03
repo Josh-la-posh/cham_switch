@@ -4,7 +4,6 @@ import {
   Image,
   Pressable,
   StyleSheet,
-  TextInput,
   ScrollView,
 } from "react-native";
 import { COLORS } from "../../../../constants";
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    top: 20,
+    top: "15%",
     left: 15,
   },
   headerContainer: {
