@@ -2,10 +2,11 @@ import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { SIZES } from "../constants";
 
-function Header({ image, icon2, imageHeader, title, style, imageStyle }) {
+function Header({ image, icon2, imageHeader, title, style, imageStyle, settingsHeader }) {
   const navigation = useNavigation();
+  const defaultHeader = [styles.header, settingsHeader];
   return (
-    <View style={styles.header}>
+    <View style={defaultHeader}>
       <View style={styles.backIcon}>
         <Pressable
           style={styles.icon}
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    // marginLeft: "-12%",
+    marginLeft: "-12%",
     marginBottom: "5%",
     position: "relative",
   },

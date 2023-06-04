@@ -46,7 +46,7 @@ const SettingsSreen = (Stack) => {
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}
@@ -65,7 +65,7 @@ const SettingsSreen = (Stack) => {
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}
@@ -85,13 +85,17 @@ const SettingsSreen = (Stack) => {
               style={{ color: "#000", fontSize: 27, fontWeight: "400" }}
               image={require("../../assets/icons/arrow_left_black.png")}
               imageHeader={require("../../assets/images/GearSettings.png")}
-              imageStyle={{width: "100%", height: "100%", resizeMode: 'contain'}}
+              imageStyle={{
+                width: "100%",
+                height: "100%",
+                resizeMode: "contain",
+              }}
             />
           ),
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}

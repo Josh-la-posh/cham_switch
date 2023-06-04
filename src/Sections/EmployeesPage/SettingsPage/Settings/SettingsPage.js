@@ -44,8 +44,8 @@ const SettingsPage = ({ navigation }) => {
           <View
             style={{
               width: "100%",
-              borderBottomWidth: 2,
-              borderBottomColor: "lightgray",
+              borderBottomWidth: 1,
+              borderBottomColor: "#e1dcdc",
               padding: 20,
               // position: "relative",
             }}

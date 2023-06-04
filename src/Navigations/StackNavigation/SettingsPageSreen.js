@@ -6,8 +6,11 @@ import ChangePassword from "../../Sections/EmployeesPage/SettingsPage/ChangePass
 import ChangePasswordSuccess from "../../Sections/EmployeesPage/SettingsPage/ChangePassword/ChangePasswordSuccess";
 import SettingForWorkingDays from "../../Sections/EmployeesPage/SettingsPage/SettingsList/SettingForWorkingDays";
 import SettingForLeaveTypes from "../../Sections/EmployeesPage/SettingsPage/SettingsList/SettingForLeaveTypes";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const SettingsPageSreen = (Stack) => {
+  const { role } = useContext(AuthContext);
   return (
     <>
       <Stack.Screen
@@ -23,7 +26,7 @@ const SettingsPageSreen = (Stack) => {
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}
@@ -37,13 +40,15 @@ const SettingsPageSreen = (Stack) => {
               title="Leave Type"
               style={{ color: "#000", fontSize: 27, fontWeight: "800" }}
               image={require("../../assets/icons/arrow_left_black.png")}
-              icon2={require("../../assets/icons/trash_dark.png")}
+              icon2={
+                role === "hr" && require("../../assets/icons/trash_dark.png")
+              }
             />
           ),
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}
@@ -65,13 +70,17 @@ const SettingsPageSreen = (Stack) => {
               style={{ color: "#000", fontSize: 27, fontWeight: "400" }}
               image={require("../../assets/icons/arrow_left_black.png")}
               imageHeader={require("../../assets/images/GearSettings.png")}
-              imageStyle={{width: "100%", height: "100%", resizeMode: 'contain'}}
+              imageStyle={{
+                width: "100%",
+                height: "100%",
+                resizeMode: "contain",
+              }}
             />
           ),
           headerTintColor: "transparent",
           headerStyle: {
             backgroundColor: "#fff",
-            borderBottomColor: "#000",
+            borderBottomColor: "rgba(0,0,0,0.17)",
             borderBottomWidth: 1,
           },
         }}
@@ -80,7 +89,7 @@ const SettingsPageSreen = (Stack) => {
       <Stack.Screen
         name="Password Change Successful"
         options={{ headerShown: false }}
-        component={ ChangePasswordSuccess}
+        component={ChangePasswordSuccess}
       />
     </>
   );

@@ -82,13 +82,11 @@ const styles = StyleSheet.create({
   container: {
     width: "98%",
     paddingHorizontal: "1%",
-    flex: 1,
   },
   contentContainer: {
     minHeight: 250,
     maxHeight: "75%",
     marginTop: "-5%",
-    // flex: 1,
   },
   content: {
     flexDirection: "row",

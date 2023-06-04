@@ -86,7 +86,12 @@ function Home() {
             headerTitle: () => (
               <Header
                 title="Settings"
-                style={{ color: "#000", fontSize: 27, fontWeight: "400" }}
+                style={{
+                  color: "#000",
+                  fontSize: 27,
+                  fontWeight: "400",
+                }}
+                settingsHeader={{marginLeft: 0}}
                 image={require("../../assets/icons/arrow_left_black.png")}
                 imageHeader={require("../../assets/images/GearSettings.png")}
                 imageStyle={{

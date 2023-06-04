@@ -17,7 +17,9 @@ const SettingForWorkingDays = ({ navigation }) => {
         <View style={styles.btnContainer}>
           <PrimaryButton
             onPress={() => {
-              role === "hr" ? navigation.navigate("Add Official Holidays") : {};
+              role === "hr"
+                ? navigation.navigate("Add Official Holidays")
+                : console.log(role);
             }}
             btnStyle={styles.btnStyle}
           >

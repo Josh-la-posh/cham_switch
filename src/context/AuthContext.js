@@ -9,7 +9,12 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  const [role, setRole] = useState("");
+  const [roles, setRoles] = useState(
+    AsyncStorage.getItem("role") ? AsyncStorage.getItem("role") : "role"
+  );
+  const role = roles._j;
+
+  // const role = roles._j;
 
   // useEffect(() => {
   //   onAuthStateChanged(auth, (user) => {
@@ -27,8 +32,8 @@ export const AuthProvider = ({ children }) => {
     const starCountRef = ref(db, "users/" + password);
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
-      setRole(data.role);
-      console.log(role);
+      // setRoles(data.role);
+      AsyncStorage.setItem("role", data.role);
     });
   }
 
@@ -76,7 +81,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoading, user, login, logout }}>
+    <AuthContext.Provider value={{ isLoading, user, login, logout, role }}>
       {children}
     </AuthContext.Provider>
   );
